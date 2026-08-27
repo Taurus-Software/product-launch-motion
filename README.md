@@ -9,7 +9,7 @@ frame by frame to MP4.
 
 Four beats from it, above. **[▶ Watch all 45 seconds](https://github.com/AbubakrChan/product-launch-motion/releases/download/v1.0.0/product-launch-motion-example-film.mp4)** — eleven
 shots, no After Effects, no stock footage, no GPU renderer, no diffusion model. The render
-is deterministic, so the same commit produces the same file.
+is deterministic, so the same commit produces the same file. Example for http://cheerful.ai/
 
 ```bash
 npx skills add AbubakrChan/product-launch-motion
