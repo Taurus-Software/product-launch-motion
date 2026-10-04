@@ -154,8 +154,8 @@ ffmpeg -i renders/video-v1-raw.mp4 -af loudnorm=I=-14:print_format=json -f null 
 # pass 2 — correct, limit, re-encode
 ffmpeg -i renders/video-v1-raw.mp4 \
   -c:v libx264 -preset slow -crf 19 -tune film -pix_fmt yuv420p \
-  -af "loudnorm=I=-14:TP=-1.0:LRA=7:linear=true:measured_I=…:measured_TP=…:measured_LRA=…:measured_thresh=…,alimiter=limit=0.891:level=disabled:attack=5:release=50" \
-  -c:a aac -b:a 192k -movflags +faststart renders/video-v1.mp4
+  -af "loudnorm=I=-14:TP=-1.0:LRA=7:linear=true:measured_I=…:measured_TP=…:measured_LRA=…:measured_thresh=…,alimiter=limit=0.841:level=disabled:attack=5:release=50" \
+  -ar 48000 -c:a aac -b:a 192k -movflags +faststart renders/video-v1.mp4
 ```
 
 Targets: **−14 LUFS integrated, ≤ −1.0 dBTP.** That is the level most social and web
@@ -196,8 +196,11 @@ ffmpeg -i renders/video-v1.mp4 -af ebur128=peak=true:framelog=quiet -f null - 2>
   | grep -E "^\s+(I|Peak|LRA):"
 ```
 
-Expected: `I: -14.0 LUFS`, `Peak: ≤ -0.8 dBFS`. (AAC encoding can add a hair above the
-limiter ceiling; that is normal.)
+Expected: `I: -14.0 LUFS`, `Peak: ≤ -1.0 dBFS` (true peak, as the definition of done asks).
+The limiter is a sample-peak limiter and AAC adds inter-sample peaks on top of it, so the
+ceiling sits at −1.5 dBFS (`0.841`): in a field test a −1.0 dBFS ceiling delivered
+−0.9 dBTP. And pin `-ar 48000` — `loudnorm` resamples to 192 kHz internally and, left to
+itself, the AAC encoder delivered a 96 kHz web master.
 
 And prove each cue you added is present, by comparing the same window in the old and new
 masters:

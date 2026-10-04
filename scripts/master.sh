@@ -16,6 +16,12 @@
 #   3. The video is RE-ENCODED, not copied. Film grain defeats inter-frame compression, so
 #      -c:v copy preserves a bloated file; -crf 19 -tune film took 68 MB to 38 MB with no
 #      visible loss.
+#   4. loudnorm resamples internally (to 192 kHz) and passes that rate on: without an
+#      explicit -ar the AAC encoder picked 96 kHz for a delivered web master. Pin 48 kHz.
+#   5. The limiter is a SAMPLE-peak limiter; AAC encoding then adds inter-sample peaks.
+#      A -1.0 dBFS ceiling measured -0.9 dBTP on the delivered file, which misses the
+#      definition of done (true peak <= -1 dBTP). The ceiling sits 0.5 dB lower to leave
+#      room for the codec.
 #
 # usage:
 #   ./scripts/master.sh renders/video-v1-raw.mp4 renders/video-v1.mp4 [target_lufs]
@@ -37,8 +43,10 @@ OUT="${2:-}"
 TARGET="${3:--14}"
 TP="-1.0"
 LRA="7"
-# 0.891 ≈ -1.0 dBFS, the limiter ceiling
-LIMIT="0.891"
+# 0.841 ≈ -1.5 dBFS: the sample-peak ceiling, 0.5 dB under the -1 dBTP target so the
+# AAC encode's inter-sample overshoot still lands under it (measured: a 0.891 ceiling
+# delivered -0.9 dBTP)
+LIMIT="0.841"
 
 if [[ -z "$IN" || -z "$OUT" ]]; then
   echo "usage: ./scripts/master.sh <in-raw.mp4> <out.mp4> [target_lufs]" >&2
@@ -80,7 +88,7 @@ AF="${AF},alimiter=limit=${LIMIT}:level=disabled:attack=5:release=50"
 echo "── pass 2 · correcting, limiting and re-encoding → $OUT"
 ffmpeg -hide_banner -y -i "$IN" \
   -c:v libx264 -preset slow -crf 19 -tune film -pix_fmt yuv420p \
-  -af "$AF" \
+  -af "$AF" -ar 48000 \
   -c:a aac -b:a 192k -movflags +faststart \
   "$OUT" 2>&1 | tail -1
 
@@ -91,6 +99,6 @@ ffmpeg -hide_banner -i "$OUT" -af ebur128=peak=true:framelog=quiet -f null - 2>&
 SIZE=$(du -h "$OUT" | cut -f1)
 echo "── $OUT · $SIZE"
 echo
-echo "Expected: I within 0.5 LUFS of ${TARGET}, Peak <= -0.8 dBFS."
-echo "(AAC can land a hair above the limiter ceiling; that is normal.)"
+echo "Expected: I within 0.5 LUFS of ${TARGET}, Peak (true peak) <= -1.0 dBFS."
+echo "(The limiter ceiling is -1.5 dBFS because AAC adds inter-sample peaks on top of it.)"
 echo "If I is ~1 dB HOT, something dropped level=disabled from the limiter."

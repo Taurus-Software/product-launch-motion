@@ -91,6 +91,10 @@ if (!wrappers.length) {
 
 const t = (n) => String(Number(n.toFixed(3)));
 
+// A push travels one frame WIDTH, read off the assembled root, so a 9:16 cut (1080 wide)
+// pushes by 1080 and not by a hardcoded 1920 (found re-laying out a film for vertical).
+const W = Number(html.match(/data-composition-id="main"[^>]*data-width="(\d+)"/)?.[1] ?? 1920);
+
 /** The tween pair for one crossing. `at` is when both sides begin. */
 function cross(type, outSel, inSel, at, dur) {
   const A = t(at);
@@ -106,13 +110,13 @@ function cross(type, outSel, inSel, at, dur) {
     case "push":
     case "push-left":
       return [
-        `tl.to("${outSel}", { x: -1920, duration: ${D}, ease: "power3.inOut" }, ${A});`,
-        `tl.fromTo("${inSel}", { x: 1920, opacity: 1 }, { x: 0, duration: ${D}, ease: "power3.inOut" }, ${A});`,
+        `tl.to("${outSel}", { x: -${W}, duration: ${D}, ease: "power3.inOut" }, ${A});`,
+        `tl.fromTo("${inSel}", { x: ${W}, opacity: 1 }, { x: 0, duration: ${D}, ease: "power3.inOut" }, ${A});`,
       ];
     case "push-right":
       return [
-        `tl.to("${outSel}", { x: 1920, duration: ${D}, ease: "power3.inOut" }, ${A});`,
-        `tl.fromTo("${inSel}", { x: -1920, opacity: 1 }, { x: 0, duration: ${D}, ease: "power3.inOut" }, ${A});`,
+        `tl.to("${outSel}", { x: ${W}, duration: ${D}, ease: "power3.inOut" }, ${A});`,
+        `tl.fromTo("${inSel}", { x: -${W}, opacity: 1 }, { x: 0, duration: ${D}, ease: "power3.inOut" }, ${A});`,
       ];
     case "dissolve":
       return [

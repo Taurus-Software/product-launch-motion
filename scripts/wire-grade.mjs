@@ -98,6 +98,11 @@ for (const m of html.matchAll(/data-composition-src="[^"]+\.html"[^>]*>/g)) {
 }
 if (!total) throw new Error(`no frame wrappers found in ${INDEX} — assemble first`);
 
+// the canvas size, off the assembled root (a 9:16 cut is 1080×1920; grain sized 1920×1080
+// would cover only its top 56%)
+const W = Number(html.match(/data-composition-id="main"[^>]*data-width="(\d+)"/)?.[1] ?? 1920);
+const H = Number(html.match(/data-composition-id="main"[^>]*data-height="(\d+)"/)?.[1] ?? 1080);
+
 // Each treatment is emitted only if it is switched on. This matters more than it looks:
 // the anti-sameness check in references/11-creative-direction.md says to pick the treatments
 // your direction needs and drop the rest, and if the tool always writes all three then the
@@ -131,7 +136,7 @@ const grainEl = useGrain
       <!-- moving grain: the noise's luminance is moved into ALPHA by the colour matrix,
            so the plate is black speckles over transparency rather than a grey haze — which
            is what lets it work with no blend mode. -->
-      <svg id="hf-grade-grain" width="1920" height="1080" style="position:absolute;inset:0;opacity:${GRAIN}" aria-hidden="true">
+      <svg id="hf-grade-grain" width="${W}" height="${H}" style="position:absolute;inset:0;opacity:${GRAIN}" aria-hidden="true">
         <filter id="hf-grade-noise" x="0" y="0" width="100%" height="100%">
           <feTurbulence id="hf-grade-turb" type="fractalNoise" baseFrequency="0.82" numOctaves="1" seed="1" stitchTiles="stitch" />
           <feColorMatrix type="matrix" values="0 0 0 0 0
@@ -139,7 +144,7 @@ const grainEl = useGrain
                                                0 0 0 0 0
                                                0.34 0.34 0.34 0 0" />
         </filter>
-        <rect width="1920" height="1080" filter="url(#hf-grade-noise)" />
+        <rect width="${W}" height="${H}" filter="url(#hf-grade-noise)" />
       </svg>`
   : "";
 
