@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="vendor/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #000;
+      }
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #FFF4E7;
+      }
+      .scene { position: absolute; inset: 0; width: 100%; height: 100%; }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="37.563"
+      data-width="1920"
+      data-height="1080"
+    >
+      <div
+        id="el-01-split"
+        class="scene"
+        data-composition-id="01-split"
+        data-composition-src="compositions/frames/01-split.html"
+        data-start="0"
+        data-duration="3.266"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-01-split-voice"
+        src="assets/voice/01-split.wav"
+        data-start="0"
+        data-duration="2.566"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-02-gast"
+        class="scene"
+        data-composition-id="02-gast"
+        data-composition-src="compositions/frames/02-gast.html"
+        data-start="3.266"
+        data-duration="3.375"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-02-gast-voice"
+        src="assets/voice/02-gast.wav"
+        data-start="3.266"
+        data-duration="2.775"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-03-echtzeit"
+        class="scene"
+        data-composition-id="03-echtzeit"
+        data-composition-src="compositions/frames/03-echtzeit.html"
+        data-start="6.641"
+        data-duration="2.55"
+        data-track-index="2"
+      ></div>
+      <audio
+        id="el-03-echtzeit-voice"
+        src="assets/voice/03-echtzeit.wav"
+        data-start="6.641"
+        data-duration="1.95"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-04-abholzeit"
+        class="scene"
+        data-composition-id="04-abholzeit"
+        data-composition-src="compositions/frames/04-abholzeit.html"
+        data-start="9.191"
+        data-duration="2.533"
+        data-track-index="3"
+      ></div>
+      <audio
+        id="el-04-abholzeit-voice"
+        src="assets/voice/04-abholzeit.wav"
+        data-start="9.191"
+        data-duration="1.533"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-05-puenktlich"
+        class="scene"
+        data-composition-id="05-puenktlich"
+        data-composition-src="compositions/frames/05-puenktlich.html"
+        data-start="11.724"
+        data-duration="3.22"
+        data-track-index="4"
+      ></div>
+      <audio
+        id="el-05-puenktlich-voice"
+        src="assets/voice/05-puenktlich.wav"
+        data-start="11.724"
+        data-duration="2.02"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-06-weniger"
+        class="scene"
+        data-composition-id="06-weniger"
+        data-composition-src="compositions/frames/06-weniger.html"
+        data-start="14.944"
+        data-duration="3.661"
+        data-track-index="5"
+      ></div>
+      <audio
+        id="el-06-weniger-voice"
+        src="assets/voice/06-weniger.wav"
+        data-start="14.944"
+        data-duration="2.961"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-07-einfach"
+        class="scene"
+        data-composition-id="07-einfach"
+        data-composition-src="compositions/frames/07-einfach.html"
+        data-start="18.604"
+        data-duration="3.399"
+        data-track-index="6"
+      ></div>
+      <audio
+        id="el-07-einfach-voice"
+        src="assets/voice/07-einfach.wav"
+        data-start="18.604"
+        data-duration="2.399"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-08-live"
+        class="scene"
+        data-composition-id="08-live"
+        data-composition-src="compositions/frames/08-live.html"
+        data-start="22.004"
+        data-duration="4.323"
+        data-track-index="7"
+      ></div>
+      <audio
+        id="el-08-live-voice"
+        src="assets/voice/08-live.wav"
+        data-start="22.004"
+        data-duration="3.723"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-09-preis"
+        class="scene"
+        data-composition-id="09-preis"
+        data-composition-src="compositions/frames/09-preis.html"
+        data-start="26.327"
+        data-duration="5.684"
+        data-track-index="8"
+      ></div>
+      <audio
+        id="el-09-preis-voice"
+        src="assets/voice/09-preis.wav"
+        data-start="26.327"
+        data-duration="4.884"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-10-anfragen"
+        class="scene"
+        data-composition-id="10-anfragen"
+        data-composition-src="compositions/frames/10-anfragen.html"
+        data-start="32.011"
+        data-duration="5.552"
+        data-track-index="9"
+      ></div>
+      <audio
+        id="el-10-anfragen-voice"
+        src="assets/voice/10-anfragen.wav"
+        data-start="32.011"
+        data-duration="3.552"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+      (function () {
+        var tl = window.__timelines["main"];
+        /* transitions:start */
+        /* transitions:end */
+        /* Full-span anchor: without it the root timeline is only as long as its last tween,
+           and the renderer takes THAT as the film's length — truncating the final hold. */
+        tl.to({}, { duration: 37.563 }, 0);
+      })();
+    </script>
+  
+  
+    <!-- wire-audio:start -->
+    <!-- music bed -->
+    <audio id="bed" class="clip" src="audio/room.mp3" data-start="0" data-duration="37.563" data-track-index="900" data-volume="0.12"></audio>
+    <!-- SFX: frame-relative cues resolved against real frame starts -->
+    <audio id="sfx-01-split-open-r-00" class="clip" src="audio/sfx/open-r.mp3" data-start="0.000" data-duration="0.700" data-track-index="910" data-volume="0.5"></audio> <!-- "(before Vorbestellen) the team's side opens from the seam, on the right" -->
+    <audio id="sfx-02-gast-tap-l-01" class="clip" src="audio/sfx/tap-l.mp3" data-start="4.286" data-duration="0.300" data-track-index="911" data-volume="0.55"></audio> <!-- "vor — the order appears on the guest's side (left)" -->
+    <audio id="sfx-03-echtzeit-tap-r-02" class="clip" src="audio/sfx/tap-r.mp3" data-start="8.011" data-duration="0.300" data-track-index="912" data-volume="0.55"></audio> <!-- "Echtzeit — the same order on the team's side (right)" -->
+    <audio id="sfx-04-abholzeit-ratchet-r-03" class="clip" src="audio/sfx/ratchet-r.mp3" data-start="9.461" data-duration="0.500" data-track-index="913" data-volume="0.6"></audio> <!-- "steuert — the team turns the pickup time and it locks (right)" -->
+    <audio id="sfx-05-puenktlich-swish-rl-04" class="clip" src="audio/sfx/swish-rl.mp3" data-start="12.834" data-duration="0.400" data-track-index="914" data-volume="0.6"></audio> <!-- "the bag crosses the counter, right to left" -->
+    <audio id="sfx-05-puenktlich-bell-05" class="clip" src="audio/sfx/bell.mp3" data-start="13.034" data-duration="1.800" data-track-index="915" data-volume="0.4"></audio> <!-- "pünktlich — the service bell at the pass (centre)" -->
+    <audio id="sfx-07-einfach-tick-l-06" class="clip" src="audio/sfx/tick-l.mp3" data-start="19.174" data-duration="0.250" data-track-index="916" data-volume="0.45"></audio> <!-- "Gäste — the guest's half lands (left)" -->
+    <audio id="sfx-07-einfach-tick-r-07" class="clip" src="audio/sfx/tick-r.mp3" data-start="20.604" data-duration="0.250" data-track-index="917" data-volume="0.45"></audio> <!-- "Team — the team's half lands (right)" -->
+    <audio id="sfx-09-preis-price-thunk-08" class="clip" src="audio/sfx/price-thunk.mp3" data-start="28.247" data-duration="0.500" data-track-index="918" data-volume="0.5"></audio> <!-- "Neunundzwanzig — the price lands on the counter" -->
+    <audio id="sfx-10-anfragen-chord-c-09" class="clip" src="audio/sfx/chord-c.mp3" data-start="34.161" data-duration="2.600" data-track-index="919" data-volume="0.45"></audio> <!-- "bontrivo — the two halves of the mark meet: the brand chord" -->
+    <audio id="sfx-10-anfragen-sub-drop-10" class="clip" src="audio/sfx/sub-drop.mp3" data-start="34.161" data-duration="1.800" data-track-index="920" data-volume="0.3"></audio> <!-- "bontrivo — sub under the lockup" -->
+    <!-- wire-audio:end -->
+  </body>
+</html>

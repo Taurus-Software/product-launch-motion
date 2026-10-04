@@ -1,0 +1,44 @@
+{
+  "duration": 2.9605,
+  "source": "piper alignment (de_DE-thorsten-high), sample-exact",
+  "asr_check": {
+    "score": 1.0,
+    "heard": "Weniger Wartezeit, mehr zufriedene Gäste."
+  },
+  "segments": [
+    {
+      "words": [
+        {
+          "word": "Weniger",
+          "start": 0.2554,
+          "end": 0.5805,
+          "phonemes": "vˈeːnɪɡɜ"
+        },
+        {
+          "word": "Wartezeit,",
+          "start": 0.6385,
+          "end": 1.2423,
+          "phonemes": "vˈaɾteːtsˌaɪt,"
+        },
+        {
+          "word": "mehr",
+          "start": 1.5209,
+          "end": 1.6951,
+          "phonemes": "mˈeːɾ"
+        },
+        {
+          "word": "zufriedene",
+          "start": 1.7299,
+          "end": 2.2523,
+          "phonemes": "tsuːfrˈiːdənə"
+        },
+        {
+          "word": "Gäste.",
+          "start": 2.2988,
+          "end": 2.7051,
+          "phonemes": "ɡˈɛstə."
+        }
+      ]
+    }
+  ]
+}

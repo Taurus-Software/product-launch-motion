@@ -1,0 +1,44 @@
+{
+  "duration": 2.5658,
+  "source": "piper alignment (de_DE-thorsten-high), sample-exact",
+  "asr_check": {
+    "score": 1.0,
+    "heard": "Vorbestellen und Abholen ganz einfach."
+  },
+  "segments": [
+    {
+      "words": [
+        {
+          "word": "Vorbestellen",
+          "start": 0.2438,
+          "end": 0.9404,
+          "phonemes": "fˈoːɾbəʃtˌɛlən"
+        },
+        {
+          "word": "und",
+          "start": 1.0101,
+          "end": 1.1029,
+          "phonemes": "ʊnt"
+        },
+        {
+          "word": "abholen,",
+          "start": 1.1378,
+          "end": 1.7067,
+          "phonemes": "ˈaphˌoːlən,"
+        },
+        {
+          "word": "ganz",
+          "start": 1.8228,
+          "end": 1.9969,
+          "phonemes": "ɡˌants"
+        },
+        {
+          "word": "einfach.",
+          "start": 2.0201,
+          "end": 2.4497,
+          "phonemes": "ˈaɪnfˌax."
+        }
+      ]
+    }
+  ]
+}

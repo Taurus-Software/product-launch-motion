@@ -1,0 +1,56 @@
+{
+  "duration": 2.3995,
+  "source": "piper alignment (de_DE-thorsten-high), sample-exact",
+  "asr_check": {
+    "score": 1.0,
+    "heard": "Einfach für Gäste, einfach für ihr Team."
+  },
+  "segments": [
+    {
+      "words": [
+        {
+          "word": "Einfach",
+          "start": 0.0464,
+          "end": 0.3947,
+          "phonemes": "ˈaɪnfˌax"
+        },
+        {
+          "word": "für",
+          "start": 0.418,
+          "end": 0.5341,
+          "phonemes": "fyːɾ"
+        },
+        {
+          "word": "Gäste.",
+          "start": 0.5689,
+          "end": 0.9172,
+          "phonemes": "ɡˈɛstə."
+        },
+        {
+          "word": "Einfach",
+          "start": 1.2965,
+          "end": 1.668,
+          "phonemes": "ˈaɪnfˌax"
+        },
+        {
+          "word": "für",
+          "start": 1.7029,
+          "end": 1.8306,
+          "phonemes": "fyːɾ"
+        },
+        {
+          "word": "Ihr",
+          "start": 1.8538,
+          "end": 1.9583,
+          "phonemes": "iːɾ"
+        },
+        {
+          "word": "Team.",
+          "start": 2.0047,
+          "end": 2.2485,
+          "phonemes": "tˈiːm."
+        }
+      ]
+    }
+  ]
+}

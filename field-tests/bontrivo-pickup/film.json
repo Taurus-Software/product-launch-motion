@@ -1,0 +1,112 @@
+{
+  "_note": [
+    "BONTRIVO film 3 (Vorbestellen & Abholen). Durations are measured by assemble.mjs from",
+    "the VO; the numbers here are pads only. DIRECTION: a locked, symmetric split stage, so",
+    "every crossing is a hard cut and the persistent parts of the stage (grounds, eyebrows,",
+    "icons, clock) are drawn identically on both sides of each cut. Pads are generous where",
+    "something has to finish on screen: the clock being set (04), the bell (05), the claim (07)."
+  ],
+  "width": 1920,
+  "height": 1080,
+  "background": "#FFF4E7",
+  "gsap": "vendor/gsap.min.js",
+  "pad": 0.6,
+  "frames": [
+    {
+      "id": "01-split",
+      "src": "compositions/frames/01-split.html",
+      "vo": "assets/voice/01-split.wav",
+      "pad": 0.7,
+      "out": {
+        "type": "cut",
+        "duration": 0
+      }
+    },
+    {
+      "id": "02-gast",
+      "src": "compositions/frames/02-gast.html",
+      "vo": "assets/voice/02-gast.wav",
+      "pad": 0.6,
+      "out": {
+        "type": "cut",
+        "duration": 0
+      }
+    },
+    {
+      "id": "03-echtzeit",
+      "src": "compositions/frames/03-echtzeit.html",
+      "vo": "assets/voice/03-echtzeit.wav",
+      "pad": 0.6,
+      "out": {
+        "type": "cut",
+        "duration": 0
+      }
+    },
+    {
+      "id": "04-abholzeit",
+      "src": "compositions/frames/04-abholzeit.html",
+      "vo": "assets/voice/04-abholzeit.wav",
+      "pad": 1.0,
+      "out": {
+        "type": "cut",
+        "duration": 0
+      }
+    },
+    {
+      "id": "05-puenktlich",
+      "src": "compositions/frames/05-puenktlich.html",
+      "vo": "assets/voice/05-puenktlich.wav",
+      "pad": 1.2,
+      "out": {
+        "type": "cut",
+        "duration": 0
+      }
+    },
+    {
+      "id": "06-weniger",
+      "src": "compositions/frames/06-weniger.html",
+      "vo": "assets/voice/06-weniger.wav",
+      "pad": 0.7,
+      "out": {
+        "type": "cut",
+        "duration": 0
+      }
+    },
+    {
+      "id": "07-einfach",
+      "src": "compositions/frames/07-einfach.html",
+      "vo": "assets/voice/07-einfach.wav",
+      "pad": 1.0,
+      "out": {
+        "type": "cut",
+        "duration": 0
+      }
+    },
+    {
+      "id": "08-live",
+      "src": "compositions/frames/08-live.html",
+      "vo": "assets/voice/08-live.wav",
+      "pad": 0.6,
+      "out": {
+        "type": "cut",
+        "duration": 0
+      }
+    },
+    {
+      "id": "09-preis",
+      "src": "compositions/frames/09-preis.html",
+      "vo": "assets/voice/09-preis.wav",
+      "pad": 0.8,
+      "out": {
+        "type": "cut",
+        "duration": 0
+      }
+    },
+    {
+      "id": "10-anfragen",
+      "src": "compositions/frames/10-anfragen.html",
+      "vo": "assets/voice/10-anfragen.wav",
+      "pad": 2.0
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "duration": 2.7748,
+  "source": "piper alignment (de_DE-thorsten-high), sample-exact",
+  "asr_check": {
+    "score": 1.0,
+    "heard": "Ihre Gäste bestellen vor direkt über ihre Website."
+  },
+  "segments": [
+    {
+      "words": [
+        {
+          "word": "Ihre",
+          "start": 0.058,
+          "end": 0.2554,
+          "phonemes": "ˌiːrə"
+        },
+        {
+          "word": "Gäste",
+          "start": 0.3135,
+          "end": 0.6037,
+          "phonemes": "ɡˈɛstə"
+        },
+        {
+          "word": "bestellen",
+          "start": 0.6269,
+          "end": 0.9868,
+          "phonemes": "bəʃtˈɛlən"
+        },
+        {
+          "word": "vor,",
+          "start": 1.0217,
+          "end": 1.3003,
+          "phonemes": "fˈɔɾ,"
+        },
+        {
+          "word": "direkt",
+          "start": 1.5209,
+          "end": 1.8344,
+          "phonemes": "diːrˈɛkt"
+        },
+        {
+          "word": "über",
+          "start": 1.8576,
+          "end": 1.9737,
+          "phonemes": "ˌyːbɜ"
+        },
+        {
+          "word": "Ihre",
+          "start": 2.0085,
+          "end": 2.1362,
+          "phonemes": "ˌiːrə"
+        },
+        {
+          "word": "Website.",
+          "start": 2.1711,
+          "end": 2.6239,
+          "phonemes": "vˈɛpsaɪt."
+        }
+      ]
+    }
+  ]
+}

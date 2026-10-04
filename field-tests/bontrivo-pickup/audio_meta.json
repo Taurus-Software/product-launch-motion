@@ -1,0 +1,402 @@
+{
+  "01-split": {
+    "duration": 2.5658,
+    "words": [
+      {
+        "w": "Vorbestellen",
+        "start": 0.2438,
+        "end": 0.9404
+      },
+      {
+        "w": "und",
+        "start": 1.0101,
+        "end": 1.1029
+      },
+      {
+        "w": "abholen,",
+        "start": 1.1378,
+        "end": 1.7067
+      },
+      {
+        "w": "ganz",
+        "start": 1.8228,
+        "end": 1.9969
+      },
+      {
+        "w": "einfach.",
+        "start": 2.0201,
+        "end": 2.4497
+      }
+    ]
+  },
+  "02-gast": {
+    "duration": 2.7748,
+    "words": [
+      {
+        "w": "Ihre",
+        "start": 0.058,
+        "end": 0.2554
+      },
+      {
+        "w": "Gäste",
+        "start": 0.3135,
+        "end": 0.6037
+      },
+      {
+        "w": "bestellen",
+        "start": 0.6269,
+        "end": 0.9868
+      },
+      {
+        "w": "vor,",
+        "start": 1.0217,
+        "end": 1.3003
+      },
+      {
+        "w": "direkt",
+        "start": 1.5209,
+        "end": 1.8344
+      },
+      {
+        "w": "über",
+        "start": 1.8576,
+        "end": 1.9737
+      },
+      {
+        "w": "Ihre",
+        "start": 2.0085,
+        "end": 2.1362
+      },
+      {
+        "w": "Website.",
+        "start": 2.1711,
+        "end": 2.6239
+      }
+    ]
+  },
+  "03-echtzeit": {
+    "duration": 1.9505,
+    "words": [
+      {
+        "w": "Ihr",
+        "start": 0.0697,
+        "end": 0.1858
+      },
+      {
+        "w": "Team",
+        "start": 0.2438,
+        "end": 0.4528
+      },
+      {
+        "w": "sieht",
+        "start": 0.4876,
+        "end": 0.6502
+      },
+      {
+        "w": "die",
+        "start": 0.685,
+        "end": 0.7663
+      },
+      {
+        "w": "Bestellung",
+        "start": 0.8127,
+        "end": 1.1958
+      },
+      {
+        "w": "in",
+        "start": 1.219,
+        "end": 1.3119
+      },
+      {
+        "w": "Echtzeit.",
+        "start": 1.37,
+        "end": 1.8112
+      }
+    ]
+  },
+  "04-abholzeit": {
+    "duration": 1.5325,
+    "words": [
+      {
+        "w": "Und",
+        "start": 0.0464,
+        "end": 0.1974
+      },
+      {
+        "w": "steuert",
+        "start": 0.2322,
+        "end": 0.5341
+      },
+      {
+        "w": "die",
+        "start": 0.5805,
+        "end": 0.6618
+      },
+      {
+        "w": "Abholzeit.",
+        "start": 0.685,
+        "end": 1.3468
+      }
+    ]
+  },
+  "05-puenktlich": {
+    "duration": 2.0201,
+    "words": [
+      {
+        "w": "So",
+        "start": 0.2206,
+        "end": 0.3947
+      },
+      {
+        "w": "holen",
+        "start": 0.4296,
+        "end": 0.7082
+      },
+      {
+        "w": "Ihre",
+        "start": 0.7546,
+        "end": 0.9172
+      },
+      {
+        "w": "Gäste",
+        "start": 0.952,
+        "end": 1.2655
+      },
+      {
+        "w": "pünktlich",
+        "start": 1.3119,
+        "end": 1.6718
+      },
+      {
+        "w": "ab.",
+        "start": 1.7067,
+        "end": 1.8692
+      }
+    ]
+  },
+  "06-weniger": {
+    "duration": 2.9605,
+    "words": [
+      {
+        "w": "Weniger",
+        "start": 0.2554,
+        "end": 0.5805
+      },
+      {
+        "w": "Wartezeit,",
+        "start": 0.6385,
+        "end": 1.2423
+      },
+      {
+        "w": "mehr",
+        "start": 1.5209,
+        "end": 1.6951
+      },
+      {
+        "w": "zufriedene",
+        "start": 1.7299,
+        "end": 2.2523
+      },
+      {
+        "w": "Gäste.",
+        "start": 2.2988,
+        "end": 2.7051
+      }
+    ]
+  },
+  "07-einfach": {
+    "duration": 2.3995,
+    "words": [
+      {
+        "w": "Einfach",
+        "start": 0.0464,
+        "end": 0.3947
+      },
+      {
+        "w": "für",
+        "start": 0.418,
+        "end": 0.5341
+      },
+      {
+        "w": "Gäste.",
+        "start": 0.5689,
+        "end": 0.9172
+      },
+      {
+        "w": "Einfach",
+        "start": 1.2965,
+        "end": 1.668
+      },
+      {
+        "w": "für",
+        "start": 1.7029,
+        "end": 1.8306
+      },
+      {
+        "w": "Ihr",
+        "start": 1.8538,
+        "end": 1.9583
+      },
+      {
+        "w": "Team.",
+        "start": 2.0047,
+        "end": 2.2485
+      }
+    ]
+  },
+  "08-live": {
+    "duration": 3.723,
+    "words": [
+      {
+        "w": "Wir",
+        "start": 0.0232,
+        "end": 0.1741
+      },
+      {
+        "w": "richten",
+        "start": 0.209,
+        "end": 0.4992
+      },
+      {
+        "w": "die",
+        "start": 0.5457,
+        "end": 0.6269
+      },
+      {
+        "w": "Vorbestellung",
+        "start": 0.6734,
+        "end": 1.3119
+      },
+      {
+        "w": "für",
+        "start": 1.3468,
+        "end": 1.5093
+      },
+      {
+        "w": "Sie",
+        "start": 1.5441,
+        "end": 1.6486
+      },
+      {
+        "w": "ein.",
+        "start": 1.7067,
+        "end": 1.9389
+      },
+      {
+        "w": "In",
+        "start": 2.4111,
+        "end": 2.562
+      },
+      {
+        "w": "wenigen",
+        "start": 2.5968,
+        "end": 2.98
+      },
+      {
+        "w": "Tagen",
+        "start": 3.0148,
+        "end": 3.2934
+      },
+      {
+        "w": "live.",
+        "start": 3.3166,
+        "end": 3.6301
+      }
+    ]
+  },
+  "09-preis": {
+    "duration": 4.884,
+    "words": [
+      {
+        "w": "Vorbestellung",
+        "start": 0.0232,
+        "end": 0.6153
+      },
+      {
+        "w": "inklusive.",
+        "start": 0.6734,
+        "end": 1.2423
+      },
+      {
+        "w": "29,00 €",
+        "start": 1.9234,
+        "end": 2.7013
+      },
+      {
+        "w": "Euro",
+        "start": 2.7826,
+        "end": 3.0844
+      },
+      {
+        "w": "im",
+        "start": 3.1077,
+        "end": 3.2005
+      },
+      {
+        "w": "Monat,",
+        "start": 3.247,
+        "end": 3.6649
+      },
+      {
+        "w": "bei",
+        "start": 3.8043,
+        "end": 3.9204
+      },
+      {
+        "w": "jährlicher",
+        "start": 3.9552,
+        "end": 4.3151
+      },
+      {
+        "w": "Zahlung.",
+        "start": 4.3615,
+        "end": 4.7331
+      }
+    ]
+  },
+  "10-anfragen": {
+    "duration": 3.5521,
+    "words": [
+      {
+        "w": "Jetzt",
+        "start": 0.0464,
+        "end": 0.2786
+      },
+      {
+        "w": "Website",
+        "start": 0.3251,
+        "end": 0.6618
+      },
+      {
+        "w": "anfragen.",
+        "start": 0.6966,
+        "end": 1.2887
+      },
+      {
+        "w": "Auf",
+        "start": 1.9151,
+        "end": 2.1008
+      },
+      {
+        "w": "bontrivo",
+        "start": 2.1473,
+        "end": 2.7045
+      },
+      {
+        "w": ".",
+        "start": 2.7742,
+        "end": 3.0064
+      },
+      {
+        "w": "d",
+        "start": 3.0528,
+        "end": 3.227
+      },
+      {
+        "w": "e.",
+        "start": 3.2502,
+        "end": 3.4011
+      }
+    ]
+  }
+}

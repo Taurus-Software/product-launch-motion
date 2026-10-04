@@ -1,0 +1,38 @@
+{
+  "duration": 1.5325,
+  "source": "piper alignment (de_DE-thorsten-high), sample-exact",
+  "asr_check": {
+    "score": 1.0,
+    "heard": "und steuert die Abholzeit."
+  },
+  "segments": [
+    {
+      "words": [
+        {
+          "word": "Und",
+          "start": 0.0464,
+          "end": 0.1974,
+          "phonemes": "ʊnt"
+        },
+        {
+          "word": "steuert",
+          "start": 0.2322,
+          "end": 0.5341,
+          "phonemes": "ʃtˈɔøɜt"
+        },
+        {
+          "word": "die",
+          "start": 0.5805,
+          "end": 0.6618,
+          "phonemes": "diː"
+        },
+        {
+          "word": "Abholzeit.",
+          "start": 0.685,
+          "end": 1.3468,
+          "phonemes": "ˈaphˌɔltsaɪt."
+        }
+      ]
+    }
+  ]
+}

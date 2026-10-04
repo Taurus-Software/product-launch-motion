@@ -1,0 +1,56 @@
+{
+  "duration": 1.9505,
+  "source": "piper alignment (de_DE-thorsten-high), sample-exact",
+  "asr_check": {
+    "score": 1.0,
+    "heard": "Ihr Team sieht die Bestellung in Echtzeit"
+  },
+  "segments": [
+    {
+      "words": [
+        {
+          "word": "Ihr",
+          "start": 0.0697,
+          "end": 0.1858,
+          "phonemes": "iːɾ"
+        },
+        {
+          "word": "Team",
+          "start": 0.2438,
+          "end": 0.4528,
+          "phonemes": "tˈiːm"
+        },
+        {
+          "word": "sieht",
+          "start": 0.4876,
+          "end": 0.6502,
+          "phonemes": "zˈiːt"
+        },
+        {
+          "word": "die",
+          "start": 0.685,
+          "end": 0.7663,
+          "phonemes": "diː"
+        },
+        {
+          "word": "Bestellung",
+          "start": 0.8127,
+          "end": 1.1958,
+          "phonemes": "bəʃtˈɛlʊŋ"
+        },
+        {
+          "word": "in",
+          "start": 1.219,
+          "end": 1.3119,
+          "phonemes": "ɪn"
+        },
+        {
+          "word": "Echtzeit.",
+          "start": 1.37,
+          "end": 1.8112,
+          "phonemes": "ˈɛçtsaɪt."
+        }
+      ]
+    }
+  ]
+}

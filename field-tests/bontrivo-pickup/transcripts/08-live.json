@@ -1,0 +1,80 @@
+{
+  "duration": 3.723,
+  "source": "piper alignment (de_DE-thorsten-high), sample-exact",
+  "asr_check": {
+    "score": 1.0,
+    "heard": "Wir richten die Vorbestellung für Sie ein, in wenigen Tagen live."
+  },
+  "segments": [
+    {
+      "words": [
+        {
+          "word": "Wir",
+          "start": 0.0232,
+          "end": 0.1741,
+          "phonemes": "viːɾ"
+        },
+        {
+          "word": "richten",
+          "start": 0.209,
+          "end": 0.4992,
+          "phonemes": "rˈɪçtən"
+        },
+        {
+          "word": "die",
+          "start": 0.5457,
+          "end": 0.6269,
+          "phonemes": "diː"
+        },
+        {
+          "word": "Vorbestellung",
+          "start": 0.6734,
+          "end": 1.3119,
+          "phonemes": "fˈoːɾbəʃtˌɛlʊŋ"
+        },
+        {
+          "word": "für",
+          "start": 1.3468,
+          "end": 1.5093,
+          "phonemes": "fyːɾ"
+        },
+        {
+          "word": "Sie",
+          "start": 1.5441,
+          "end": 1.6486,
+          "phonemes": "ziː"
+        },
+        {
+          "word": "ein.",
+          "start": 1.7067,
+          "end": 1.9389,
+          "phonemes": "ˈaɪn."
+        },
+        {
+          "word": "In",
+          "start": 2.4111,
+          "end": 2.562,
+          "phonemes": "ɪn"
+        },
+        {
+          "word": "wenigen",
+          "start": 2.5968,
+          "end": 2.98,
+          "phonemes": "vˈeːnɪɡən"
+        },
+        {
+          "word": "Tagen",
+          "start": 3.0148,
+          "end": 3.2934,
+          "phonemes": "tˈɑːɡən"
+        },
+        {
+          "word": "live.",
+          "start": 3.3166,
+          "end": 3.6301,
+          "phonemes": "lˈaɪf."
+        }
+      ]
+    }
+  ]
+}

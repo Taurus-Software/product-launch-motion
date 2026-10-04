@@ -1,0 +1,73 @@
+{
+  "_readme": [
+    "Narration for film 3. `text` = what is shown/captioned; `tts` = what the voice is fed",
+    "(numbers spelled as said, loanwords as raw IPA in [[ ]], punctuation inside the block);",
+    "`words` = the displayed word for each spoken word group (tools/vo.py checks the count).",
+    "10-anfragen is film 1's 09-cta take, reused verbatim (same sign-off, already ASR-checked)."
+  ],
+  "voice": "de_DE-thorsten-high",
+  "syn": { "length_scale": 1.04, "noise_scale": 0.6, "noise_w_scale": 0.7 },
+  "sentence_gap": 0.24,
+  "frames": [
+    {
+      "id": "01-split",
+      "text": "Vorbestellen und abholen, ganz einfach.",
+      "tts": "Vorbestellen und abholen, ganz einfach.",
+      "words": ["Vorbestellen", "und", "abholen,", "ganz", "einfach."]
+    },
+    {
+      "id": "02-gast",
+      "text": "Ihre Gäste bestellen vor, direkt über Ihre Website.",
+      "tts": "Ihre Gäste bestellen vor, direkt über Ihre [[vˈɛpsaɪt.]]",
+      "words": ["Ihre", "Gäste", "bestellen", "vor,", "direkt", "über", "Ihre", "Website."]
+    },
+    {
+      "id": "03-echtzeit",
+      "text": "Ihr Team sieht die Bestellung in Echtzeit.",
+      "tts": "Ihr Team sieht die Bestellung in Echtzeit.",
+      "words": ["Ihr", "Team", "sieht", "die", "Bestellung", "in", "Echtzeit."]
+    },
+    {
+      "id": "04-abholzeit",
+      "text": "Und steuert die Abholzeit.",
+      "tts": "Und steuert die Abholzeit.",
+      "words": ["Und", "steuert", "die", "Abholzeit."]
+    },
+    {
+      "id": "05-puenktlich",
+      "text": "So holen Ihre Gäste pünktlich ab.",
+      "tts": "So holen Ihre Gäste pünktlich ab.",
+      "words": ["So", "holen", "Ihre", "Gäste", "pünktlich", "ab."]
+    },
+    {
+      "id": "06-weniger",
+      "text": "Weniger Wartezeit, mehr zufriedene Gäste.",
+      "tts": "Weniger Wartezeit, mehr zufriedene Gäste.",
+      "words": ["Weniger", "Wartezeit,", "mehr", "zufriedene", "Gäste."]
+    },
+    {
+      "id": "07-einfach",
+      "text": "Einfach für Gäste. Einfach für Ihr Team.",
+      "tts": "Einfach für Gäste. Einfach für Ihr Team.",
+      "words": ["Einfach", "für", "Gäste.", "Einfach", "für", "Ihr", "Team."]
+    },
+    {
+      "id": "08-live",
+      "text": "Wir richten die Vorbestellung für Sie ein. In wenigen Tagen live.",
+      "tts": "Wir richten die Vorbestellung für Sie ein. In wenigen Tagen [[lˈaɪf.]]",
+      "words": ["Wir", "richten", "die", "Vorbestellung", "für", "Sie", "ein.", "In", "wenigen", "Tagen", "live."]
+    },
+    {
+      "id": "09-preis",
+      "text": "Vorbestellung inklusive. Neunundzwanzig Euro im Monat, bei jährlicher Zahlung.",
+      "tts": "Vorbestellung inklusive. Neunundzwanzig Euro im Monat, bei jährlicher Zahlung.",
+      "words": ["Vorbestellung", "inklusive.", "29,00 €", "Euro", "im", "Monat,", "bei", "jährlicher", "Zahlung."]
+    },
+    {
+      "id": "10-anfragen",
+      "text": "Jetzt Website anfragen. Auf bontrivo.de.",
+      "tts": "Jetzt Website anfragen. Auf [[bˈɔntriːvoː]] Punkt D E.",
+      "words": ["Jetzt", "Website", "anfragen.", "Auf", "bontrivo", ".", "d", "e."]
+    }
+  ]
+}

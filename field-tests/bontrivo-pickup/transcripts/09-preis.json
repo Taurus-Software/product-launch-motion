@@ -1,0 +1,68 @@
+{
+  "duration": 4.884,
+  "source": "piper alignment (de_DE-thorsten-high), sample-exact",
+  "asr_check": {
+    "score": 0.889,
+    "heard": "Vorbestellung inklusive 29 Euro im Monat bei jährlicher Zahlung"
+  },
+  "segments": [
+    {
+      "words": [
+        {
+          "word": "Vorbestellung",
+          "start": 0.0232,
+          "end": 0.6153,
+          "phonemes": "fˈoːɾbəʃtˌɛlʊŋ"
+        },
+        {
+          "word": "inklusive.",
+          "start": 0.6734,
+          "end": 1.2423,
+          "phonemes": "ɪnkluːzˈiːvə."
+        },
+        {
+          "word": "29,00 €",
+          "start": 1.9234,
+          "end": 2.7013,
+          "phonemes": "nˈɔønʊnttsvˌantsɪç"
+        },
+        {
+          "word": "Euro",
+          "start": 2.7826,
+          "end": 3.0844,
+          "phonemes": "ˈɔøroː"
+        },
+        {
+          "word": "im",
+          "start": 3.1077,
+          "end": 3.2005,
+          "phonemes": "ɪm"
+        },
+        {
+          "word": "Monat,",
+          "start": 3.247,
+          "end": 3.6649,
+          "phonemes": "mˈoːnɑːt,"
+        },
+        {
+          "word": "bei",
+          "start": 3.8043,
+          "end": 3.9204,
+          "phonemes": "baɪ"
+        },
+        {
+          "word": "jährlicher",
+          "start": 3.9552,
+          "end": 4.3151,
+          "phonemes": "jˈɛːɾlɪçɜ"
+        },
+        {
+          "word": "Zahlung.",
+          "start": 4.3615,
+          "end": 4.7331,
+          "phonemes": "tsˈɑːlʊŋ."
+        }
+      ]
+    }
+  ]
+}

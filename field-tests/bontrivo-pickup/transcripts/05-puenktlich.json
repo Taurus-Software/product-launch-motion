@@ -1,0 +1,50 @@
+{
+  "duration": 2.0201,
+  "source": "piper alignment (de_DE-thorsten-high), sample-exact",
+  "asr_check": {
+    "score": 1.0,
+    "heard": "So holen ihre Gäste pünktlich ab"
+  },
+  "segments": [
+    {
+      "words": [
+        {
+          "word": "So",
+          "start": 0.2206,
+          "end": 0.3947,
+          "phonemes": "zoː"
+        },
+        {
+          "word": "holen",
+          "start": 0.4296,
+          "end": 0.7082,
+          "phonemes": "hˈoːlən"
+        },
+        {
+          "word": "Ihre",
+          "start": 0.7546,
+          "end": 0.9172,
+          "phonemes": "ˌiːrə"
+        },
+        {
+          "word": "Gäste",
+          "start": 0.952,
+          "end": 1.2655,
+          "phonemes": "ɡˈɛstə"
+        },
+        {
+          "word": "pünktlich",
+          "start": 1.3119,
+          "end": 1.6718,
+          "phonemes": "pˈʏŋktlɪç"
+        },
+        {
+          "word": "ab.",
+          "start": 1.7067,
+          "end": 1.8692,
+          "phonemes": "ˈap."
+        }
+      ]
+    }
+  ]
+}

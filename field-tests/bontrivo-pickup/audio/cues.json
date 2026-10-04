@@ -1,0 +1,41 @@
+{
+  "_readme": [
+    "Frame-relative SFX cues, resolved against real frame starts by scripts/wire-audio.mjs.",
+    "Every cue names its word. DIRECTION: stereo is the device. The guest's side sounds LEFT,",
+    "the team's RIGHT (the panning is baked into the assets, tools/sfx.sh); the real-time",
+    "moment is the same tap answered on the other side; the bag's swish travels right to",
+    "left with it; one service bell on 'pünktlich'; the brand chord of films 1-2 resolves.",
+    "Nothing repeats more than twice (tap and tick appear once per side)."
+  ],
+  "bed": { "src": "audio/room.mp3", "volume": 0.12 },
+  "sfxDir": "audio/sfx",
+  "cues": {
+    "01-split": [
+      { "sfx": "open-r", "at": 0.0, "dur": 0.7, "vol": 0.5, "word": "(before Vorbestellen) the team's side opens from the seam, on the right" }
+    ],
+    "02-gast": [
+      { "sfx": "tap-l", "at": 1.02, "dur": 0.3, "vol": 0.55, "word": "vor — the order appears on the guest's side (left)" }
+    ],
+    "03-echtzeit": [
+      { "sfx": "tap-r", "at": 1.37, "dur": 0.3, "vol": 0.55, "word": "Echtzeit — the same order on the team's side (right)" }
+    ],
+    "04-abholzeit": [
+      { "sfx": "ratchet-r", "at": 0.27, "dur": 0.5, "vol": 0.6, "word": "steuert — the team turns the pickup time and it locks (right)" }
+    ],
+    "05-puenktlich": [
+      { "sfx": "swish-rl", "at": 1.11, "dur": 0.4, "vol": 0.6, "word": "the bag crosses the counter, right to left" },
+      { "sfx": "bell", "at": 1.31, "dur": 1.8, "vol": 0.4, "word": "pünktlich — the service bell at the pass (centre)" }
+    ],
+    "07-einfach": [
+      { "sfx": "tick-l", "at": 0.57, "dur": 0.25, "vol": 0.45, "word": "Gäste — the guest's half lands (left)" },
+      { "sfx": "tick-r", "at": 2.00, "dur": 0.25, "vol": 0.45, "word": "Team — the team's half lands (right)" }
+    ],
+    "09-preis": [
+      { "sfx": "price-thunk", "at": 1.92, "dur": 0.5, "vol": 0.5, "word": "Neunundzwanzig — the price lands on the counter" }
+    ],
+    "10-anfragen": [
+      { "sfx": "chord-c", "at": 2.15, "dur": 2.6, "vol": 0.45, "word": "bontrivo — the two halves of the mark meet: the brand chord" },
+      { "sfx": "sub-drop", "at": 2.15, "dur": 1.8, "vol": 0.3, "word": "bontrivo — sub under the lockup" }
+    ]
+  }
+}
