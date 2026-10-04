@@ -1,0 +1,86 @@
+{
+  "duration": 5.4213,
+  "source": "piper alignment (de_DE-thorsten-high), sample-exact",
+  "asr_check": {
+    "score": 0.917,
+    "heard": "Alles inklusive auch das Hosting, 29 Euro im Monat bei jährlicher Zahlung."
+  },
+  "segments": [
+    {
+      "words": [
+        {
+          "word": "Alles",
+          "start": 0.0464,
+          "end": 0.2902,
+          "phonemes": "ˈaləs"
+        },
+        {
+          "word": "inklusive,",
+          "start": 0.3367,
+          "end": 0.9752,
+          "phonemes": "ɪnkluːzˈiːvə,"
+        },
+        {
+          "word": "auch",
+          "start": 1.1029,
+          "end": 1.2539,
+          "phonemes": "ˌaʊx"
+        },
+        {
+          "word": "das",
+          "start": 1.3003,
+          "end": 1.4048,
+          "phonemes": "das"
+        },
+        {
+          "word": "Hosting.",
+          "start": 1.4629,
+          "end": 1.8576,
+          "phonemes": "hˈɔstɪŋ."
+        },
+        {
+          "word": "29,00 €",
+          "start": 2.3678,
+          "end": 3.1341,
+          "phonemes": "nˈɔønʊnttsvˌantsɪç"
+        },
+        {
+          "word": "Euro",
+          "start": 3.1805,
+          "end": 3.494,
+          "phonemes": "ˈɔøroː"
+        },
+        {
+          "word": "im",
+          "start": 3.5405,
+          "end": 3.6333,
+          "phonemes": "ɪm"
+        },
+        {
+          "word": "Monat,",
+          "start": 3.6682,
+          "end": 4.121,
+          "phonemes": "mˈoːnɑːt,"
+        },
+        {
+          "word": "bei",
+          "start": 4.2951,
+          "end": 4.4112,
+          "phonemes": "baɪ"
+        },
+        {
+          "word": "jährlicher",
+          "start": 4.446,
+          "end": 4.8756,
+          "phonemes": "jˈɛːɾlɪçɜ"
+        },
+        {
+          "word": "Zahlung.",
+          "start": 4.9104,
+          "end": 5.282,
+          "phonemes": "tsˈɑːlʊŋ."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "duration": 2.4033,
+  "source": "piper alignment (de_DE-thorsten-high), sample-exact",
+  "asr_check": {
+    "score": 0.857,
+    "heard": "oder bestellen vor und holen punklich ab."
+  },
+  "segments": [
+    {
+      "words": [
+        {
+          "word": "Oder",
+          "start": 0.0929,
+          "end": 0.3019,
+          "phonemes": "ˌoːdɜ"
+        },
+        {
+          "word": "bestellen",
+          "start": 0.3599,
+          "end": 0.7314,
+          "phonemes": "bəʃtˈɛlən"
+        },
+        {
+          "word": "vor,",
+          "start": 0.7663,
+          "end": 1.0449,
+          "phonemes": "fˈɔɾ,"
+        },
+        {
+          "word": "und",
+          "start": 1.2887,
+          "end": 1.4396,
+          "phonemes": "ʊnt"
+        },
+        {
+          "word": "holen",
+          "start": 1.4745,
+          "end": 1.6718,
+          "phonemes": "hˈoːlən"
+        },
+        {
+          "word": "pünktlich",
+          "start": 1.7183,
+          "end": 2.0782,
+          "phonemes": "pˈʏŋktlɪç"
+        },
+        {
+          "word": "ab.",
+          "start": 2.1478,
+          "end": 2.2756,
+          "phonemes": "ˈap."
+        }
+      ]
+    }
+  ]
+}

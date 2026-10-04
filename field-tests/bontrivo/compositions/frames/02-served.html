@@ -1,0 +1,171 @@
+<!--
+  02-served: the turn into the product register. The full stop from 01 opens into the O
+  and the camera flies through its well onto the cream table (the iris, 0 → 0.5s, while
+  01 is still alive underneath). Then the plate is SERVED (signature, first appearance)
+  and, on "Fertig", the bean drops into its notch: the first olive signal.
+
+  Stage constants (shared by 02–05, so the hard cuts between them hold the plate still):
+    plate centre (1440, 520), size 500  → box left 1190, top 270
+    text column x = 150, width ≤ 960 (headline 84px: "IHRE RESTAURANT-" = 896px measured)
+  Iris origin = 01's dot centre (1215.2, 732.7). Covering scale: the well's radius is
+  0.2568 × S; the farthest corner from the origin is 1418px away → S ≥ 5600 → scale 11.4
+  of a 500px element.
+-->
+<template>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="compositions/lib/btv-brand.js"></script>
+  <script src="compositions/lib/btv.js"></script>
+  <style>
+    @font-face {
+      font-family: "Montserrat";
+      src: url("assets/fonts/montserrat-variable-latin.woff2") format("woff2-variations");
+      font-weight: 100 900;
+      font-display: block;
+    }
+    #root {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      font-family: "Montserrat", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      color: #20201e;
+    }
+    /* The table: brand cream, lit from the upper left like an overhead food shot. */
+    .f02-ground {
+      position: absolute;
+      inset: 0;
+      opacity: 0; /* hidden until the iris has covered the frame (a tl.set at 0 does not render at t=0) */
+      background:
+        radial-gradient(ellipse 80% 70% at 22% 12%, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 60%),
+        radial-gradient(ellipse 60% 50% at 90% 100%, rgba(246, 232, 214, 0.9), rgba(246, 232, 214, 0) 70%),
+        #fff4e7;
+    }
+    #f02-iris {
+      position: absolute;
+      left: 965.2px;   /* 1215.2 − 250 */
+      top: 482.7px;    /*  732.7 − 250 */
+      width: 500px;
+      height: 500px;
+      transform-origin: 50% 50%;
+    }
+    #f02-plate {
+      position: absolute;
+      left: 1190px;
+      top: 270px;
+      width: 500px;
+      height: 500px;
+      transform-origin: 50% 50%;
+      opacity: 0;
+    }
+    .f02-eyebrow {
+      position: absolute;
+      left: 150px;
+      top: 286px;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #85817a;
+      white-space: nowrap;
+    }
+    .f02-line {
+      position: absolute;
+      left: 150px;
+      height: 104px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .f02-line span {
+      display: inline-block;
+      font-size: 84px;
+      line-height: 92px;
+      font-weight: 900;
+      letter-spacing: 0.005em;
+      text-transform: uppercase;
+    }
+    #f02-l1 { top: 336px; }
+    #f02-l2 { top: 428px; }
+    #f02-l3 { top: 552px; }
+    #f02-l4 { top: 644px; }
+    .f02-accent { color: #e65f3c; }
+    .f02-body {
+      position: absolute;
+      left: 152px;
+      top: 772px;
+      font-size: 36px;
+      font-weight: 500;
+      color: #55534c;
+      white-space: nowrap;
+    }
+  </style>
+
+  <div id="root" data-composition-id="02-served" data-width="1920" data-height="1080" data-duration="5.686">
+    <!-- track 0 · the table (hidden until the iris has covered the frame) -->
+    <div class="clip f02-ground" id="f02-ground" data-start="0" data-duration="5.686" data-track-index="0"></div>
+    <!-- track 1 · the iris: the O with a cream well, flying at camera -->
+    <div id="f02-layer-1" class="clip" data-start="0" data-duration="5.686" data-track-index="1" style="position:absolute;inset:0">
+      <div id="f02-iris"></div>
+    </div>
+    <!-- track 2 · plate and copy -->
+    <div id="f02-layer-2" class="clip" data-start="0" data-duration="5.686" data-track-index="2" style="position:absolute;inset:0">
+      <div id="f02-plate"></div>
+      <div class="f02-eyebrow" id="f02-eyebrow">Mit Bontrivo</div>
+      <div class="f02-line" id="f02-l1"><span id="f02-w1">Ihre Restaurant-</span></div>
+      <div class="f02-line" id="f02-l2"><span id="f02-w2">Website.</span></div>
+      <div class="f02-line" id="f02-l3"><span id="f02-w3" class="f02-accent">Fertig</span></div>
+      <div class="f02-line" id="f02-l4"><span id="f02-w4">eingerichtet.</span></div>
+      <div class="f02-body" id="f02-body">Ohne technisches Vorwissen.</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      /* VO: "Mit Bontrivo: Ihre Restaurant-Website. Fertig eingerichtet, ohne technisches Vorwissen."
+         "Mit"@0.06  "Bontrivo:"@0.30  "Ihre"@1.11  "Restaurant-Website."@1.37  "Fertig"@2.82
+         "eingerichtet,"@3.25  "ohne"@4.07  "technisches"@4.28  "Vorwissen."@4.79
+         duration 5.386s · hold 5.686 · cut to 03 (plate does not move across the cut) */
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      var B = window.BTV;
+
+      B.plate(document.getElementById("f02-iris"), "f02-iris", { fill: "#FFF4E7" });
+      B.plate(document.getElementById("f02-plate"), "f02-plate", { bean: true });
+      var bean = document.getElementById("f02-plate-bean");
+
+      /* ── the iris (0 → 0.5): 01 is still alive underneath. The O starts the size of
+         01's full stop and accelerates at camera; its cream well becomes the table. */
+      tl.fromTo("#f02-iris", { scale: 0.06 }, { scale: 11.4, duration: 0.5, ease: "power2.in" }, 0);
+      tl.set("#f02-ground", { opacity: 1 }, 0.5);
+      tl.set("#f02-iris", { opacity: 0 }, 0.5);
+
+      // "Bontrivo:"@0.30–0.85: the O flying through IS the word; the name lands as text the
+      // moment the iris clears (0.52), still inside the word, for muted viewers. (v2 cued it
+      // at 0.30, over 01's still-visible "MACHEN" in the 9:16 cut: a layout-gate overlap.)
+      B.arrive(tl, "#f02-eyebrow", 0.52, { y: 10, dur: 0.28 });
+
+      // "Ihre"@1.11 · "Restaurant-Website."@1.37
+      B.rise(tl, "#f02-w1", 1.11);
+      B.rise(tl, "#f02-w2", 1.37);
+
+      /* ── SERVED (signature): the plate travels in from the right, lifted, and lands on
+         "Restaurant-Website." The bean is withheld: the notch stays empty until "fertig". */
+      gsap.set(bean, { opacity: 0 }); // initial state outside the timeline (lint: gsap_timeline_set_initial_hide)
+      tl.set("#f02-plate", { opacity: 1 }, 0.9);
+      B.serve(tl, "#f02-plate", 1.37, { from: { x: 760, y: 26 }, dur: 0.46 });
+
+      /* ── "Fertig"@2.82: the garnish drops into the notch. The O is now the whole mark,
+         and olive appears for the first time (accent budget: Olive · job 1). */
+      B.rise(tl, "#f02-w3", 2.82);
+      B.drop(tl, bean, 2.84, { from: 1.9, dur: 0.3, shadow: false, origin: "50% 50%" });
+
+      // "eingerichtet,"@3.25 · "ohne"@4.07
+      B.rise(tl, "#f02-w4", 3.25);
+      B.arrive(tl, "#f02-body", 4.07, { y: 14 });
+
+      // 4.37 → 5.686 locked still.
+      tl.to({}, { duration: 5.686 }, 0);
+      window.__timelines["02-served"] = tl;
+    })();
+  </script>
+</template>

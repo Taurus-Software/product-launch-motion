@@ -1,0 +1,68 @@
+{
+  "duration": 5.1548,
+  "source": "piper alignment (de_DE-thorsten-high), sample-exact",
+  "asr_check": {
+    "score": 0.889,
+    "heard": "für Restaurants, Bistros, Bars, Hotels, Cafés, Biergärten und Kätern."
+  },
+  "segments": [
+    {
+      "words": [
+        {
+          "word": "Für",
+          "start": 0.0232,
+          "end": 0.1509,
+          "phonemes": "fyːɾ"
+        },
+        {
+          "word": "Restaurants,",
+          "start": 0.1858,
+          "end": 0.7546,
+          "phonemes": "rˌɛstoːrˈɑ̃s,"
+        },
+        {
+          "word": "Bistros,",
+          "start": 0.9404,
+          "end": 1.5093,
+          "phonemes": "bˈɪstroːs,"
+        },
+        {
+          "word": "Bars,",
+          "start": 1.6718,
+          "end": 2.0434,
+          "phonemes": "bˈɑːɾs,"
+        },
+        {
+          "word": "Hotels,",
+          "start": 2.2639,
+          "end": 2.8793,
+          "phonemes": "hotˈɛls,"
+        },
+        {
+          "word": "Cafés,",
+          "start": 3.1231,
+          "end": 3.6688,
+          "phonemes": "kafˈeːs,"
+        },
+        {
+          "word": "Biergärten",
+          "start": 3.8893,
+          "end": 4.3189,
+          "phonemes": "bˈiːɾɡɛɾtən"
+        },
+        {
+          "word": "und",
+          "start": 4.3537,
+          "end": 4.5047,
+          "phonemes": "ˈʊnt"
+        },
+        {
+          "word": "Catering.",
+          "start": 4.5511,
+          "end": 5.0271,
+          "phonemes": "kˈeːtəɾɪŋ."
+        }
+      ]
+    }
+  ]
+}

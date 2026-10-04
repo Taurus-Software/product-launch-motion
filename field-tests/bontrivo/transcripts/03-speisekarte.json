@@ -1,0 +1,62 @@
+{
+  "duration": 4.5737,
+  "source": "piper alignment (de_DE-thorsten-high), sample-exact",
+  "asr_check": {
+    "score": 1.0,
+    "heard": "mit Speisekarte, Gerichte und Preise jederzeit selbst aktualisiert."
+  },
+  "segments": [
+    {
+      "words": [
+        {
+          "word": "Mit",
+          "start": 0.058,
+          "end": 0.1625,
+          "phonemes": "mɪt"
+        },
+        {
+          "word": "Speisekarte.",
+          "start": 0.2206,
+          "end": 0.9636,
+          "phonemes": "ʃpˈaɪzeːkˌaɾtə."
+        },
+        {
+          "word": "Gerichte",
+          "start": 1.2997,
+          "end": 1.7641,
+          "phonemes": "ɡərˈɪçtə"
+        },
+        {
+          "word": "und",
+          "start": 1.8222,
+          "end": 1.9847,
+          "phonemes": "ʊnt"
+        },
+        {
+          "word": "Preise,",
+          "start": 2.0195,
+          "end": 2.5304,
+          "phonemes": "prˈaɪzə,"
+        },
+        {
+          "word": "jederzeit",
+          "start": 2.7394,
+          "end": 3.2618,
+          "phonemes": "jˈeːdɜtsˌaɪt"
+        },
+        {
+          "word": "selbst",
+          "start": 3.2966,
+          "end": 3.5869,
+          "phonemes": "zˈɛlpst"
+        },
+        {
+          "word": "aktualisiert.",
+          "start": 3.6101,
+          "end": 4.3996,
+          "phonemes": "ˌaktuːˌɑliːzˈiːɾt."
+        }
+      ]
+    }
+  ]
+}

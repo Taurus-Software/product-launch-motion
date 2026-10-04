@@ -1,0 +1,86 @@
+<!--
+  05-vorbestellung: course 3, and the plate leaves WITH it: "…und holen pünktlich ab" is
+  the one beat where the departure is the content (references/04, §10). On "holen" the
+  plate lifts off the table (shadow spreads), on "ab." it is carried up out of frame.
+  Plate and course ride one carrier node so they leave as one object.
+-->
+<template>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="compositions/lib/btv-brand.js"></script>
+  <script src="compositions/lib/btv.js"></script>
+  <style>
+    @font-face {
+      font-family: "Montserrat";
+      src: url("assets/fonts/montserrat-variable-latin.woff2") format("woff2-variations");
+      font-weight: 100 900;
+      font-display: block;
+    }
+    #root {
+      position: relative; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "Montserrat", sans-serif; -webkit-font-smoothing: antialiased; color: #20201e;
+    }
+    .f05-ground {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 70% at 22% 12%, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 60%),
+        radial-gradient(ellipse 60% 50% at 90% 100%, rgba(246, 232, 214, 0.9), rgba(246, 232, 214, 0) 70%),
+        #fff4e7;
+    }
+    /* carrier = the plate's box; its shadow is the plate's shadow */
+    #f05-carry { position: absolute; left: 1190px; top: 270px; width: 500px; height: 500px; transform-origin: 50% 50%; filter: drop-shadow(0px 14px 16px rgba(32,32,30,0.20)); }
+    #f05-plate { position: absolute; inset: 0; }
+    .f05-course { position: absolute; left: 175px; top: 175px; width: 150px; height: 150px; transform-origin: 50% 50%; }
+    #f05-course { opacity: 0; }
+    .f05-line { position: absolute; left: 150px; height: 118px; overflow: hidden; white-space: nowrap; }
+    .f05-line span { display: inline-block; font-size: 96px; line-height: 104px; font-weight: 900; letter-spacing: 0.005em; text-transform: uppercase; }
+    #f05-l1 { top: 372px; }
+    .f05-body { position: absolute; left: 152px; top: 520px; font-size: 36px; font-weight: 500; color: #55534c; white-space: nowrap; opacity: 0; }
+  </style>
+
+  <div id="root" data-composition-id="05-vorbestellung" data-width="1920" data-height="1080" data-duration="2.703">
+    <div id="f05-ground-clip" class="clip f05-ground" data-start="0" data-duration="2.703" data-track-index="0"></div>
+    <div id="f05-layer-1" class="clip" data-start="0" data-duration="2.703" data-track-index="1" style="position:absolute;inset:0">
+      <div id="f05-carry">
+        <div id="f05-plate"></div>
+        <div class="f05-course" id="f05-prev"></div>
+        <div class="f05-course" id="f05-course"></div>
+      </div>
+      <div class="f05-line" id="f05-l1"><span id="f05-w1">Vorbestellung</span></div>
+      <div class="f05-body" id="f05-body">Pünktlich abholen.</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      /* VO: "Oder bestellen vor, und holen pünktlich ab."
+         "Oder"@0.09  "bestellen"@0.36  "vor,"@0.77  "und"@1.29  "holen"@1.47
+         "pünktlich"@1.72  "ab."@2.15
+         duration 2.403s · hold 2.703 · cut to 06 (the long table) */
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      var B = window.BTV;
+      B.plate(document.getElementById("f05-plate"), "f05-plate", { bean: true });
+      document.getElementById("f05-prev").innerHTML = B.icon("calendar", 150, "#20201E", 1.7);
+      document.getElementById("f05-course").innerHTML = B.icon("bag", 150, "#20201E", 1.7);
+
+      // 0.02: course 2 off the plate · "bestellen"@0.36: course 3 on, with its name.
+      // (Inside the carrier the courses take no shadow of their own: the carrier's
+      //  drop-shadow already shades plate and course together.)
+      B.clear(tl, "#f05-prev", 0.0, { x: 200, y: -30, dur: 0.16 });  // gone by 0.16 (v1: overlapped the next course = trap 13)
+      B.drop(tl, "#f05-course", 0.38, { from: 1.6, dur: 0.22, shadow: false });
+      B.rise(tl, "#f05-w1", 0.36);
+
+      // "pünktlich"@1.72
+      B.arrive(tl, "#f05-body", 1.72, { y: 14 });
+
+      /* "holen"@1.47: lifted. Shadow spreads, the plate grows a little toward the
+         overhead camera. "ab."@2.15: carried up and out, accelerating (power2.in). */
+      tl.to("#f05-carry", { scale: 1.05, filter: B.LIFT, duration: 0.32, ease: "power2.out" }, 1.47);
+      tl.to("#f05-carry", { y: -900, x: -60, duration: 0.42, ease: "power2.in" }, 2.13);
+
+      // 2.55 → 2.703: empty table, then the cut. Nothing is mid-move at the cut.
+      tl.to({}, { duration: 2.703 }, 0);
+      window.__timelines["05-vorbestellung"] = tl;
+    })();
+  </script>
+</template>

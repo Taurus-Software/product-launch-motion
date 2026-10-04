@@ -1,0 +1,86 @@
+<!--
+  04-reservierung: course 2. Hard cut from 03: the plate holds still and still carries
+  course 1, which is cleared first (the "Abräumen"), then course 2 is set down on its word.
+  Stage constants as in 02/03. Text measured: "OHNE UMWEG ÜBER DRITTPORTALE." 40px = 806px.
+-->
+<template>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="compositions/lib/btv-brand.js"></script>
+  <script src="compositions/lib/btv.js"></script>
+  <style>
+    @font-face {
+      font-family: "Montserrat";
+      src: url("assets/fonts/montserrat-variable-latin.woff2") format("woff2-variations");
+      font-weight: 100 900;
+      font-display: block;
+    }
+    #root {
+      position: relative; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "Montserrat", sans-serif; -webkit-font-smoothing: antialiased; color: #20201e;
+    }
+    .f04-ground {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 70% at 22% 12%, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 60%),
+        radial-gradient(ellipse 60% 50% at 90% 100%, rgba(246, 232, 214, 0.9), rgba(246, 232, 214, 0) 70%),
+        #fff4e7;
+    }
+    #f04-plate { position: absolute; left: 1190px; top: 270px; width: 500px; height: 500px; filter: drop-shadow(0px 14px 16px rgba(32,32,30,0.20)); }
+    .f04-course { position: absolute; left: 1365px; top: 445px; width: 150px; height: 150px; transform-origin: 50% 50%; }
+    #f04-prev { filter: drop-shadow(0px 14px 16px rgba(32,32,30,0.20)); }
+    #f04-course { opacity: 0; }
+    .f04-line { position: absolute; left: 150px; height: 118px; overflow: hidden; white-space: nowrap; }
+    .f04-line span { display: inline-block; font-size: 96px; line-height: 104px; font-weight: 900; letter-spacing: 0.005em; text-transform: uppercase; }
+    #f04-l1 { top: 372px; }
+    .f04-body { position: absolute; left: 152px; top: 520px; font-size: 36px; font-weight: 500; color: #55534c; white-space: nowrap; opacity: 0; }
+    .f04-strong { position: absolute; left: 150px; top: 618px; height: 56px; overflow: hidden; white-space: nowrap; }
+    .f04-strong span { display: inline-block; font-size: 40px; line-height: 50px; font-weight: 900; letter-spacing: 0.005em; text-transform: uppercase; }
+    .f04-rule { position: absolute; left: 152px; top: 600px; width: 64px; height: 4px; background: #20201e; transform-origin: 0 50%; transform: scaleX(0); }
+  </style>
+
+  <div id="root" data-composition-id="04-reservierung" data-width="1920" data-height="1080" data-duration="4.116">
+    <div id="f04-ground-clip" class="clip f04-ground" data-start="0" data-duration="4.116" data-track-index="0"></div>
+    <div id="f04-layer-1" class="clip" data-start="0" data-duration="4.116" data-track-index="1" style="position:absolute;inset:0">
+      <div id="f04-plate"></div>
+      <div class="f04-course" id="f04-prev"></div>
+      <div class="f04-course" id="f04-course"></div>
+      <div class="f04-line" id="f04-l1"><span id="f04-w1">Reservierung</span></div>
+      <div class="f04-body" id="f04-body">Direkt über Ihre Website.</div>
+      <div class="f04-rule" id="f04-rule"></div>
+      <div class="f04-strong" id="f04-s1"><span id="f04-sw1">Ohne Umweg über Drittportale.</span></div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      /* VO: "Gäste reservieren direkt über Ihre Website. Ohne Umweg über Drittportale."
+         "Gäste"@0.03  "reservieren"@0.30  "direkt"@0.80  "über"@1.10  "Ihre"@1.30
+         "Website."@1.51  "Ohne"@2.19  "Umweg"@2.47  "über"@2.84  "Drittportale."@3.03
+         duration 3.866s · hold 4.116 · cut to 05 */
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      var B = window.BTV;
+      B.plate(document.getElementById("f04-plate"), "f04-plate", { bean: true });
+      document.getElementById("f04-prev").innerHTML = B.icon("cutlery", 150, "#20201E", 1.7);
+      document.getElementById("f04-course").innerHTML = B.icon("calendar", 150, "#20201E", 1.7);
+
+      // 0.02: course 1 is taken off the plate (it arrived as 03's last state).
+      B.clear(tl, "#f04-prev", 0.0, { x: 200, y: -30, dur: 0.16 });  // gone by 0.16 (v1: overlapped the next course = trap 13)
+
+      // "reservieren"@0.30: course 2 lands on the word, with its name.
+      B.drop(tl, "#f04-course", 0.32, { from: 1.6, dur: 0.2 });
+      B.rise(tl, "#f04-w1", 0.30);
+
+      // "direkt"@0.80
+      B.arrive(tl, "#f04-body", 0.80, { y: 14 });
+
+      // "Ohne"@2.19: the contrast, factual and unnamed (no portal is named on screen).
+      tl.to("#f04-rule", { scaleX: 1, duration: 0.24, ease: "power2.out" }, 2.12);
+      B.rise(tl, "#f04-sw1", 2.19, { dur: 0.32 });
+
+      // 2.53 → 4.116 locked still.
+      tl.to({}, { duration: 4.116 }, 0);
+      window.__timelines["04-reservierung"] = tl;
+    })();
+  </script>
+</template>

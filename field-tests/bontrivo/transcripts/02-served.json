@@ -1,0 +1,68 @@
+{
+  "duration": 5.3864,
+  "source": "piper alignment (de_DE-thorsten-high), sample-exact",
+  "asr_check": {
+    "score": 1.4,
+    "heard": "mit Bontrivo, ihre Restaurant-Babzeit, fertig eingerichtet ohne technisches Vorwissen."
+  },
+  "segments": [
+    {
+      "words": [
+        {
+          "word": "Mit",
+          "start": 0.058,
+          "end": 0.2786,
+          "phonemes": "mˈɪt"
+        },
+        {
+          "word": "Bontrivo:",
+          "start": 0.3019,
+          "end": 0.8707,
+          "phonemes": "bˈɔntriːvoː:"
+        },
+        {
+          "word": "Ihre",
+          "start": 1.1146,
+          "end": 1.3468,
+          "phonemes": "ˌiːrə"
+        },
+        {
+          "word": "Restaurant-Website.",
+          "start": 1.37,
+          "end": 2.3452,
+          "phonemes": "rˌɛstoːrˈɑ̃wˈɛbsaɪt."
+        },
+        {
+          "word": "Fertig",
+          "start": 2.8206,
+          "end": 3.227,
+          "phonemes": "fˈɛɾtɪç"
+        },
+        {
+          "word": "eingerichtet,",
+          "start": 3.2502,
+          "end": 3.8771,
+          "phonemes": "ˈaɪnɡərˌɪçtət,"
+        },
+        {
+          "word": "ohne",
+          "start": 4.0745,
+          "end": 4.2371,
+          "phonemes": "ˈoːnə"
+        },
+        {
+          "word": "technisches",
+          "start": 4.2835,
+          "end": 4.7595,
+          "phonemes": "tˈɛçnɪʃəs"
+        },
+        {
+          "word": "Vorwissen.",
+          "start": 4.7943,
+          "end": 5.282,
+          "phonemes": "fˈoːɾvˌɪsən."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+<!--
+  03-speisekarte: course 1. Same table, same plate (hard cut from 02; the plate does not
+  move across it). The site's own Speisekarte icon is served onto the plate on the word.
+  Stage constants as in 02: plate centre (1440, 520), size 500. Course icon 150px centred
+  on the plate → left 1365, top 445.
+-->
+<template>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="compositions/lib/btv-brand.js"></script>
+  <script src="compositions/lib/btv.js"></script>
+  <style>
+    @font-face {
+      font-family: "Montserrat";
+      src: url("assets/fonts/montserrat-variable-latin.woff2") format("woff2-variations");
+      font-weight: 100 900;
+      font-display: block;
+    }
+    #root {
+      position: relative; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "Montserrat", sans-serif; -webkit-font-smoothing: antialiased; color: #20201e;
+    }
+    .f03-ground {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 70% at 22% 12%, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 60%),
+        radial-gradient(ellipse 60% 50% at 90% 100%, rgba(246, 232, 214, 0.9), rgba(246, 232, 214, 0) 70%),
+        #fff4e7;
+    }
+    #f03-plate { position: absolute; left: 1190px; top: 270px; width: 500px; height: 500px; filter: drop-shadow(0px 14px 16px rgba(32,32,30,0.20)); }
+    #f03-course { position: absolute; left: 1365px; top: 445px; width: 150px; height: 150px; transform-origin: 50% 50%; opacity: 0; }
+    .f03-line { position: absolute; left: 150px; height: 118px; overflow: hidden; white-space: nowrap; }
+    .f03-line span { display: inline-block; font-size: 96px; line-height: 104px; font-weight: 900; letter-spacing: 0.005em; text-transform: uppercase; }
+    #f03-l1 { top: 372px; }
+    .f03-chip {
+      position: absolute; top: 520px; height: 64px; padding: 0 28px; border-radius: 999px;
+      border: 3px solid #20201e; display: flex; align-items: center;
+      font-size: 28px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap;
+      opacity: 0;
+    }
+    #f03-c1 { left: 150px; }
+    #f03-c2 { left: 410px; }
+    .f03-body { position: absolute; left: 152px; top: 626px; font-size: 36px; font-weight: 500; color: #55534c; white-space: nowrap; opacity: 0; }
+  </style>
+
+  <div id="root" data-composition-id="03-speisekarte" data-width="1920" data-height="1080" data-duration="4.824">
+    <div id="f03-ground-clip" class="clip f03-ground" data-start="0" data-duration="4.824" data-track-index="0"></div>
+    <div id="f03-layer-1" class="clip" data-start="0" data-duration="4.824" data-track-index="1" style="position:absolute;inset:0">
+      <div id="f03-plate"></div>
+      <div id="f03-course"></div>
+      <div class="f03-line" id="f03-l1"><span id="f03-w1">Speisekarte</span></div>
+      <div class="f03-chip" id="f03-c1">Gerichte</div>
+      <div class="f03-chip" id="f03-c2">Preise</div>
+      <div class="f03-body" id="f03-body">Jederzeit selbst aktualisiert.</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      /* VO: "Mit Speisekarte. Gerichte und Preise, jederzeit selbst aktualisiert."
+         "Mit"@0.06  "Speisekarte."@0.22  "Gerichte"@1.30  "und"@1.82  "Preise,"@2.02
+         "jederzeit"@2.74  "selbst"@3.30  "aktualisiert."@3.61
+         duration 4.574s · hold 4.824 · cut to 04 */
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      var B = window.BTV;
+      B.plate(document.getElementById("f03-plate"), "f03-plate", { bean: true });
+      document.getElementById("f03-course").innerHTML = B.icon("cutlery", 150, "#20201E", 1.7);
+
+      // "Speisekarte."@0.22: course 1 set into the plate (lands on the word) + its name.
+      B.drop(tl, "#f03-course", 0.24, { from: 1.6, dur: 0.22 });  // starts at 0.02, not before the cut (v1: −0.08)
+      B.rise(tl, "#f03-w1", 0.22);
+
+      // "Gerichte"@1.30 · "Preise,"@2.02: the two things a menu holds, as the site names them.
+      B.arrive(tl, "#f03-c1", 1.30, { x: -14, y: 0, dur: 0.28 });
+      B.arrive(tl, "#f03-c2", 2.02, { x: -14, y: 0, dur: 0.28 });
+
+      // "jederzeit"@2.74: the line it is all for.
+      B.arrive(tl, "#f03-body", 2.74, { y: 14 });
+
+      // 3.06 → 4.824 locked still.
+      tl.to({}, { duration: 4.824 }, 0);
+      window.__timelines["03-speisekarte"] = tl;
+    })();
+  </script>
+</template>

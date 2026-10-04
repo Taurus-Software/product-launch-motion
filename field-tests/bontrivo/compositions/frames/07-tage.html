@@ -1,0 +1,99 @@
+<!--
+  07-tage: argument register again (ink): from WHAT to HOW FAST. The site's three real
+  steps (1 · 2 · 3 are on the approved-figures list), in the site's own step-number style
+  inverted for the dark ground. "Live" is the olive beat (accent budget · Olive · job 2).
+  Then the site's sentence "Tage, nicht Monate." with the one accent word.
+  Measured: "TAGE, NICHT MONATE." at 120px = 1475.2 → left (1920 − 1475.2)/2 = 222.4;
+    "TAGE," 387.7 · "NICHT" 404.9 · spaces 0.276em·120 ≈ 33.1
+-->
+<template>
+  <script src="vendor/gsap.min.js"></script>
+  <style>
+    @font-face {
+      font-family: "Montserrat";
+      src: url("assets/fonts/montserrat-variable-latin.woff2") format("woff2-variations");
+      font-weight: 100 900;
+      font-display: block;
+    }
+    #root {
+      position: relative; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "Montserrat", sans-serif; -webkit-font-smoothing: antialiased; color: #fff4e7;
+    }
+    .f07-ground {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 0%, rgba(230, 95, 60, 0.06), rgba(230, 95, 60, 0) 62%),
+        #20201e;
+    }
+    #f07-steps { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 50% 30%; }
+    .f07-step { position: absolute; top: 218px; width: 400px; margin-left: -200px; text-align: center; }
+    .f07-pill {
+      width: 88px; height: 88px; margin: 0 auto; border-radius: 999px; background: #fff4e7; color: #20201e;
+      display: flex; align-items: center; justify-content: center; font-size: 42px; font-weight: 900;
+      font-variant-numeric: tabular-nums; transform-origin: 50% 50%; opacity: 0;
+    }
+    .f07-label {
+      margin-top: 30px; height: 52px; overflow: hidden; font-size: 40px; line-height: 50px; font-weight: 900;
+      letter-spacing: 0.005em; text-transform: uppercase; white-space: nowrap;
+    }
+    .f07-label span { display: inline-block; }
+    .f07-link {
+      position: absolute; top: 260px; height: 3px; background: rgba(255, 244, 231, 0.32);
+      transform-origin: 0 50%; transform: scaleX(0);
+    }
+    .f07-line { position: absolute; top: 576px; height: 150px; overflow: hidden; white-space: nowrap; }
+    .f07-line span { display: inline-block; font-size: 120px; line-height: 132px; font-weight: 900; letter-spacing: 0.005em; text-transform: uppercase; }
+    .f07-accent { color: #e65f3c; }
+  </style>
+
+  <div id="root" data-composition-id="07-tage" data-width="1920" data-height="1080" data-duration="4.726">
+    <div id="f07-ground-clip" class="clip f07-ground" data-start="0" data-duration="4.726" data-track-index="0"></div>
+    <div id="f07-layer-1" class="clip" data-start="0" data-duration="4.726" data-track-index="1" style="position:absolute;inset:0">
+      <div id="f07-steps">
+        <!-- links run between pill edges: pills at x 560/960/1360, radius 44, 14px clearance -->
+        <div class="f07-link" id="f07-k1" style="left:618px;width:284px"></div>
+        <div class="f07-link" id="f07-k2" style="left:1018px;width:284px"></div>
+        <div class="f07-step" style="left:560px"><div class="f07-pill" id="f07-p1">1</div><div class="f07-label"><span id="f07-t1">Anfragen</span></div></div>
+        <div class="f07-step" style="left:960px"><div class="f07-pill" id="f07-p2">2</div><div class="f07-label"><span id="f07-t2">Einrichten</span></div></div>
+        <div class="f07-step" style="left:1360px"><div class="f07-pill" id="f07-p3">3</div><div class="f07-label"><span id="f07-t3">Live&nbsp;</span><span id="f07-t4">gehen</span></div></div>
+      </div>
+      <div class="f07-line" style="left:222.4px"><span id="f07-w1" class="f07-accent">Tage,</span></div>
+      <div class="f07-line" style="left:643.2px"><span id="f07-w2">nicht</span></div>
+      <div class="f07-line" style="left:1081.2px"><span id="f07-w3">Monate.</span></div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      /* VO: "Anfragen. Einrichten. Live gehen. Tage, nicht Monate."
+         "Anfragen."@0.03  "Einrichten."@1.02  "Live"@1.80  "gehen."@2.08  "Tage,"@2.95
+         "nicht"@3.56  "Monate."@3.81
+         duration 4.376s · hold 4.726 · cut to 08 */
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+
+      function step(n, at) {
+        tl.fromTo("#f07-p" + n, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.28, ease: "back.out(2)" }, at - 0.02);
+        tl.fromTo("#f07-t" + n, { yPercent: 135 }, { yPercent: 0, duration: 0.32, ease: "power3.out" }, at);
+      }
+      step(1, 0.03);                                                                       // "Anfragen."
+      tl.to("#f07-k1", { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, 0.5);          // the path to step 2
+      step(2, 1.02);                                                                       // "Einrichten."
+      tl.to("#f07-k2", { scaleX: 1, duration: 0.45, ease: "power2.inOut" }, 1.3);
+      step(3, 1.80);                                                                       // "Live"
+      // the state flip: step 3 turns olive ON "Live" (the one sanctioned overshoot)
+      tl.to("#f07-p3", { backgroundColor: "#A3C13A", duration: 0.2, ease: "power1.out" }, 1.80);
+      tl.fromTo("#f07-t4", { yPercent: 135 }, { yPercent: 0, duration: 0.3, ease: "power3.out" }, 2.08); // "gehen."
+
+      // "Tage,"@2.95: the steps step back (dim, lift); the sentence takes the frame.
+      tl.to("#f07-steps", { opacity: 0.32, y: -24, scale: 0.94, duration: 0.4, ease: "power2.inOut" }, 2.85);
+      tl.fromTo("#f07-w1", { yPercent: 135 }, { yPercent: 0, duration: 0.34, ease: "power3.out" }, 2.93);
+      tl.fromTo("#f07-w2", { yPercent: 135 }, { yPercent: 0, duration: 0.32, ease: "power3.out" }, 3.54);
+      tl.fromTo("#f07-w3", { yPercent: 135 }, { yPercent: 0, duration: 0.32, ease: "power3.out" }, 3.79);
+
+      // 4.11 → 4.726 locked still.
+      tl.to({}, { duration: 4.726 }, 0);
+      window.__timelines["07-tage"] = tl;
+    })();
+  </script>
+</template>

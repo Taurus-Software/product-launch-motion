@@ -1,0 +1,56 @@
+{
+  "duration": 4.3758,
+  "source": "piper alignment (de_DE-thorsten-high), sample-exact",
+  "asr_check": {
+    "score": 1.0,
+    "heard": "Anfragen, Einrichten, Live gehen, Tage, Nicht Monate."
+  },
+  "segments": [
+    {
+      "words": [
+        {
+          "word": "Anfragen.",
+          "start": 0.0348,
+          "end": 0.6269,
+          "phonemes": "ˈanfrˌɑːɡən."
+        },
+        {
+          "word": "Einrichten.",
+          "start": 1.0211,
+          "end": 1.6248,
+          "phonemes": "ˈaɪnrˌɪçtən."
+        },
+        {
+          "word": "Live",
+          "start": 1.799,
+          "end": 2.0312,
+          "phonemes": "lˈaɪf"
+        },
+        {
+          "word": "gehen.",
+          "start": 2.0776,
+          "end": 2.3446,
+          "phonemes": "ɡˈeːən."
+        },
+        {
+          "word": "Tage,",
+          "start": 2.9478,
+          "end": 3.3425,
+          "phonemes": "tˈɑːɡə,"
+        },
+        {
+          "word": "nicht",
+          "start": 3.5631,
+          "end": 3.7837,
+          "phonemes": "nˈɪçt"
+        },
+        {
+          "word": "Monate.",
+          "start": 3.8069,
+          "end": 4.2132,
+          "phonemes": "mˈoːnɑːtə."
+        }
+      ]
+    }
+  ]
+}

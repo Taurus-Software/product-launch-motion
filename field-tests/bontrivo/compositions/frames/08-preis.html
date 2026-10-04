@@ -1,0 +1,117 @@
+<!--
+  08-preis: the one real surface in the film: bontrivo.de's own pricing card, rebuilt
+  from its CSS at 1.6x (RECONSTRUCTION, labelled in STORYBOARD.md). Only approved figures:
+  29,00 € · / Monat · 348,00 € (always beside the monthly price, because it is billed
+  yearly in advance). The card shows four of its seven "inklusive" rows, the four the
+  voice names; nothing is added that the card does not say.
+  One deliberate deviation from the site: the small print is #55534C at 22px instead of
+  #85817A at 12.5px, because the honesty line has to be READABLE in a video (and the
+  site's grey fails AA on white at that size).
+  Measured: "ALLES" 120px = 407 · "INKLUSIVE." 120px = 737 → column 150–887; card 1000–1736.
+-->
+<template>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="compositions/lib/btv-brand.js"></script>
+  <script src="compositions/lib/btv.js"></script>
+  <style>
+    @font-face {
+      font-family: "Montserrat";
+      src: url("assets/fonts/montserrat-variable-latin.woff2") format("woff2-variations");
+      font-weight: 100 900;
+      font-display: block;
+    }
+    #root {
+      position: relative; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "Montserrat", sans-serif; -webkit-font-smoothing: antialiased; color: #fff4e7;
+    }
+    .f08-ground {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 70% at 72% 45%, rgba(255, 244, 231, 0.05), rgba(255, 244, 231, 0) 65%),
+        #20201e;
+    }
+    .f08-line { position: absolute; left: 150px; height: 140px; overflow: hidden; white-space: nowrap; }
+    .f08-line span { display: inline-block; font-size: 120px; line-height: 128px; font-weight: 900; letter-spacing: 0.005em; text-transform: uppercase; }
+    #f08-l1 { top: 330px; }
+    #f08-l2 { top: 458px; }
+
+    /* ── the card (site CSS × 1.6) ─────────────────────────────────────────── */
+    #f08-card {
+      position: absolute; left: 1000px; top: 176px; width: 736px; padding: 38px;
+      background: #ffffff; border: 3px solid #e65f3c; border-radius: 26px; color: #20201e;
+      box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.45); opacity: 0;
+    }
+    .f08-eyebrow { font-size: 20px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #be4020; margin: 0 0 13px; }
+    .f08-title { font-size: 29px; font-weight: 700; margin: 0 0 26px; }
+    .f08-amount {
+      display: flex; flex-direction: column; align-items: center; background: #fbdcd1; border-radius: 26px;
+      border-bottom: 5px solid #e65f3c; padding: 30px 26px 26px; margin: 0 0 22px;
+    }
+    .f08-price {
+      height: 132px; font-size: 125px; line-height: 132px; font-weight: 900; letter-spacing: -0.02em; color: #be4020;
+      font-variant-numeric: tabular-nums; white-space: nowrap; transform-origin: 50% 70%; opacity: 0;
+    }
+    .f08-unit { height: 32px; font-size: 22px; line-height: 32px; font-weight: 700; color: #be4020; opacity: 0; }
+    .f08-small { font-size: 22px; line-height: 30px; color: #55534c; text-align: center; margin: 0 0 30px; opacity: 0; }
+    .f08-feat { display: flex; align-items: center; gap: 18px; height: 50px; font-size: 26px; font-weight: 600; }
+    .f08-check { width: 34px; height: 34px; flex: none; transform-origin: 50% 50%; opacity: 0; }
+    .f08-feat span { opacity: 0.38; }
+  </style>
+
+  <div id="root" data-composition-id="08-preis" data-width="1920" data-height="1080" data-duration="5.871">
+    <div id="f08-ground-clip" class="clip f08-ground" data-start="0" data-duration="5.871" data-track-index="0"></div>
+    <div id="f08-layer-1" class="clip" data-start="0" data-duration="5.871" data-track-index="1" style="position:absolute;inset:0">
+      <div class="f08-line" id="f08-l1"><span id="f08-w1">Alles</span></div>
+      <div class="f08-line" id="f08-l2"><span id="f08-w2">inklusive.</span></div>
+      <div id="f08-card">
+        <p class="f08-eyebrow">Grundpreis</p>
+        <p class="f08-title">Website monatlich</p>
+        <div class="f08-amount">
+          <div class="f08-price" id="f08-price">29,00&nbsp;€</div>
+          <div class="f08-unit" id="f08-unit">/ Monat</div>
+        </div>
+        <p class="f08-small" id="f08-small">Jährliche Zahlweise — 348,00 € / Jahr, im Voraus fällig</p>
+        <div class="f08-feat"><div class="f08-check" id="f08-k1"></div><span id="f08-f1">Speisekarte inklusive</span></div>
+        <div class="f08-feat"><div class="f08-check" id="f08-k2"></div><span id="f08-f2">Reservierung inklusive</span></div>
+        <div class="f08-feat"><div class="f08-check" id="f08-k3"></div><span id="f08-f3">Vorbestellung inklusive</span></div>
+        <div class="f08-feat"><div class="f08-check" id="f08-k4"></div><span id="f08-f4">Hosting inklusive</span></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      /* VO: "Alles inklusive, auch das Hosting. Neunundzwanzig Euro im Monat, bei jährlicher Zahlung."
+         "Alles"@0.05  "inklusive,"@0.34  "auch"@1.10  "das"@1.30  "Hosting."@1.46
+         "29,00 €"@2.37  "Euro"@3.18  "im"@3.54  "Monat,"@3.67  "bei"@4.30  "jährlicher"@4.45  "Zahlung."@4.91
+         duration 5.421s · hold 5.871 · hard cut to 09 on "Jetzt" */
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      var B = window.BTV;
+      for (var i = 1; i <= 4; i++) document.getElementById("f08-k" + i).innerHTML = B.icon("check", 34, "#A3C13A", 3);
+
+      // "Alles"@0.05: headline and the card arrive together: the claim and its evidence.
+      B.rise(tl, "#f08-w1", 0.05);
+      tl.fromTo("#f08-card", { opacity: 0, y: 30, scale: 0.985 }, { opacity: 1, y: 0, scale: 1, duration: 0.38, ease: "power3.out" }, 0.04);
+      B.rise(tl, "#f08-w2", 0.34);
+
+      // the inclusions tick on (state flip = the sanctioned overshoot); olive as on the site
+      function tick(n, at) {
+        tl.fromTo("#f08-k" + n, { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.26, ease: "back.out(2.2)" }, at);
+        tl.to("#f08-f" + n, { opacity: 1, duration: 0.22, ease: "power2.out" }, at);
+      }
+      tick(1, 0.36); tick(2, 0.44); tick(3, 0.52);   // "inklusive,"@0.34: the three courses
+      tick(4, 1.46);                                 // "Hosting."@1.46
+
+      // "Neunundzwanzig"@2.37: the price lands, a hit on the word (no count-up: a price
+      // that counts reads as a meter running).
+      tl.fromTo("#f08-price", { opacity: 0, scale: 0.86 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power3.out" }, 2.36);
+      B.arrive(tl, "#f08-unit", 3.67, { y: 8, dur: 0.26 });   // "Monat,"
+      B.arrive(tl, "#f08-small", 4.45, { y: 8, dur: 0.3 });   // "jährlicher": the honesty line
+
+      // 4.75 → 5.871 locked still.
+      tl.to({}, { duration: 5.871 }, 0);
+      window.__timelines["08-preis"] = tl;
+    })();
+  </script>
+</template>

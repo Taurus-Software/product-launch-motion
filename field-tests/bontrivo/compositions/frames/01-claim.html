@@ -1,0 +1,106 @@
+<!--
+  01-claim: cold open on the answer (DIRECTION: turn at 0%). Argument register (ink).
+  The site's h1, word by word, on the words. The full stop is a tomato dot: frame 02's
+  iris flies out of exactly this point (DOT_X/DOT_Y below are shared with 02-served).
+  Layout constants are measured, not eyeballed: tools/measure.py at 168px / wght 900:
+    "WEBSITES," 1006.7 · "DIE APPETIT" 1146.9 · "MACHEN" 807.7  → block width 1146.9
+  Block left = (1920 − 1146.9) / 2 = 386.5. Line pitch 155px, first line box top 300.
+  Baseline inside a 155px line box at 168px (ascent .968, content 1.219em) = top + 137.7.
+-->
+<template>
+  <script src="vendor/gsap.min.js"></script>
+  <style>
+    @font-face {
+      font-family: "Montserrat";
+      src: url("assets/fonts/montserrat-variable-latin.woff2") format("woff2-variations");
+      font-weight: 100 900;
+      font-display: block;
+    }
+    #root {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      font-family: "Montserrat", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      color: #fff4e7;
+    }
+    /* Argument register: ink, lifted (never #000), one warm pool from above-left so the
+       ground is a lit surface, not a black rectangle. */
+    .f01-ground {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 28% 18%, rgba(230, 95, 60, 0.07), rgba(230, 95, 60, 0) 62%),
+        #20201e;
+    }
+    .f01-line {
+      position: absolute;
+      left: 386.5px;
+      height: 190px; /* taller than the 155px pitch so the comma's descender is not masked */
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .f01-line span {
+      display: inline-block;
+      font-size: 168px;
+      line-height: 155px;
+      font-weight: 900;
+      letter-spacing: 0.005em;
+      text-transform: uppercase;
+      will-change: transform;
+    }
+    #f01-l1 { top: 300px; }
+    #f01-l2 { top: 455px; }
+    #f01-l3 { top: 610px; }
+    .f01-accent { color: #e65f3c; }
+    /* the full stop, as an object: 30px tomato disc sitting on line 3's baseline
+       left = 386.5 + 807.7 + 6  ·  top = (610 + 137.7) − 30 */
+    #f01-dot {
+      position: absolute;
+      left: 1200.2px;
+      top: 717.7px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #e65f3c;
+      transform-origin: 50% 50%;
+    }
+  </style>
+
+  <div id="root" data-composition-id="01-claim" data-width="1920" data-height="1080" data-duration="2.789">
+    <div id="f01-ground-clip" class="clip f01-ground" data-start="0" data-duration="2.789" data-track-index="0"></div>
+    <div id="f01-layer-1" class="clip" data-start="0" data-duration="2.789" data-track-index="1" style="position:absolute;inset:0">
+      <div class="f01-line" id="f01-l1"><span id="f01-w1">Websites,</span></div>
+      <div class="f01-line" id="f01-l2"><span id="f01-w2">Die&nbsp;</span><span id="f01-w3" class="f01-accent">Appetit</span></div>
+      <div class="f01-line" id="f01-l3"><span id="f01-w4">Machen</span></div>
+      <div id="f01-dot"></div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      /* VO: "Websites, die Appetit machen."
+         "Websites,"@0.06  "die"@1.00  "Appetit"@1.13  "machen."@1.54
+         duration 1.939s · hold 2.289 · frame 2.789 (0.5s overlap: 02's iris flies over it) */
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+
+      function rise(sel, at) {
+        tl.fromTo(sel, { yPercent: 135 }, { yPercent: 0, duration: 0.34, ease: "power3.out" }, at - 0.03);
+      }
+      rise("#f01-w1", 0.06); // "Websites,"
+      rise("#f01-w2", 1.00); // "die"
+      rise("#f01-w3", 1.13); // "Appetit": the one accent word
+      rise("#f01-w4", 1.54); // "machen."
+
+      // The full stop lands as a separate beat on the end of "machen." (word end 1.85):
+      // it is the seed of the plate, so it gets its own small, decisive arrival.
+      tl.fromTo("#f01-dot", { scale: 0, opacity: 1 }, { scale: 1, duration: 0.22, ease: "back.out(2)" }, 1.80);
+
+      // 2.02 → 2.789 locked still. The iris in 02 starts at this frame's hold (2.289).
+      tl.to({}, { duration: 2.789 }, 0);
+      window.__timelines["01-claim"] = tl;
+    })();
+  </script>
+</template>

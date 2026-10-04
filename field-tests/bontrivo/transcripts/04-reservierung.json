@@ -1,0 +1,74 @@
+{
+  "duration": 3.8661,
+  "source": "piper alignment (de_DE-thorsten-high), sample-exact",
+  "asr_check": {
+    "score": 0.9,
+    "heard": "Gäste reservieren direkt über ihre Website ohne Umweg über Trittportale."
+  },
+  "segments": [
+    {
+      "words": [
+        {
+          "word": "Gäste",
+          "start": 0.0348,
+          "end": 0.2786,
+          "phonemes": "ɡˈɛstə"
+        },
+        {
+          "word": "reservieren",
+          "start": 0.3019,
+          "end": 0.7779,
+          "phonemes": "rˌeːzɛɾvˈiːrən"
+        },
+        {
+          "word": "direkt",
+          "start": 0.8011,
+          "end": 1.0681,
+          "phonemes": "diːrˈɛkt"
+        },
+        {
+          "word": "über",
+          "start": 1.1029,
+          "end": 1.2655,
+          "phonemes": "ˌyːbɜ"
+        },
+        {
+          "word": "Ihre",
+          "start": 1.3003,
+          "end": 1.4745,
+          "phonemes": "ˌiːrə"
+        },
+        {
+          "word": "Website.",
+          "start": 1.5093,
+          "end": 2.0201,
+          "phonemes": "vˈɛpsaɪt."
+        },
+        {
+          "word": "Ohne",
+          "start": 2.1943,
+          "end": 2.4265,
+          "phonemes": "ˈoːnə"
+        },
+        {
+          "word": "Umweg",
+          "start": 2.4729,
+          "end": 2.8212,
+          "phonemes": "ˈʊmvˌeːk"
+        },
+        {
+          "word": "über",
+          "start": 2.8444,
+          "end": 2.9954,
+          "phonemes": "ˌyːbɜ"
+        },
+        {
+          "word": "Drittportale.",
+          "start": 3.0302,
+          "end": 3.75,
+          "phonemes": "drˌɪtpɔɾtˈɑːlə."
+        }
+      ]
+    }
+  ]
+}

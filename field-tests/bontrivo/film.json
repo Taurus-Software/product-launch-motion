@@ -1,0 +1,103 @@
+{
+  "_note": [
+    "Bontrivo field test. Durations are never typed: assemble.mjs measures every frame from its",
+    "voiceover. The only numbers here are pads (rhythm) and transition overlaps.",
+    "Transitions: the two flips INTO the table (01->02, 08->09) are irises through the O, built",
+    "Transitions: the flip INTO the table at 01->02 is an iris through the O, built inside 02;",
+    "the manifest gives it a 'cut' with an overlap so 01 stays alive underneath. 08->09 is a hard",
+    "cut on 'Jetzt' (the plate descends inside 09). 02->05 are hard cuts on an unmoving plate (one table, three courses). 06->07 is a push that continues the pan's direction."
+  ],
+  "width": 1920,
+  "height": 1080,
+  "background": "#20201E",
+  "gsap": "vendor/gsap.min.js",
+  "pad": 0.25,
+  "frames": [
+    {
+      "id": "01-claim",
+      "src": "compositions/frames/01-claim.html",
+      "vo": "assets/voice/01-claim.wav",
+      "pad": 0.35,
+      "out": {
+        "type": "cut",
+        "duration": 0.5
+      }
+    },
+    {
+      "id": "02-served",
+      "src": "compositions/frames/02-served.html",
+      "vo": "assets/voice/02-served.wav",
+      "pad": 0.3,
+      "out": {
+        "type": "cut",
+        "duration": 0
+      }
+    },
+    {
+      "id": "03-speisekarte",
+      "src": "compositions/frames/03-speisekarte.html",
+      "vo": "assets/voice/03-speisekarte.wav",
+      "pad": 0.25,
+      "out": {
+        "type": "cut",
+        "duration": 0
+      }
+    },
+    {
+      "id": "04-reservierung",
+      "src": "compositions/frames/04-reservierung.html",
+      "vo": "assets/voice/04-reservierung.wav",
+      "pad": 0.25,
+      "out": {
+        "type": "cut",
+        "duration": 0
+      }
+    },
+    {
+      "id": "05-vorbestellung",
+      "src": "compositions/frames/05-vorbestellung.html",
+      "vo": "assets/voice/05-vorbestellung.wav",
+      "pad": 0.3,
+      "out": {
+        "type": "cut",
+        "duration": 0
+      }
+    },
+    {
+      "id": "06-branchen",
+      "src": "compositions/frames/06-branchen.html",
+      "vo": "assets/voice/06-branchen.wav",
+      "pad": 0.4,
+      "out": {
+        "type": "push",
+        "duration": 0.5
+      }
+    },
+    {
+      "id": "07-tage",
+      "src": "compositions/frames/07-tage.html",
+      "vo": "assets/voice/07-tage.wav",
+      "pad": 0.35,
+      "out": {
+        "type": "cut",
+        "duration": 0
+      }
+    },
+    {
+      "id": "08-preis",
+      "src": "compositions/frames/08-preis.html",
+      "vo": "assets/voice/08-preis.wav",
+      "pad": 0.45,
+      "out": {
+        "type": "cut",
+        "duration": 0
+      }
+    },
+    {
+      "id": "09-cta",
+      "src": "compositions/frames/09-cta.html",
+      "vo": "assets/voice/09-cta.wav",
+      "pad": 1.3
+    }
+  ]
+}

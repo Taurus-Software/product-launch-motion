@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="vendor/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #000;
+      }
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #20201E;
+      }
+      .scene { position: absolute; inset: 0; width: 100%; height: 100%; }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="40.622"
+      data-width="1920"
+      data-height="1080"
+    >
+      <div
+        id="el-01-claim"
+        class="scene"
+        data-composition-id="01-claim"
+        data-composition-src="compositions/frames/01-claim.html"
+        data-start="0"
+        data-duration="2.789"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-01-claim-voice"
+        src="assets/voice/01-claim.wav"
+        data-start="0"
+        data-duration="1.939"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-02-served"
+        class="scene"
+        data-composition-id="02-served"
+        data-composition-src="compositions/frames/02-served.html"
+        data-start="2.289"
+        data-duration="5.686"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-02-served-voice"
+        src="assets/voice/02-served.wav"
+        data-start="2.289"
+        data-duration="5.386"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-03-speisekarte"
+        class="scene"
+        data-composition-id="03-speisekarte"
+        data-composition-src="compositions/frames/03-speisekarte.html"
+        data-start="7.975"
+        data-duration="4.824"
+        data-track-index="2"
+      ></div>
+      <audio
+        id="el-03-speisekarte-voice"
+        src="assets/voice/03-speisekarte.wav"
+        data-start="7.975"
+        data-duration="4.574"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-04-reservierung"
+        class="scene"
+        data-composition-id="04-reservierung"
+        data-composition-src="compositions/frames/04-reservierung.html"
+        data-start="12.799"
+        data-duration="4.116"
+        data-track-index="3"
+      ></div>
+      <audio
+        id="el-04-reservierung-voice"
+        src="assets/voice/04-reservierung.wav"
+        data-start="12.799"
+        data-duration="3.866"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-05-vorbestellung"
+        class="scene"
+        data-composition-id="05-vorbestellung"
+        data-composition-src="compositions/frames/05-vorbestellung.html"
+        data-start="16.915"
+        data-duration="2.703"
+        data-track-index="4"
+      ></div>
+      <audio
+        id="el-05-vorbestellung-voice"
+        src="assets/voice/05-vorbestellung.wav"
+        data-start="16.915"
+        data-duration="2.403"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-06-branchen"
+        class="scene"
+        data-composition-id="06-branchen"
+        data-composition-src="compositions/frames/06-branchen.html"
+        data-start="19.618"
+        data-duration="6.055"
+        data-track-index="5"
+      ></div>
+      <audio
+        id="el-06-branchen-voice"
+        src="assets/voice/06-branchen.wav"
+        data-start="19.618"
+        data-duration="5.155"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-07-tage"
+        class="scene"
+        data-composition-id="07-tage"
+        data-composition-src="compositions/frames/07-tage.html"
+        data-start="25.173"
+        data-duration="4.726"
+        data-track-index="6"
+      ></div>
+      <audio
+        id="el-07-tage-voice"
+        src="assets/voice/07-tage.wav"
+        data-start="25.173"
+        data-duration="4.376"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-08-preis"
+        class="scene"
+        data-composition-id="08-preis"
+        data-composition-src="compositions/frames/08-preis.html"
+        data-start="29.899"
+        data-duration="5.871"
+        data-track-index="7"
+      ></div>
+      <audio
+        id="el-08-preis-voice"
+        src="assets/voice/08-preis.wav"
+        data-start="29.899"
+        data-duration="5.421"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-09-cta"
+        class="scene"
+        data-composition-id="09-cta"
+        data-composition-src="compositions/frames/09-cta.html"
+        data-start="35.77"
+        data-duration="4.852"
+        data-track-index="8"
+      ></div>
+      <audio
+        id="el-09-cta-voice"
+        src="assets/voice/09-cta.wav"
+        data-start="35.77"
+        data-duration="3.552"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+      (function () {
+        var tl = window.__timelines["main"];
+        /* transitions:start */
+        tl.to("#el-06-branchen", { x: -1920, duration: 0.5, ease: "power3.inOut" }, 25.173);
+        tl.fromTo("#el-07-tage", { x: 1920, opacity: 1 }, { x: 0, duration: 0.5, ease: "power3.inOut" }, 25.173);
+        /* transitions:end */
+        /* Full-span anchor: without it the root timeline is only as long as its last tween,
+           and the renderer takes THAT as the film's length — truncating the final hold. */
+        tl.to({}, { duration: 40.622 }, 0);
+      })();
+    </script>
+  
+    <!-- wire-audio:start -->
+    <!-- music bed -->
+    <audio id="bed" class="clip" src="audio/room.mp3" data-start="0" data-duration="40.622" data-track-index="900" data-volume="0.12"></audio>
+    <!-- SFX: frame-relative cues resolved against real frame starts -->
+    <audio id="sfx-02-served-whoosh-through-loud-00" class="clip" src="audio/sfx/whoosh-through-loud.mp3" data-start="2.289" data-duration="0.650" data-track-index="910" data-volume="0.55"></audio> <!-- "Bontrivo — the O flies through the camera; the swell peaks at 0.5 as the iris completes" -->
+    <audio id="sfx-02-served-clink-c5-01" class="clip" src="audio/sfx/clink-c5.mp3" data-start="3.659" data-duration="1.200" data-track-index="911" data-volume="0.5"></audio> <!-- "Restaurant-Website — the plate is set down" -->
+    <audio id="sfx-02-served-sub-drop-02" class="clip" src="audio/sfx/sub-drop.mp3" data-start="5.109" data-duration="1.800" data-track-index="912" data-volume="0.3"></audio> <!-- "Fertig — sub under the first olive beat" -->
+    <audio id="sfx-02-served-bean-tick-03" class="clip" src="audio/sfx/bean-tick.mp3" data-start="5.129" data-duration="0.500" data-track-index="913" data-volume="0.45"></audio> <!-- "Fertig — the garnish lands in the notch" -->
+    <audio id="sfx-03-speisekarte-clink-c6-04" class="clip" src="audio/sfx/clink-c6.mp3" data-start="8.215" data-duration="0.900" data-track-index="914" data-volume="0.45"></audio> <!-- "Speisekarte — course 1" -->
+    <audio id="sfx-04-reservierung-clink-e6-05" class="clip" src="audio/sfx/clink-e6.mp3" data-start="13.119" data-duration="0.900" data-track-index="915" data-volume="0.45"></audio> <!-- "reservieren — course 2" -->
+    <audio id="sfx-05-vorbestellung-clink-g6-06" class="clip" src="audio/sfx/clink-g6.mp3" data-start="17.295" data-duration="0.900" data-track-index="916" data-volume="0.45"></audio> <!-- "bestellen — course 3" -->
+    <audio id="sfx-05-vorbestellung-swish-out-loud-07" class="clip" src="audio/sfx/swish-out-loud.mp3" data-start="19.045" data-duration="0.450" data-track-index="917" data-volume="0.45"></audio> <!-- "ab — the plate is carried off" -->
+    <audio id="sfx-06-branchen-table-slide-loud-08" class="clip" src="audio/sfx/table-slide-loud.mp3" data-start="19.618" data-duration="5.100" data-track-index="918" data-volume="0.35"></audio> <!-- "Für … Catering — one texture under the whole truck, not a tick per plate" -->
+    <audio id="sfx-07-tage-wood-tick-09" class="clip" src="audio/sfx/wood-tick.mp3" data-start="25.203" data-duration="0.250" data-track-index="919" data-volume="0.4"></audio> <!-- "Anfragen" -->
+    <audio id="sfx-07-tage-wood-tick-10" class="clip" src="audio/sfx/wood-tick.mp3" data-start="26.193" data-duration="0.250" data-track-index="920" data-volume="0.4"></audio> <!-- "Einrichten" -->
+    <audio id="sfx-07-tage-live-ding-11" class="clip" src="audio/sfx/live-ding.mp3" data-start="26.973" data-duration="0.900" data-track-index="921" data-volume="0.4"></audio> <!-- "Live — the olive step" -->
+    <audio id="sfx-08-preis-pop-soft-12" class="clip" src="audio/sfx/pop-soft.mp3" data-start="30.259" data-duration="0.180" data-track-index="922" data-volume="0.35"></audio> <!-- "inklusive — the three ticks" -->
+    <audio id="sfx-08-preis-pop-soft-13" class="clip" src="audio/sfx/pop-soft.mp3" data-start="31.359" data-duration="0.180" data-track-index="923" data-volume="0.35"></audio> <!-- "Hosting" -->
+    <audio id="sfx-08-preis-price-thunk-14" class="clip" src="audio/sfx/price-thunk.mp3" data-start="32.259" data-duration="0.500" data-track-index="924" data-volume="0.5"></audio> <!-- "Neunundzwanzig — the price lands" -->
+    <audio id="sfx-09-cta-swish-in-loud-15" class="clip" src="audio/sfx/swish-in-loud.mp3" data-start="35.770" data-duration="0.450" data-track-index="925" data-volume="0.45"></audio> <!-- "Jetzt — the plate comes back down" -->
+    <audio id="sfx-09-cta-chord-c-16" class="clip" src="audio/sfx/chord-c.mp3" data-start="37.920" data-duration="2.600" data-track-index="926" data-volume="0.45"></audio> <!-- "bontrivo — the lockup lands: the clink resolves" -->
+    <audio id="sfx-09-cta-sub-drop-17" class="clip" src="audio/sfx/sub-drop.mp3" data-start="37.920" data-duration="1.800" data-track-index="927" data-volume="0.3"></audio> <!-- "bontrivo — sub under the CTA" -->
+    <!-- wire-audio:end -->
+  
+    <!-- wire-grade:start -->
+    <div
+      id="hf-grade"
+      class="clip"
+      data-start="0"
+      data-duration="40.622"
+      data-track-index="990"
+      style="position:absolute;inset:0;z-index:9000;pointer-events:none"
+    >
+      <!-- moving grain: the noise's luminance is moved into ALPHA by the colour matrix,
+           so the plate is black speckles over transparency rather than a grey haze — which
+           is what lets it work with no blend mode. -->
+      <svg id="hf-grade-grain" width="1920" height="1080" style="position:absolute;inset:0;opacity:0.05" aria-hidden="true">
+        <filter id="hf-grade-noise" x="0" y="0" width="100%" height="100%">
+          <feTurbulence id="hf-grade-turb" type="fractalNoise" baseFrequency="0.82" numOctaves="1" seed="1" stitchTiles="stitch" />
+          <feColorMatrix type="matrix" values="0 0 0 0 0
+                                               0 0 0 0 0
+                                               0 0 0 0 0
+                                               0.34 0.34 0.34 0 0" />
+        </filter>
+        <rect width="1920" height="1080" filter="url(#hf-grade-noise)" />
+      </svg>
+    </div>
+    <script>
+      /* grade pass — appended to the root timeline the assembler built. */
+      (function () {
+        var tl = window.__timelines && window.__timelines["main"];
+        if (!tl) return;
+        var TOTAL = 40.622;
+
+        /* Grain: one driver for the whole film. seed = floor(t * 12) % 12 — a pure
+           function of the playhead, so a seek to any time reproduces the same grain field.
+           12Hz, not per-frame: re-seeding every frame reads as electronic sizzle rather
+           than film, and it defeats inter-frame compression (a 30Hz cut encoded to 85MB
+           against ~9MB ungrained). Real film grain is also held across frames at 24fps. */
+        var turb = document.getElementById("hf-grade-turb");
+        var clock = { t: 0 };
+        var lastSeed = -1;
+        tl.to(clock, {
+          t: TOTAL, duration: TOTAL, ease: "none",
+          onUpdate: function () {
+            var seed = Math.floor(clock.t * 12) % 12;
+            if (seed !== lastSeed) { lastSeed = seed; turb.setAttribute("seed", String(seed)); }
+          },
+        }, 0);
+      })();
+    </script>
+    <!-- wire-grade:end -->
+  </body>
+</html>

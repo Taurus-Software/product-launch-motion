@@ -1,0 +1,48 @@
+{
+  "_readme": [
+    "Frame-relative SFX cues, resolved against real frame starts by scripts/wire-audio.mjs.",
+    "Every cue names its word. The kit is synthesised (tools/sfx.sh), so there is no licence",
+    "to record. Dramaturgy (DIRECTION.md): one porcelain clink that recurs and climbs",
+    "C5 → C6 → E6 → G6 and resolves as a C chord on the logo; nothing else repeats more than",
+    "twice. The -loud variants were made with scripts/level-sfx.mjs (see FINDINGS.md: its",
+    "silent-head check misfires on swells, whose peak is meant to come late)."
+  ],
+  "bed": { "src": "audio/room.mp3", "volume": 0.12 },
+  "sfxDir": "audio/sfx",
+  "cues": {
+    "02-served": [
+      { "sfx": "whoosh-through-loud", "at": 0.0, "dur": 0.65, "vol": 0.55, "word": "Bontrivo — the O flies through the camera; the swell peaks at 0.5 as the iris completes" },
+      { "sfx": "clink-c5", "at": 1.37, "dur": 1.2, "vol": 0.5, "word": "Restaurant-Website — the plate is set down" },
+      { "sfx": "sub-drop", "at": 2.82, "dur": 1.8, "vol": 0.3, "word": "Fertig — sub under the first olive beat" },
+      { "sfx": "bean-tick", "at": 2.84, "dur": 0.5, "vol": 0.45, "word": "Fertig — the garnish lands in the notch" }
+    ],
+    "03-speisekarte": [
+      { "sfx": "clink-c6", "at": 0.24, "dur": 0.9, "vol": 0.45, "word": "Speisekarte — course 1" }
+    ],
+    "04-reservierung": [
+      { "sfx": "clink-e6", "at": 0.32, "dur": 0.9, "vol": 0.45, "word": "reservieren — course 2" }
+    ],
+    "05-vorbestellung": [
+      { "sfx": "clink-g6", "at": 0.38, "dur": 0.9, "vol": 0.45, "word": "bestellen — course 3" },
+      { "sfx": "swish-out-loud", "at": 2.13, "dur": 0.45, "vol": 0.45, "word": "ab — the plate is carried off" }
+    ],
+    "06-branchen": [
+      { "sfx": "table-slide-loud", "at": 0.0, "dur": 5.1, "vol": 0.35, "word": "Für … Catering — one texture under the whole truck, not a tick per plate" }
+    ],
+    "07-tage": [
+      { "sfx": "wood-tick", "at": 0.03, "dur": 0.25, "vol": 0.4, "word": "Anfragen" },
+      { "sfx": "wood-tick", "at": 1.02, "dur": 0.25, "vol": 0.4, "word": "Einrichten" },
+      { "sfx": "live-ding", "at": 1.8, "dur": 0.9, "vol": 0.4, "word": "Live — the olive step" }
+    ],
+    "08-preis": [
+      { "sfx": "pop-soft", "at": 0.36, "dur": 0.18, "vol": 0.35, "word": "inklusive — the three ticks" },
+      { "sfx": "pop-soft", "at": 1.46, "dur": 0.18, "vol": 0.35, "word": "Hosting" },
+      { "sfx": "price-thunk", "at": 2.36, "dur": 0.5, "vol": 0.5, "word": "Neunundzwanzig — the price lands" }
+    ],
+    "09-cta": [
+      { "sfx": "swish-in-loud", "at": 0.0, "dur": 0.45, "vol": 0.45, "word": "Jetzt — the plate comes back down" },
+      { "sfx": "chord-c", "at": 2.15, "dur": 2.6, "vol": 0.45, "word": "bontrivo — the lockup lands: the clink resolves" },
+      { "sfx": "sub-drop", "at": 2.15, "dur": 1.8, "vol": 0.3, "word": "bontrivo — sub under the CTA" }
+    ]
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "_readme": [
+    "Single source of truth for the narration. `text` is what is said and captioned, exactly as",
+    "it should read on screen. `tts` is what the voice is fed: identical words, but loanwords",
+    "espeak mispronounces are given as raw IPA in [[ ]] (punctuation inside the block, or the",
+    "pause is lost). `words` lists the displayed word for each spoken word group, in order —",
+    "tools/vo.py refuses to write timings if the voice produced a different number of words."
+  ],
+  "voice": "de_DE-thorsten-high",
+  "syn": {
+    "length_scale": 1.04,
+    "noise_scale": 0.6,
+    "noise_w_scale": 0.7
+  },
+  "sentence_gap": 0.22,
+  "frames": [
+    {
+      "id": "01-claim",
+      "text": "Websites, die Appetit machen.",
+      "tts": "[[vˈɛpsaɪts,]] die Appetit machen.",
+      "words": [
+        "Websites,",
+        "die",
+        "Appetit",
+        "machen."
+      ]
+    },
+    {
+      "id": "02-served",
+      "text": "Mit Bontrivo: Ihre Restaurant-Website. Fertig eingerichtet, ohne technisches Vorwissen.",
+      "tts": "Mit [[bˈɔntriːvoː:]] Ihre Restaurant-Website. Fertig eingerichtet, ohne technisches Vorwissen.",
+      "words": [
+        "Mit",
+        "Bontrivo:",
+        "Ihre",
+        "Restaurant-Website.",
+        "Fertig",
+        "eingerichtet,",
+        "ohne",
+        "technisches",
+        "Vorwissen."
+      ]
+    },
+    {
+      "id": "03-speisekarte",
+      "text": "Mit Speisekarte. Gerichte und Preise, jederzeit selbst aktualisiert.",
+      "tts": "Mit Speisekarte. Gerichte und Preise, jederzeit selbst aktualisiert.",
+      "words": [
+        "Mit",
+        "Speisekarte.",
+        "Gerichte",
+        "und",
+        "Preise,",
+        "jederzeit",
+        "selbst",
+        "aktualisiert."
+      ]
+    },
+    {
+      "id": "04-reservierung",
+      "text": "Gäste reservieren direkt über Ihre Website. Ohne Umweg über Drittportale.",
+      "tts": "Gäste reservieren direkt über Ihre [[vˈɛpsaɪt.]] Ohne Umweg über Drittportale.",
+      "words": [
+        "Gäste",
+        "reservieren",
+        "direkt",
+        "über",
+        "Ihre",
+        "Website.",
+        "Ohne",
+        "Umweg",
+        "über",
+        "Drittportale."
+      ]
+    },
+    {
+      "id": "05-vorbestellung",
+      "text": "Oder bestellen vor, und holen pünktlich ab.",
+      "tts": "Oder bestellen vor, und holen pünktlich ab.",
+      "words": [
+        "Oder",
+        "bestellen",
+        "vor,",
+        "und",
+        "holen",
+        "pünktlich",
+        "ab."
+      ]
+    },
+    {
+      "id": "06-branchen",
+      "text": "Für Restaurants, Bistros, Bars, Hotels, Cafés, Biergärten und Catering.",
+      "tts": "Für Restaurants, Bistros, Bars, [[hotˈɛls,]] [[kafˈeːs,]] Biergärten und [[kˈeːtəɾɪŋ.]]",
+      "words": [
+        "Für",
+        "Restaurants,",
+        "Bistros,",
+        "Bars,",
+        "Hotels,",
+        "Cafés,",
+        "Biergärten",
+        "und",
+        "Catering."
+      ]
+    },
+    {
+      "id": "07-tage",
+      "text": "Anfragen. Einrichten. Live gehen. Tage, nicht Monate.",
+      "tts": "Anfragen. Einrichten. [[lˈaɪf]] gehen. Tage, nicht Monate.",
+      "words": [
+        "Anfragen.",
+        "Einrichten.",
+        "Live",
+        "gehen.",
+        "Tage,",
+        "nicht",
+        "Monate."
+      ]
+    },
+    {
+      "id": "08-preis",
+      "text": "Alles inklusive, auch das Hosting. Neunundzwanzig Euro im Monat, bei jährlicher Zahlung.",
+      "tts": "Alles inklusive, auch das Hosting. Neunundzwanzig Euro im Monat, bei jährlicher Zahlung.",
+      "words": [
+        "Alles",
+        "inklusive,",
+        "auch",
+        "das",
+        "Hosting.",
+        "29,00 €",
+        "Euro",
+        "im",
+        "Monat,",
+        "bei",
+        "jährlicher",
+        "Zahlung."
+      ]
+    },
+    {
+      "id": "09-cta",
+      "text": "Jetzt Website anfragen. Auf bontrivo.de.",
+      "tts": "Jetzt Website anfragen. Auf [[bˈɔntriːvoː]] Punkt D E.",
+      "words": [
+        "Jetzt",
+        "Website",
+        "anfragen.",
+        "Auf",
+        "bontrivo",
+        ".",
+        "d",
+        "e."
+      ]
+    }
+  ]
+}

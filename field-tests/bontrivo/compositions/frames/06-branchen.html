@@ -1,0 +1,118 @@
+<!--
+  06-branchen: the long table. One of the film's two camera moves: a truck along a table
+  laid for seven, each place setting crossing frame centre exactly as its name is spoken.
+
+  The plates are placed BY the camera curve, not on a grid: the camera trucks at a constant
+  v = 560 px/s until the last name (4.55), then decelerates to rest over 0.5s (a power2.out
+  tail whose start velocity is also 560 px/s, so there is no seam). A plate whose name
+  starts at t_i therefore sits at world x_i = 1100 + 560 · t_i, and the spacing between
+  settings follows the rhythm of the speech instead of a metronome (references/04: "speech
+  is uneven and the reveals must be too").
+
+    t_i  0.19   0.94   1.67   2.26   3.12   3.89   4.55
+    x_i  1206.4 1626.4 2035.2 2365.6 2847.2 3278.4 3648.0     (min spacing 330 > disc 240)
+  Lock point 1100, not 960 (v2): every setting crosses x = 1100 on its word, and the 140px
+  tail then brings the last one (Catering) to rest at exactly frame centre.
+
+  Icons are the site's own Anwendungsfälle icons (btv.js), one per Branche, in site order.
+-->
+<template>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="compositions/lib/btv-brand.js"></script>
+  <script src="compositions/lib/btv.js"></script>
+  <style>
+    @font-face {
+      font-family: "Montserrat";
+      src: url("assets/fonts/montserrat-variable-latin.woff2") format("woff2-variations");
+      font-weight: 100 900;
+      font-display: block;
+    }
+    #root {
+      position: relative; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "Montserrat", sans-serif; -webkit-font-smoothing: antialiased; color: #20201e;
+    }
+    .f06-ground {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 70% at 22% 12%, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 60%),
+        #fff4e7;
+    }
+    #f06-world { position: absolute; left: 0; top: 0; width: 4800px; height: 1080px; will-change: transform; }
+    .f06-runner {
+      position: absolute; left: -400px; top: 340px; width: 5400px; height: 390px;
+      background: #f6e8d6; border-top: 2px solid #e4d9c8; border-bottom: 2px solid #e4d9c8;
+    }
+    .f06-set { position: absolute; top: 380px; width: 360px; margin-left: -180px; }
+    .f06-disc {
+      position: relative; width: 240px; height: 240px; margin: 0 auto; border-radius: 50%;
+      background: #fffdf8; box-shadow: 0 14px 22px rgba(32, 32, 30, 0.14);
+    }
+    .f06-disc::after {
+      content: ""; position: absolute; inset: 22px; border-radius: 50%; border: 2px solid #efe3d2;
+    }
+    .f06-ico { position: absolute; left: 68px; top: 68px; width: 104px; height: 104px; transform-origin: 50% 50%; opacity: 0; }
+    .f06-label {
+      margin-top: 30px; text-align: center; font-size: 34px; font-weight: 900; letter-spacing: 0.005em;
+      text-transform: uppercase; white-space: nowrap; opacity: 0;
+    }
+    .f06-eyebrow {
+      position: absolute; left: 150px; top: 214px; font-size: 26px; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: #85817a; white-space: nowrap; opacity: 0;
+    }
+  </style>
+
+  <div id="root" data-composition-id="06-branchen" data-width="1920" data-height="1080" data-duration="6.055">
+    <div id="f06-ground-clip" class="clip f06-ground" data-start="0" data-duration="6.055" data-track-index="0"></div>
+    <div id="f06-layer-1" class="clip" data-start="0" data-duration="6.055" data-track-index="1" style="position:absolute;inset:0">
+      <div id="f06-world" data-layout-allow-overflow>
+        <div class="f06-runner"></div>
+      </div>
+      <div class="f06-eyebrow" id="f06-eyebrow">Für jede Art von Gastronomie</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      /* VO: "Für Restaurants, Bistros, Bars, Hotels, Cafés, Biergärten und Catering."
+         "Für"@0.02  "Restaurants,"@0.19  "Bistros,"@0.94  "Bars,"@1.67  "Hotels,"@2.26
+         "Cafés,"@3.12  "Biergärten"@3.89  "und"@4.35  "Catering."@4.55
+         duration 5.155s · hold 5.555 · push → 07 (continues the truck's direction) */
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      var B = window.BTV;
+      var V = 560, T_LAST = 4.55, TAIL = 0.5, LOCK = 1100;
+      var SETS = [
+        ["Restaurants", "cutlery", 0.19], ["Bistros", "bistro", 0.94], ["Bars", "bar", 1.67],
+        ["Hotels", "hotel", 2.26], ["Cafés", "cafe", 3.12], ["Biergärten", "beer", 3.89],
+        ["Catering", "cloche", 4.55]
+      ];
+      var world = document.getElementById("f06-world");
+      SETS.forEach(function (s, i) {
+        var set = document.createElement("div");
+        set.className = "f06-set";
+        set.style.left = (LOCK + V * s[2]).toFixed(1) + "px";
+        set.innerHTML = '<div class="f06-disc"><div class="f06-ico" id="f06-ico-' + i + '">' +
+          B.icon(s[1], 104, "#20201E", 1.6) + '</div></div><div class="f06-label" id="f06-lab-' + i + '">' + s[0] + "</div>";
+        world.appendChild(set);
+      });
+
+      // the truck: constant velocity, then a tail that starts at the same velocity
+      // (power2.out over 0.5s starts at 2·Δ/0.5 = 560 px/s with Δ = 140)
+      tl.fromTo(world, { x: 0 }, { x: -V * T_LAST, duration: T_LAST, ease: "none" }, 0);
+      tl.to(world, { x: -V * T_LAST - V * TAIL / 2, duration: TAIL, ease: "power2.out" }, T_LAST + 0.01);
+
+      // "Für"@0.02
+      B.arrive(tl, "#f06-eyebrow", 0.02, { y: 10, dur: 0.28 });
+
+      // each setting is served its icon, and named, on its word
+      SETS.forEach(function (s, i) {
+        B.drop(tl, "#f06-ico-" + i, s[2] + 0.02, { from: 1.45, dur: Math.min(0.26, s[2] + 0.02), shadow: false });
+        B.arrive(tl, "#f06-lab-" + i, s[2], { y: 12, dur: 0.26 });
+      });
+
+      // 5.06 → 6.055 at rest; the push to 07 starts at 5.555 and runs on the index.
+      tl.to({}, { duration: 6.055 }, 0);
+      window.__timelines["06-branchen"] = tl;
+    })();
+  </script>
+</template>

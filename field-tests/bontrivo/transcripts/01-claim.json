@@ -1,0 +1,38 @@
+{
+  "duration": 1.9389,
+  "source": "piper alignment (de_DE-thorsten-high), sample-exact",
+  "asr_check": {
+    "score": 1.0,
+    "heard": "Websites, die Appetit machen."
+  },
+  "segments": [
+    {
+      "words": [
+        {
+          "word": "Websites,",
+          "start": 0.058,
+          "end": 0.7546,
+          "phonemes": "vˈɛpsaɪts,"
+        },
+        {
+          "word": "die",
+          "start": 0.9985,
+          "end": 1.1029,
+          "phonemes": "diː"
+        },
+        {
+          "word": "Appetit",
+          "start": 1.1262,
+          "end": 1.4977,
+          "phonemes": "ˌapeːtˈɪt"
+        },
+        {
+          "word": "machen.",
+          "start": 1.5441,
+          "end": 1.846,
+          "phonemes": "mˈaxən."
+        }
+      ]
+    }
+  ]
+}
