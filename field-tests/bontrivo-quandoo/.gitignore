@@ -1,0 +1,5 @@
+# generated or derivable (see README.md); renders/, snapshots/, node_modules/ are ignored at the repo root
+vertical/
+tools/.trace/
+tools/__pycache__/
+deliverables/*-silent.mp4

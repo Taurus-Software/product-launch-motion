@@ -1,0 +1,92 @@
+{
+  "duration": 5.4064,
+  "source": "piper alignment (de_DE-thorsten-high), sample-exact",
+  "asr_check": {
+    "score": 1.0,
+    "heard": "auf ihrer eigenen Website auf Wunsch unter ihrer Domain, mit Speisekarte und Google Profil."
+  },
+  "segments": [
+    {
+      "words": [
+        {
+          "word": "Auf",
+          "start": 0.0813,
+          "end": 0.1974,
+          "phonemes": "aʊf"
+        },
+        {
+          "word": "Ihrer",
+          "start": 0.2206,
+          "end": 0.4644,
+          "phonemes": "ˌiːrɜ"
+        },
+        {
+          "word": "eigenen",
+          "start": 0.5108,
+          "end": 0.8707,
+          "phonemes": "ˈaɪɡənən"
+        },
+        {
+          "word": "Website,",
+          "start": 0.894,
+          "end": 1.4396,
+          "phonemes": "vˈɛpsaɪt,"
+        },
+        {
+          "word": "auf",
+          "start": 1.579,
+          "end": 1.6834,
+          "phonemes": "aʊf"
+        },
+        {
+          "word": "Wunsch",
+          "start": 1.7531,
+          "end": 2.0666,
+          "phonemes": "vˈʊnʃ"
+        },
+        {
+          "word": "unter",
+          "start": 2.1362,
+          "end": 2.3452,
+          "phonemes": "ˌʊntɜ"
+        },
+        {
+          "word": "Ihrer",
+          "start": 2.3684,
+          "end": 2.589,
+          "phonemes": "ˌiːrɜ"
+        },
+        {
+          "word": "Domain.",
+          "start": 2.6355,
+          "end": 3.0534,
+          "phonemes": "dˈoːmaɪn."
+        },
+        {
+          "word": "Mit",
+          "start": 3.456,
+          "end": 3.5721,
+          "phonemes": "mɪt"
+        },
+        {
+          "word": "Speisekarte",
+          "start": 3.6301,
+          "end": 4.3732,
+          "phonemes": "ʃpˈaɪzeːkˌaɾtə"
+        },
+        {
+          "word": "und",
+          "start": 4.4196,
+          "end": 4.5705,
+          "phonemes": "ʊnt"
+        },
+        {
+          "word": "Google-Profil.",
+          "start": 4.6054,
+          "end": 5.2903,
+          "phonemes": "ɡˈuːɡəlproːfˈiːl."
+        }
+      ]
+    }
+  ]
+}

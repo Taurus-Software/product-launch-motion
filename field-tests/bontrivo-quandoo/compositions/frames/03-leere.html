@@ -1,0 +1,99 @@
+<!--
+  03-leere: pushed in from the right (the journey continues). The three places where the
+  portal's link lived, each with its own reservation line, and every line runs out into
+  nothing: a gradient to transparent, no endpoint. Then the sentence that names it.
+  Each row arrives on its place word; its line is drawn out of the label right after.
+
+  Stage constants (shared with 04, hard cut):
+    rows y = 440 / 620 / 800 (v2: +60, v1 sat 60 px above centre) · labels 44/700 at x = 150 (vertically centred on the row)
+    lines from x = 600, solid to 860, then fading to nothing at 1060
+    (one path per row, gradient in user space 860 → 1060; 04 splits it at 860 into a solid
+    and a faded path that look identical, so the cut is invisible)
+    headline 92/900 at x = 1130, tops 522 / 614 ("ALLES LÄUFT" = 665 px → ends at 1795)
+-->
+<template>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="compositions/lib/btv-brand.js"></script>
+  <script src="compositions/lib/btv.js"></script>
+  <style>
+    @font-face {
+      font-family: "Montserrat";
+      src: url("assets/fonts/montserrat-variable-latin.woff2") format("woff2-variations");
+      font-weight: 100 900;
+      font-display: block;
+    }
+    #root {
+      position: relative; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "Montserrat", sans-serif; -webkit-font-smoothing: antialiased; color: #fff4e7;
+    }
+    .f03-ground { position: absolute; inset: 0; background: #20201e; }
+    .f03-eyebrow {
+      position: absolute; left: 152px; top: 256px; font-size: 26px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; color: #a69f97; white-space: nowrap; opacity: 0;
+    }
+    .f03-row { position: absolute; left: 150px; font-size: 44px; line-height: 54px; font-weight: 700; white-space: nowrap; opacity: 0; }
+    #f03-r1 { top: 413px; }
+    #f03-r2 { top: 593px; }
+    #f03-r3 { top: 773px; }
+    .f03-svg { position: absolute; left: 0; top: 0; }
+    .f03-mask { position: absolute; left: 1130px; height: 112px; overflow: hidden; white-space: nowrap; }
+    .f03-mask span { display: inline-block; font-size: 92px; line-height: 104px; font-weight: 900; letter-spacing: 0.005em; }
+    #f03-h1 { top: 516px; }
+    #f03-h2 { top: 608px; }
+  </style>
+
+  <div id="root" data-composition-id="03-leere" data-width="1920" data-height="1080" data-duration="5.918">
+    <div class="clip f03-ground" id="f03-ground" data-start="0" data-duration="5.918" data-track-index="0"></div>
+    <div id="f03-layer-1" class="clip" data-start="0" data-duration="5.918" data-track-index="1" style="position:absolute;inset:0">
+      <div class="f03-eyebrow" id="f03-eyebrow">Was wegfällt</div>
+      <div class="f03-row" id="f03-r1">Website-Widget</div>
+      <div class="f03-row" id="f03-r2">Google-Profil</div>
+      <div class="f03-row" id="f03-r3">Instagram</div>
+      <svg class="f03-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+        <defs>
+          <linearGradient id="f03-fade" gradientUnits="userSpaceOnUse" x1="860" y1="0" x2="1060" y2="0">
+            <stop offset="0" stop-color="#e65f3c" stop-opacity="1"/>
+            <stop offset="1" stop-color="#e65f3c" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path id="f03-l1" d="M600 440 H1060" fill="none" stroke="url(#f03-fade)" stroke-width="10" stroke-linecap="butt"/>
+        <path id="f03-l2" d="M600 620 H1060" fill="none" stroke="url(#f03-fade)" stroke-width="10" stroke-linecap="butt"/>
+        <path id="f03-l3" d="M600 800 H1060" fill="none" stroke="url(#f03-fade)" stroke-width="10" stroke-linecap="butt"/>
+      </svg>
+      <div class="f03-mask" id="f03-h1"><span id="f03-w1">ALLES LÄUFT</span></div>
+      <div class="f03-mask" id="f03-h2"><span id="f03-w2">INS LEERE.</span></div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      /* VO: "Das Widget auf Ihrer Website, der Link im Google-Profil, bei Instagram: Alles läuft ins Leere."
+         "Das"@0.15  "Widget"@0.34  "auf"@0.67  "Ihrer"@0.78  "Website,"@0.95  "der"@1.71
+         "Link"@1.83  "im"@2.09  "Google-Profil,"@2.22  "bei"@3.18  "Instagram:"@3.34
+         "Alles"@4.23  "läuft"@4.54  "ins"@4.90  "Leere."@5.04
+         duration 5.468s · hold 5.918 · hard cut to 04. Pushed in from 02 over 0 → 0.5. */
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      var B = window.BTV;
+      var rows = [["#f03-r1", "f03-l1", 0.34], ["#f03-r2", "f03-l2", 1.83], ["#f03-r3", "f03-l3", 3.34]];
+
+      B.arrive(tl, "#f03-eyebrow", 0.15, { y: 10, dur: 0.28 });
+
+      // each place on its word ("Widget", "Link", "Instagram"), its line drawn out of it,
+      // decelerating into the fade so the line seems to run on into the dark
+      rows.forEach(function (r) {
+        var path = document.getElementById(r[1]);
+        B.prime(path, 0);
+        B.arrive(tl, r[0], r[2], { x: -14, y: 0, dur: 0.3 });
+        B.draw(tl, path, r[2] + 0.12, 0.5, { ease: "power1.out" });
+      });
+
+      // "Alles"@4.23 … "ins"@4.90: the sentence, beside the middle row's dead end
+      B.rise(tl, "#f03-w1", 4.23);
+      B.rise(tl, "#f03-w2", 4.90);
+
+      tl.to({}, { duration: 5.918 }, 0);
+      window.__timelines["03-leere"] = tl;
+    })();
+  </script>
+</template>

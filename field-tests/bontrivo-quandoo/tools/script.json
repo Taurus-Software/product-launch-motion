@@ -1,0 +1,66 @@
+{
+  "_readme": [
+    "Narration for film 2. `text` = what is shown/captioned; `tts` = what the voice is fed",
+    "(numbers spelled as said, loanwords as raw IPA in [[ ]], punctuation inside the block);",
+    "`words` = the displayed word for each spoken word group (tools/vo.py checks the count)."
+  ],
+  "voice": "de_DE-thorsten-high",
+  "syn": { "length_scale": 1.04, "noise_scale": 0.6, "noise_w_scale": 0.7 },
+  "sentence_gap": 0.24,
+  "frames": [
+    {
+      "id": "01-bruch",
+      "text": "Seit dem 1. Oktober laufen keine Reservierungen mehr über Quandoo.",
+      "tts": "Seit dem ersten Oktober laufen keine Reservierungen mehr über Quandoo.",
+      "words": ["Seit", "dem", "1.", "Oktober", "laufen", "keine", "Reservierungen", "mehr", "über", "Quandoo."]
+    },
+    {
+      "id": "02-export",
+      "text": "Ihre Daten exportieren Sie nur noch bis zum 31. Dezember.",
+      "tts": "Ihre Daten exportieren Sie nur noch bis zum einunddreißigsten Dezember.",
+      "words": ["Ihre", "Daten", "exportieren", "Sie", "nur", "noch", "bis", "zum", "31.", "Dezember."]
+    },
+    {
+      "id": "03-leere",
+      "text": "Das Widget auf Ihrer Website, der Link im Google-Profil, bei Instagram: Alles läuft ins Leere.",
+      "tts": "Das [[vˈɪdʒət]] auf Ihrer [[vˈɛpsaɪt,]] der Link im Google-Profil, bei Instagram: Alles läuft ins Leere.",
+      "words": ["Das", "Widget", "auf", "Ihrer", "Website,", "der", "Link", "im", "Google-Profil,", "bei", "Instagram:", "Alles", "läuft", "ins", "Leere."]
+    },
+    {
+      "id": "04-portal",
+      "text": "Einfach das nächste Portal? Dann bleibt die Abhängigkeit.",
+      "tts": "Einfach das nächste Portal? Dann bleibt die Abhängigkeit.",
+      "words": ["Einfach", "das", "nächste", "Portal?", "Dann", "bleibt", "die", "Abhängigkeit."]
+    },
+    {
+      "id": "05-direkt",
+      "text": "Reservierungen ab jetzt direkt bei Ihnen.",
+      "tts": "Reservierungen ab jetzt direkt bei Ihnen.",
+      "words": ["Reservierungen", "ab", "jetzt", "direkt", "bei", "Ihnen."]
+    },
+    {
+      "id": "06-eigen",
+      "text": "Auf Ihrer eigenen Website, auf Wunsch unter Ihrer Domain. Mit Speisekarte und Google-Profil.",
+      "tts": "Auf Ihrer eigenen [[vˈɛpsaɪt,]] auf Wunsch unter Ihrer Domain. Mit Speisekarte und Google-Profil.",
+      "words": ["Auf", "Ihrer", "eigenen", "Website,", "auf", "Wunsch", "unter", "Ihrer", "Domain.", "Mit", "Speisekarte", "und", "Google-Profil."]
+    },
+    {
+      "id": "07-preis",
+      "text": "Ein fester Preis statt Gebühren pro Gast. Neunundzwanzig Euro im Monat, bei jährlicher Zahlung.",
+      "tts": "Ein fester Preis statt Gebühren pro Gast. Neunundzwanzig Euro im Monat, bei jährlicher Zahlung.",
+      "words": ["Ein", "fester", "Preis", "statt", "Gebühren", "pro", "Gast.", "29,00 €", "Euro", "im", "Monat,", "bei", "jährlicher", "Zahlung."]
+    },
+    {
+      "id": "08-hamburg",
+      "text": "Und ein Team aus Hamburg hilft beim Umstieg.",
+      "tts": "Und ein Team aus Hamburg hilft beim Umstieg.",
+      "words": ["Und", "ein", "Team", "aus", "Hamburg", "hilft", "beim", "Umstieg."]
+    },
+    {
+      "id": "09-wechseln",
+      "text": "Jetzt wechseln. Auf bontrivo.de.",
+      "tts": "Jetzt wechseln. Auf [[bˈɔntriːvoː]] Punkt D E.",
+      "words": ["Jetzt", "wechseln.", "Auf", "bontrivo", ".", "d", "e."]
+    }
+  ]
+}

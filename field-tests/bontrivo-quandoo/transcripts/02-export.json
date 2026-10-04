@@ -1,0 +1,74 @@
+{
+  "duration": 3.541,
+  "source": "piper alignment (de_DE-thorsten-high), sample-exact",
+  "asr_check": {
+    "score": 1.0,
+    "heard": "Ihre Daten exportieren sie nur noch bis zum 31. Dezember."
+  },
+  "segments": [
+    {
+      "words": [
+        {
+          "word": "Ihre",
+          "start": 0.058,
+          "end": 0.2322,
+          "phonemes": "ˌiːrə"
+        },
+        {
+          "word": "Daten",
+          "start": 0.2902,
+          "end": 0.5921,
+          "phonemes": "dˈɑːtən"
+        },
+        {
+          "word": "exportieren",
+          "start": 0.6269,
+          "end": 1.2655,
+          "phonemes": "ˌɛkspɔɾtˈiːrən"
+        },
+        {
+          "word": "Sie",
+          "start": 1.2887,
+          "end": 1.37,
+          "phonemes": "ziː"
+        },
+        {
+          "word": "nur",
+          "start": 1.3932,
+          "end": 1.5441,
+          "phonemes": "nˈuːɾ"
+        },
+        {
+          "word": "noch",
+          "start": 1.5673,
+          "end": 1.7067,
+          "phonemes": "nɔx"
+        },
+        {
+          "word": "bis",
+          "start": 1.7879,
+          "end": 1.904,
+          "phonemes": "bɪs"
+        },
+        {
+          "word": "zum",
+          "start": 1.9505,
+          "end": 2.0782,
+          "phonemes": "tsʊm"
+        },
+        {
+          "word": "31.",
+          "start": 2.1246,
+          "end": 2.8909,
+          "phonemes": "ˈaɪnˌʊndrˌaɪsɪçstən"
+        },
+        {
+          "word": "Dezember.",
+          "start": 2.9141,
+          "end": 3.4017,
+          "phonemes": "deːtsˈɛmbɜ."
+        }
+      ]
+    }
+  ]
+}

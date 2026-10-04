@@ -1,0 +1,56 @@
+{
+  "duration": 2.8174,
+  "source": "piper alignment (de_DE-thorsten-high), sample-exact",
+  "asr_check": {
+    "score": 1.5,
+    "heard": "Jetzt wechseln auf bontrivo.de"
+  },
+  "segments": [
+    {
+      "words": [
+        {
+          "word": "Jetzt",
+          "start": 0.0697,
+          "end": 0.2786,
+          "phonemes": "jˌɛtst"
+        },
+        {
+          "word": "wechseln.",
+          "start": 0.3251,
+          "end": 0.7198,
+          "phonemes": "vˈɛksəln."
+        },
+        {
+          "word": "Auf",
+          "start": 1.192,
+          "end": 1.4474,
+          "phonemes": "ˈaʊf"
+        },
+        {
+          "word": "bontrivo",
+          "start": 1.4707,
+          "end": 1.9583,
+          "phonemes": "bˈɔntriːvoː"
+        },
+        {
+          "word": ".",
+          "start": 2.0047,
+          "end": 2.2485,
+          "phonemes": "pˈʊŋkt"
+        },
+        {
+          "word": "d",
+          "start": 2.295,
+          "end": 2.4459,
+          "phonemes": "dˈeː"
+        },
+        {
+          "word": "e.",
+          "start": 2.4923,
+          "end": 2.6317,
+          "phonemes": "ˈeː."
+        }
+      ]
+    }
+  ]
+}

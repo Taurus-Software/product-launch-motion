@@ -22,6 +22,13 @@
 #      A -1.0 dBFS ceiling measured -0.9 dBTP on the delivered file, which misses the
 #      definition of done (true peak <= -1 dBTP). The ceiling sits 0.5 dB lower to leave
 #      room for the codec.
+#   6. linear=true is only a REQUEST: loudnorm goes linear only if the measured peak plus
+#      the gain stays under TP (and the LRA under LRA); otherwise it silently falls back to
+#      its dynamic mode, which on a sparse, voice-led mix lands short of the target and
+#      squeezes the LRA. A film with long quiet stretches measured -15.9 LUFS / -1.45 dBTP
+#      raw, needed +1.9 dB, and was delivered at -14.9 LUFS (LRA 4.0 -> 2.6). So the script
+#      checks first: linear possible -> loudnorm as before; not possible -> it applies the
+#      one gain itself and the limiter takes the few transients above the ceiling.
 #
 # usage:
 #   ./scripts/master.sh renders/video-v1-raw.mp4 renders/video-v1.mp4 [target_lufs]
@@ -79,10 +86,27 @@ EOF
 
 echo "   measured  I ${M_I} LUFS · TP ${M_TP} dBTP · LRA ${M_LRA} · thresh ${M_THRESH}"
 
+# Would loudnorm really stay linear? af_loudnorm only goes linear if measured_TP + gain
+# <= TP and measured_LRA <= LRA; otherwise it switches to dynamic mode without a word (6).
+# (The "--" before the values: they are negative, and node would read them as options.)
+read -r GAIN PEAK MODE <<EOF
+$(node -e '
+const [t, i, tp, lra, ttp, tlra] = process.argv.slice(1).map(Number);
+const g = t - i;
+const ok = tp + g <= ttp && lra <= tlra;
+process.stdout.write([g.toFixed(2), (tp + g).toFixed(2), ok ? "linear" : "gain+limit"].join(" "));
+' -- "$TARGET" "$M_I" "$M_TP" "$M_LRA" "$TP" "$LRA")
+EOF
+echo "   mode      ${MODE} · gain ${GAIN} dB · peak after gain ${PEAK} dBTP"
+
 # Keep the whole filter chain in ONE double-quoted string. Splitting or re-quoting it is
 # how you get: Unable to parse "measured_I".
-AF="loudnorm=I=${TARGET}:TP=${TP}:LRA=${LRA}:linear=true"
-AF="${AF}:measured_I=${M_I}:measured_TP=${M_TP}:measured_LRA=${M_LRA}:measured_thresh=${M_THRESH}"
+if [[ "$MODE" == "linear" ]]; then
+  AF="loudnorm=I=${TARGET}:TP=${TP}:LRA=${LRA}:linear=true"
+  AF="${AF}:measured_I=${M_I}:measured_TP=${M_TP}:measured_LRA=${M_LRA}:measured_thresh=${M_THRESH}"
+else
+  AF="volume=${GAIN}dB"
+fi
 AF="${AF},alimiter=limit=${LIMIT}:level=disabled:attack=5:release=50"
 
 echo "── pass 2 · correcting, limiting and re-encoding → $OUT"

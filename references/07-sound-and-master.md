@@ -14,7 +14,7 @@ decibel to the mix. This document is mostly about proving things.
 - [Levelling an asset](#levelling-an-asset)
 - [Sub-bass and silence](#sub-bass-and-silence)
 - [Mastering](#mastering)
-- [The two mastering traps](#the-two-mastering-traps)
+- [The three mastering traps](#the-three-mastering-traps)
 - [Verification](#verification)
 - [Licensing](#licensing)
 
@@ -169,7 +169,7 @@ with no visible loss (`references/06-look-and-grade.md` has the grain side of th
 `scripts/master.sh` runs both passes, fills the measured values in automatically, and
 prints the verification readout.
 
-## The two mastering traps
+## The three mastering traps
 
 **1 · `loudnorm`'s `linear=true` does not back off for a new transient.** It computes one
 gain for the whole file from the pass-1 measurements. Add one louder cue after measuring —
@@ -182,7 +182,16 @@ the louder keystrokes pushed the master to **+1.1 dBFS**: clipped. A limiter aft
 limiter to fix trap 1 produced **−13.0 LUFS / −0.0 dBFS** — louder than the target the
 limiter was added to protect. Pass `level=disabled`.
 
-A third, smaller one worth knowing if you script this in zsh: quoting the filter chain
+**3 · `linear=true` is only a request.** `loudnorm` goes linear only if the measured peak
+plus the gain stays under `TP` (and the LRA under `LRA`); otherwise it switches to its
+dynamic mode without a word. On a sparse, voice-led film that lands short and squeezes the
+dynamics: a field test measured −15.9 LUFS / −1.45 dBTP raw, needed +1.9 dB, and was
+delivered at **−14.9 LUFS** with the LRA cut from 4.0 to 2.6. `scripts/master.sh` now
+predicts the mode from the pass-1 numbers and, when linear is impossible, applies the one
+gain with `volume=` and lets the limiter take the few transients above the ceiling
+(delivered −14.1 LUFS / −1.3 dBTP). It prints which path it took.
+
+A fourth, smaller one worth knowing if you script this in zsh: quoting the filter chain
 carelessly can mangle it. Keep the whole `-af` argument in one double-quoted string, or
 build it in a variable, and echo it before running if a parse error appears.
 

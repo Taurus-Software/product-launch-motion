@@ -1,0 +1,114 @@
+<!--
+  07-preis: pushed in. The price as a diagram, not a comparison chart: on the right the
+  reservation line runs flat (a fixed price), the price sits on it; on the left the portal
+  model, a fee per guest: six guests, each with a coin. No euro figure on the left (none is
+  supplied; BRIEF), no axis, no crossing point, so nothing implies a break-even claim.
+  When the price lands, the left side steps back.
+  29,00 € appears with its billing condition and the yearly total (BRIEF: 348,00 € always
+  beside 29,00 €).
+
+  Layout: left column x = 150 (guests 84 px every 132 px, coins 52 px above them; v1 had
+  56/40 px, which read as decoration, not as six people), right
+  column x = 1050. The flat line runs at y = 600 from 1050 to beyond the right edge, so it
+  continues straight into 08's line across the push.
+-->
+<template>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="compositions/lib/btv-brand.js"></script>
+  <script src="compositions/lib/btv.js"></script>
+  <style>
+    @font-face {
+      font-family: "Montserrat";
+      src: url("assets/fonts/montserrat-variable-latin.woff2") format("woff2-variations");
+      font-weight: 100 900;
+      font-display: block;
+    }
+    #root {
+      position: relative; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "Montserrat", sans-serif; -webkit-font-smoothing: antialiased; color: #20201e;
+    }
+    .f07-ground { position: absolute; inset: 0; background: #fff4e7; }
+    .f07-eyebrow {
+      position: absolute; top: 330px; font-size: 26px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; color: #85817a; white-space: nowrap; opacity: 0;
+    }
+    #f07-left { position: absolute; left: 0; top: 0; width: 960px; height: 1080px; }
+    .f07-guest { position: absolute; top: 500px; width: 84px; height: 84px; opacity: 0; }
+    .f07-coin {
+      position: absolute; top: 420px; width: 52px; height: 52px; border-radius: 50%;
+      border: 3px solid #20201e; box-sizing: border-box; display: flex; align-items: center; justify-content: center;
+      font-size: 26px; font-weight: 800; opacity: 0;
+    }
+    .f07-svg { position: absolute; left: 0; top: 0; }
+    .f07-mask { position: absolute; left: 1044px; top: 400px; height: 180px; overflow: hidden; white-space: nowrap; }
+    .f07-mask span { display: inline-block; font-size: 150px; line-height: 176px; font-weight: 900; color: #e65f3c; }
+    .f07-per { position: absolute; left: 1052px; top: 622px; font-size: 44px; line-height: 54px; font-weight: 700; white-space: nowrap; opacity: 0; }
+    .f07-small { position: absolute; left: 1052px; top: 692px; font-size: 24px; line-height: 32px; font-weight: 500; color: #55534c; white-space: nowrap; opacity: 0; }
+  </style>
+
+  <div id="root" data-composition-id="07-preis" data-width="1920" data-height="1080" data-duration="6.941">
+    <div class="clip f07-ground" id="f07-ground" data-start="0" data-duration="6.941" data-track-index="0"></div>
+    <div id="f07-layer-1" class="clip" data-start="0" data-duration="6.941" data-track-index="1" style="position:absolute;inset:0">
+      <div id="f07-left">
+        <div class="f07-eyebrow" id="f07-e1" style="left:152px">Gebühren pro Gast</div>
+        <div class="f07-guest" id="f07-g0" style="left:150px"></div>
+        <div class="f07-guest" id="f07-g1" style="left:282px"></div>
+        <div class="f07-guest" id="f07-g2" style="left:414px"></div>
+        <div class="f07-guest" id="f07-g3" style="left:546px"></div>
+        <div class="f07-guest" id="f07-g4" style="left:678px"></div>
+        <div class="f07-guest" id="f07-g5" style="left:810px"></div>
+        <div class="f07-coin" id="f07-c0" style="left:166px">€</div>
+        <div class="f07-coin" id="f07-c1" style="left:298px">€</div>
+        <div class="f07-coin" id="f07-c2" style="left:430px">€</div>
+        <div class="f07-coin" id="f07-c3" style="left:562px">€</div>
+        <div class="f07-coin" id="f07-c4" style="left:694px">€</div>
+        <div class="f07-coin" id="f07-c5" style="left:826px">€</div>
+      </div>
+      <div class="f07-eyebrow" id="f07-e2" style="left:1052px">Fester Preis</div>
+      <svg class="f07-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+        <path id="f07-line" d="M1050 600 H1940" fill="none" stroke="#e65f3c" stroke-width="10"/>
+      </svg>
+      <div class="f07-mask" id="f07-pm"><span id="f07-price">29,00&nbsp;€</span></div>
+      <div class="f07-per" id="f07-per">/ Monat</div>
+      <div class="f07-small" id="f07-small">Jährliche Zahlweise — 348,00 € / Jahr, im Voraus fällig</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      /* VO: "Ein fester Preis statt Gebühren pro Gast. Neunundzwanzig Euro im Monat, bei jährlicher Zahlung."
+         "Ein"@0.31  "fester"@0.46  "Preis"@0.88  "statt"@1.25  "Gebühren"@1.49  "pro"@1.93
+         "Gast."@2.09  "Neunundzwanzig"@2.90  "Euro"@3.78  "im"@4.08  "Monat,"@4.15  "bei"@4.79
+         "jährlicher"@4.95  "Zahlung."@5.38
+         duration 5.941s · hold 6.441 · push to 08 (0.5). Pushed in from 06 over 0 → 0.5. */
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      var B = window.BTV;
+      for (var i = 0; i < 6; i++) document.getElementById("f07-g" + i).innerHTML = B.icon("guest", 84, "#20201E", 1.6);
+
+      // "fester"@0.46: the flat line, drawn on "fester Preis"
+      var line = document.getElementById("f07-line");
+      B.prime(line, 0);
+      B.arrive(tl, "#f07-e2", 0.46, { y: 10, dur: 0.28 });
+      B.draw(tl, line, 0.50, 0.70, { ease: "power2.inOut" });
+
+      // "Gebühren"@1.49 … "Gast."@2.09: guest after guest, each with its fee
+      B.arrive(tl, "#f07-e1", 1.49, { y: 10, dur: 0.28 });
+      for (var k = 0; k < 6; k++) {
+        B.arrive(tl, "#f07-g" + k, 1.55 + k * 0.11, { y: 14, dur: 0.26 });
+        tl.fromTo("#f07-c" + k, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.22, ease: "power3.out" }, 1.62 + k * 0.11);
+      }
+
+      // "Neunundzwanzig"@2.90: the price lands on the line; the per-guest model steps back
+      B.rise(tl, "#f07-price", 2.90);
+      tl.to("#f07-left", { opacity: 0.3, duration: 0.5, ease: "power2.inOut" }, 3.0);
+
+      // "Monat,"@4.15 · "jährlicher"@4.95
+      B.arrive(tl, "#f07-per", 4.15, { y: 10, dur: 0.28 });
+      B.arrive(tl, "#f07-small", 4.95, { y: 8, dur: 0.3 });
+
+      tl.to({}, { duration: 6.941 }, 0);
+      window.__timelines["07-preis"] = tl;
+    })();
+  </script>
+</template>

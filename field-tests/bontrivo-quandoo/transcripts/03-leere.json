@@ -1,0 +1,104 @@
+{
+  "duration": 5.4683,
+  "source": "piper alignment (de_DE-thorsten-high), sample-exact",
+  "asr_check": {
+    "score": 1.0,
+    "heard": "Das Widget auf Ihrer Website, der Link im Google Profil bei Instagram, alles läuft ins Leere."
+  },
+  "segments": [
+    {
+      "words": [
+        {
+          "word": "Das",
+          "start": 0.1509,
+          "end": 0.267,
+          "phonemes": "das"
+        },
+        {
+          "word": "Widget",
+          "start": 0.3367,
+          "end": 0.6385,
+          "phonemes": "vˈɪdʒət"
+        },
+        {
+          "word": "auf",
+          "start": 0.6734,
+          "end": 0.7546,
+          "phonemes": "aʊf"
+        },
+        {
+          "word": "Ihrer",
+          "start": 0.7779,
+          "end": 0.9172,
+          "phonemes": "ˌiːrɜ"
+        },
+        {
+          "word": "Website,",
+          "start": 0.952,
+          "end": 1.4861,
+          "phonemes": "vˈɛpsaɪt,"
+        },
+        {
+          "word": "der",
+          "start": 1.7067,
+          "end": 1.8112,
+          "phonemes": "dɛɾ"
+        },
+        {
+          "word": "Link",
+          "start": 1.8344,
+          "end": 2.0434,
+          "phonemes": "lˈɪŋk"
+        },
+        {
+          "word": "im",
+          "start": 2.0898,
+          "end": 2.1827,
+          "phonemes": "ɪm"
+        },
+        {
+          "word": "Google-Profil,",
+          "start": 2.2175,
+          "end": 3.0186,
+          "phonemes": "ɡˈuːɡəlproːfˈiːl,"
+        },
+        {
+          "word": "bei",
+          "start": 3.1811,
+          "end": 3.3088,
+          "phonemes": "baɪ"
+        },
+        {
+          "word": "Instagram:",
+          "start": 3.3437,
+          "end": 3.9706,
+          "phonemes": "ˈɪnstaɡrˌɑːm:"
+        },
+        {
+          "word": "Alles",
+          "start": 4.226,
+          "end": 4.4931,
+          "phonemes": "ˈaləs"
+        },
+        {
+          "word": "läuft",
+          "start": 4.5395,
+          "end": 4.853,
+          "phonemes": "lˈɔøft"
+        },
+        {
+          "word": "ins",
+          "start": 4.8994,
+          "end": 5.0155,
+          "phonemes": "ɪns"
+        },
+        {
+          "word": "Leere.",
+          "start": 5.0387,
+          "end": 5.3522,
+          "phonemes": "lˈeːrə."
+        }
+      ]
+    }
+  ]
+}

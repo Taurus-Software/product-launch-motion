@@ -1,0 +1,104 @@
+{
+  "_note": [
+    "BONTRIVO film 2 (Quandoo-Alternative). Durations are measured by assemble.mjs from the VO;",
+    "the numbers here are pads (rhythm) and transition overlaps only.",
+    "Transitions (DIRECTION: a lateral journey along the line): 02->03, 06->07, 07->08 push;",
+    "01->02, 03->04, 05->06, 08->09 are hard cuts on an unmoving diagram (state carries over).",
+    "04->05 is a 'cut' with a 1.25 s overlap: 05 does its own wipe along the line (cream follows",
+    "the line's head from left to right) while 04 stays alive underneath, so the cream reaches",
+    "the right edge exactly as the line arrives in the O on 'direkt'."
+  ],
+  "width": 1920,
+  "height": 1080,
+  "background": "#20201E",
+  "gsap": "vendor/gsap.min.js",
+  "pad": 0.35,
+  "frames": [
+    {
+      "id": "01-bruch",
+      "src": "compositions/frames/01-bruch.html",
+      "vo": "assets/voice/01-bruch.wav",
+      "pad": 0.35,
+      "out": {
+        "type": "cut",
+        "duration": 0
+      }
+    },
+    {
+      "id": "02-export",
+      "src": "compositions/frames/02-export.html",
+      "vo": "assets/voice/02-export.wav",
+      "pad": 0.35,
+      "out": {
+        "type": "push",
+        "duration": 0.5
+      }
+    },
+    {
+      "id": "03-leere",
+      "src": "compositions/frames/03-leere.html",
+      "vo": "assets/voice/03-leere.wav",
+      "pad": 0.45,
+      "out": {
+        "type": "cut",
+        "duration": 0
+      }
+    },
+    {
+      "id": "04-portal",
+      "src": "compositions/frames/04-portal.html",
+      "vo": "assets/voice/04-portal.wav",
+      "pad": 0.55,
+      "out": {
+        "type": "cut",
+        "duration": 1.25
+      }
+    },
+    {
+      "id": "05-direkt",
+      "src": "compositions/frames/05-direkt.html",
+      "vo": "assets/voice/05-direkt.wav",
+      "pad": 0.6,
+      "out": {
+        "type": "cut",
+        "duration": 0
+      }
+    },
+    {
+      "id": "06-eigen",
+      "src": "compositions/frames/06-eigen.html",
+      "vo": "assets/voice/06-eigen.wav",
+      "pad": 0.35,
+      "out": {
+        "type": "push",
+        "duration": 0.5
+      }
+    },
+    {
+      "id": "07-preis",
+      "src": "compositions/frames/07-preis.html",
+      "vo": "assets/voice/07-preis.wav",
+      "pad": 0.5,
+      "out": {
+        "type": "push",
+        "duration": 0.5
+      }
+    },
+    {
+      "id": "08-hamburg",
+      "src": "compositions/frames/08-hamburg.html",
+      "vo": "assets/voice/08-hamburg.wav",
+      "pad": 0.8,
+      "out": {
+        "type": "cut",
+        "duration": 0
+      }
+    },
+    {
+      "id": "09-wechseln",
+      "src": "compositions/frames/09-wechseln.html",
+      "vo": "assets/voice/09-wechseln.wav",
+      "pad": 1.8
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+<!--
+  08-hamburg: pushed in; the flat line from 07 continues across the push (both at y = 600,
+  07's runs past its right edge, this one starts beyond its left edge). On "Hamburg" a pin
+  is set onto the line: the help sits on the way, not beside it. The pin is ink, not tomato
+  (accent budget: tomato is the line and the price).
+
+  Pin: icon 96 px (24 grid × 4), its tip at grid (12, 21), set under the word it stands
+  for: "HAMBURG" spans 897.6–1419.2 → centre 1158; tip on the line at (1158, 600) → left
+  1110, top 516. Headline 92/900 at x = 150, top 400 ("EIN TEAM AUS HAMBURG" = 1269 px),
+  sub-line 36/500 muted under the line, top 640 (v1: everything above the line, the pin far
+  right at 1440, the lower half empty).
+-->
+<template>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="compositions/lib/btv-brand.js"></script>
+  <script src="compositions/lib/btv.js"></script>
+  <style>
+    @font-face {
+      font-family: "Montserrat";
+      src: url("assets/fonts/montserrat-variable-latin.woff2") format("woff2-variations");
+      font-weight: 100 900;
+      font-display: block;
+    }
+    #root {
+      position: relative; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "Montserrat", sans-serif; -webkit-font-smoothing: antialiased; color: #20201e;
+    }
+    .f08-ground { position: absolute; inset: 0; background: #fff4e7; }
+    .f08-svg { position: absolute; left: 0; top: 0; }
+    .f08-mask { position: absolute; left: 150px; top: 400px; height: 112px; overflow: hidden; white-space: nowrap; font-size: 92px; line-height: 104px; font-weight: 900; letter-spacing: 0.005em; }
+    .f08-mask span { display: inline-block; }
+    .f08-sub { position: absolute; left: 152px; top: 640px; font-size: 36px; line-height: 44px; font-weight: 500; color: #55534c; white-space: nowrap; opacity: 0; }
+    #f08-pin { position: absolute; left: 1110px; top: 516px; width: 96px; height: 96px; opacity: 0; }
+  </style>
+
+  <div id="root" data-composition-id="08-hamburg" data-width="1920" data-height="1080" data-duration="3.134">
+    <div class="clip f08-ground" id="f08-ground" data-start="0" data-duration="3.134" data-track-index="0"></div>
+    <div id="f08-layer-1" class="clip" data-start="0" data-duration="3.134" data-track-index="1" style="position:absolute;inset:0">
+      <svg class="f08-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+        <path d="M-20 600 H1940" fill="none" stroke="#e65f3c" stroke-width="10"/>
+      </svg>
+      <div class="f08-mask" id="f08-h"><span id="f08-w1">EIN TEAM</span> <span id="f08-w2">AUS HAMBURG</span></div>
+      <div class="f08-sub" id="f08-sub">Online, am Telefon oder vor Ort.</div>
+      <div id="f08-pin"></div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      /* VO: "Und ein Team aus Hamburg hilft beim Umstieg."
+         "Und"@0.12  "ein"@0.34  "Team"@0.51  "aus"@0.80  "Hamburg"@1.00  "hilft"@1.40
+         "beim"@1.68  "Umstieg."@1.85
+         duration 2.334s · hold 3.134 (a longer pad: the sub-line needs reading time) · hard cut to 09 */
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      var B = window.BTV;
+      // the pin's body is filled with the ground so the line does not show through it
+      document.getElementById("f08-pin").innerHTML =
+        B.icon("pin", 96, "#20201E", 1.5).replace('fill="none"', 'fill="#FFF4E7"');
+
+      // "Team"@0.51 · "aus Hamburg"@0.80
+      B.rise(tl, "#f08-w1", 0.51);
+      B.rise(tl, "#f08-w2", 0.80);
+
+      // "Hamburg"@1.00: the pin is set down onto the line, landing on the word. It settles
+      // about its own tip (grid y 21 = 87.5 %) instead of falling: a fall would pass through
+      // "HAMBURG" (glyphs end at y 485, the pin's top rests at 516).
+      tl.fromTo("#f08-pin", { opacity: 0, scale: 1.25, transformOrigin: "50% 87.5%" },
+        { opacity: 1, scale: 1, transformOrigin: "50% 87.5%", duration: 0.28, ease: "power3.out" }, 0.72);
+
+      // "hilft"@1.40: how (site copy, verbatim)
+      B.arrive(tl, "#f08-sub", 1.40, { y: 10, dur: 0.3 });
+
+      tl.to({}, { duration: 3.134 }, 0);
+      window.__timelines["08-hamburg"] = tl;
+    })();
+  </script>
+</template>

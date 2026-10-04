@@ -1,0 +1,62 @@
+{
+  "duration": 2.3336,
+  "source": "piper alignment (de_DE-thorsten-high), sample-exact",
+  "asr_check": {
+    "score": 1.0,
+    "heard": "und ein Team aus Hamburg hilft beim Umstieg."
+  },
+  "segments": [
+    {
+      "words": [
+        {
+          "word": "Und",
+          "start": 0.1161,
+          "end": 0.3019,
+          "phonemes": "ʊnt"
+        },
+        {
+          "word": "ein",
+          "start": 0.3367,
+          "end": 0.476,
+          "phonemes": "aɪn"
+        },
+        {
+          "word": "Team",
+          "start": 0.5108,
+          "end": 0.7663,
+          "phonemes": "tˈiːm"
+        },
+        {
+          "word": "aus",
+          "start": 0.8011,
+          "end": 0.9636,
+          "phonemes": "ˌaʊs"
+        },
+        {
+          "word": "Hamburg",
+          "start": 0.9985,
+          "end": 1.3816,
+          "phonemes": "hˈambʊɐk"
+        },
+        {
+          "word": "hilft",
+          "start": 1.4048,
+          "end": 1.6254,
+          "phonemes": "hˈɪlft"
+        },
+        {
+          "word": "beim",
+          "start": 1.6834,
+          "end": 1.7995,
+          "phonemes": "baɪm"
+        },
+        {
+          "word": "Umstieg.",
+          "start": 1.846,
+          "end": 2.2407,
+          "phonemes": "ˈʊmʃtˌiːk."
+        }
+      ]
+    }
+  ]
+}

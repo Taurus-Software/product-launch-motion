@@ -1,0 +1,106 @@
+<!--
+  01-bruch: the film opens MID-MOTION. The reservation line is already running from the
+  guest towards the portal box; it passes through it and reaches the restaurant, and on
+  "keine" it breaks at the portal: the segment after the box swings down and falls away,
+  and the restaurant goes dim. The portal tone (audio/cues.json) ends exactly on the break.
+  The portal's name arrives only on its word, as plain text in the film's own type (BRIEF:
+  no Quandoo logo, colours or UI).
+
+  Stage constants (shared with 02, so the hard cut between them holds still):
+    date column x = 150 · eyebrow top 150 · date (190px, "1. OKTOBER" = 1202px) top 180
+    diagram row y = 760: guest dot (170, 760) · box 800–1120 × 700–820 · restaurant (1750, 760)
+    node labels 36/700 above the row (top 690); the box label 44/700 inside the box
+  Line speed: 856 px/s throughout (A: the 60 % left at t=0 in 0.45 s; 296 px through the box;
+  B: 628 px), so the line reaches the restaurant at 1.53, a beat before the break at 1.70.
+-->
+<template>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="compositions/lib/btv-brand.js"></script>
+  <script src="compositions/lib/btv.js"></script>
+  <style>
+    @font-face {
+      font-family: "Montserrat";
+      src: url("assets/fonts/montserrat-variable-latin.woff2") format("woff2-variations");
+      font-weight: 100 900;
+      font-display: block;
+    }
+    #root {
+      position: relative; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "Montserrat", sans-serif; -webkit-font-smoothing: antialiased; color: #fff4e7;
+    }
+    .f01-ground { position: absolute; inset: 0; background: #20201e; }
+    .f01-eyebrow {
+      position: absolute; left: 152px; top: 150px; font-size: 26px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; color: #a69f97; white-space: nowrap;
+    }
+    .f01-mask { position: absolute; left: 150px; overflow: hidden; white-space: nowrap; }
+    .f01-mask span { display: inline-block; }
+    #f01-date { top: 180px; height: 226px; font-size: 190px; line-height: 212px; font-weight: 900; }
+    #f01-year { top: 404px; height: 96px; font-size: 72px; line-height: 84px; font-weight: 900; color: #a69f97; }
+    .f01-svg { position: absolute; left: 0; top: 0; }
+    .f01-label { position: absolute; top: 690px; font-size: 36px; line-height: 44px; font-weight: 700; white-space: nowrap; }
+    .f01-boxl {
+      position: absolute; left: 800px; top: 700px; width: 320px; height: 120px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 44px; font-weight: 700; white-space: nowrap; opacity: 0;
+    }
+  </style>
+
+  <div id="root" data-composition-id="01-bruch" data-width="1920" data-height="1080" data-duration="4.019">
+    <div class="clip f01-ground" id="f01-ground" data-start="0" data-duration="4.019" data-track-index="0"></div>
+    <div id="f01-layer-1" class="clip" data-start="0" data-duration="4.019" data-track-index="1" style="position:absolute;inset:0">
+      <div class="f01-eyebrow" id="f01-eyebrow">Seit dem</div>
+      <div class="f01-mask" id="f01-date"><span id="f01-d1">1.</span> <span id="f01-d2">OKTOBER</span></div>
+      <div class="f01-mask" id="f01-year"><span id="f01-y">2026</span></div>
+
+      <svg class="f01-svg" id="f01-dia" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+        <path id="f01-lineA" d="M170 760 H812" fill="none" stroke="#e65f3c" stroke-width="10" stroke-linecap="round"/>
+        <path id="f01-lineB" d="M1108 760 H1736" fill="none" stroke="#e65f3c" stroke-width="10" stroke-linecap="round"/>
+        <rect id="f01-box" x="800" y="700" width="320" height="120" rx="20" fill="#20201e" stroke="#a69f97" stroke-width="3"/>
+        <circle id="f01-guest" cx="170" cy="760" r="14" fill="#fff4e7"/>
+        <circle id="f01-rest" cx="1750" cy="760" r="14" fill="#fff4e7"/>
+      </svg>
+      <div class="f01-label" id="f01-guest-l" style="left:150px">Gast</div>
+      <div class="f01-label" id="f01-rest-l" style="left:1478px;width:292px;text-align:right">Ihr Restaurant</div>
+      <div class="f01-boxl" id="f01-boxl">Quandoo</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      /* VO: "Seit dem 1. Oktober laufen keine Reservierungen mehr über Quandoo."
+         "Seit"@0.05  "dem"@0.27  "1."@0.43  "Oktober"@0.78  "laufen"@1.25  "keine"@1.70
+         "Reservierungen"@1.94  "mehr"@2.69  "über"@2.90  "Quandoo."@3.13
+         duration 3.669s · hold 4.019 · hard cut to 02 (same stage, nothing moves across it) */
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      var B = window.BTV;
+      var A = document.getElementById("f01-lineA"), L2 = document.getElementById("f01-lineB");
+
+      // mid-motion: at t=0 the line has already covered 40 % of its way to the box
+      B.prime(A, 0.4);
+      B.prime(L2, 0);
+      B.draw(tl, A, 0, 0.45, { from: 0.4, to: 1 });
+      B.draw(tl, L2, 0.80, 0.73);
+
+      // "Seit dem"@0.05 · "1."@0.43 · "Oktober"@0.78 · the year after the word
+      B.arrive(tl, "#f01-eyebrow", 0.05, { y: 10, dur: 0.28 });
+      B.rise(tl, "#f01-d1", 0.43);
+      B.rise(tl, "#f01-d2", 0.78);
+      B.rise(tl, "#f01-y", 1.20);
+
+      /* ── "keine"@1.70: the break. B detaches at the portal and swings down about the
+         restaurant end, then is gone; one hit (snap), then silence. The restaurant dims:
+         no guest reaches it any more. */
+      tl.to(L2, { rotation: 9, svgOrigin: "1736 760", y: 26, duration: 0.42, ease: "power2.in" }, 1.70);
+      tl.to(L2, { opacity: 0, duration: 0.3, ease: "power1.in" }, 1.84);
+      tl.to(["#f01-rest", "#f01-rest-l"], { opacity: 0.35, duration: 0.4, ease: "power2.out" }, 1.86);
+
+      // "Quandoo."@3.13: the name, as plain text
+      B.arrive(tl, "#f01-boxl", 3.13, { y: 10, dur: 0.3 });
+
+      tl.to({}, { duration: 4.019 }, 0);
+      window.__timelines["01-bruch"] = tl;
+    })();
+  </script>
+</template>

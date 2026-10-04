@@ -1,0 +1,131 @@
+<!--
+  02-export: hard cut on an unmoving stage (01's last frame IS this frame's first). The
+  data leave the portal: a folder labelled "Ihre Daten" emerges below the box and travels a
+  dotted arc to the restaurant, drawing its trail behind it (the folder's position and the
+  trail's length come from the same path at the same playhead, so they cannot disagree).
+  Then the date column turns over: "SEIT DEM 1. OKTOBER" leaves upwards and
+  "BIS ZUM 31. DEZEMBER" rises in, and on "Dezember" the portal box goes dashed and dim.
+
+  Stage as 01 (see 01's header). New: trail path from the box's bottom centre (960, 846) to
+  under the restaurant (1750, 850); the folder group is anchored at its icon centre, the
+  label is right-aligned 40 px to the left of it, so at the end it sits under
+  "Ihr Restaurant" (label 1510–1710, icon 1726–1774, inside the 120 px safe margin).
+-->
+<template>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="compositions/lib/btv-brand.js"></script>
+  <script src="compositions/lib/btv.js"></script>
+  <style>
+    @font-face {
+      font-family: "Montserrat";
+      src: url("assets/fonts/montserrat-variable-latin.woff2") format("woff2-variations");
+      font-weight: 100 900;
+      font-display: block;
+    }
+    #root {
+      position: relative; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "Montserrat", sans-serif; -webkit-font-smoothing: antialiased; color: #fff4e7;
+    }
+    .f02-ground { position: absolute; inset: 0; background: #20201e; }
+    .f02-eyebrow {
+      position: absolute; left: 152px; top: 150px; font-size: 26px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; color: #a69f97; white-space: nowrap;
+    }
+    #f02-eyebrow2 { opacity: 0; }
+    .f02-mask { position: absolute; left: 150px; overflow: hidden; white-space: nowrap; }
+    .f02-mask span { display: inline-block; }
+    .f02-date { top: 180px; height: 226px; font-size: 190px; line-height: 212px; font-weight: 900; }
+    .f02-year { top: 404px; height: 96px; font-size: 72px; line-height: 84px; font-weight: 900; color: #a69f97; }
+    .f02-svg { position: absolute; left: 0; top: 0; }
+    .f02-label { position: absolute; top: 690px; font-size: 36px; line-height: 44px; font-weight: 700; white-space: nowrap; }
+    .f02-boxl {
+      position: absolute; left: 800px; top: 700px; width: 320px; height: 120px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 44px; font-weight: 700; white-space: nowrap;
+    }
+    .f02-dim { opacity: 0.35; }
+  </style>
+
+  <div id="root" data-composition-id="02-export" data-width="1920" data-height="1080" data-duration="4.391">
+    <div class="clip f02-ground" id="f02-ground" data-start="0" data-duration="4.391" data-track-index="0"></div>
+    <div id="f02-layer-1" class="clip" data-start="0" data-duration="4.391" data-track-index="1" style="position:absolute;inset:0">
+      <div class="f02-eyebrow" id="f02-eyebrow1">Seit dem</div>
+      <div class="f02-eyebrow" id="f02-eyebrow2">Datenexport nur noch bis zum</div>
+      <div class="f02-mask f02-date" id="f02-date1"><span id="f02-a1">1.</span> <span id="f02-a2">OKTOBER</span></div>
+      <div class="f02-mask f02-year" id="f02-year1"><span id="f02-ay">2026</span></div>
+      <div class="f02-mask f02-date" id="f02-date2"><span id="f02-b1">31.</span> <span id="f02-b2">DEZEMBER</span></div>
+      <div class="f02-mask f02-year" id="f02-year2"><span id="f02-by">2026</span></div>
+
+      <svg class="f02-svg" id="f02-dia" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+        <defs>
+          <mask id="f02-trail-m" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080">
+            <path id="f02-trail-mp" d="M960 846 C1010 965 1490 985 1750 850" fill="none" stroke="#fff" stroke-width="14"/>
+          </mask>
+        </defs>
+        <path d="M170 760 H798" fill="none" stroke="#e65f3c" stroke-width="10" stroke-linecap="round"/>
+        <rect id="f02-box" x="800" y="700" width="320" height="120" rx="20" fill="#20201e" stroke="#a69f97" stroke-width="3"/>
+        <rect id="f02-box-dash" x="800" y="700" width="320" height="120" rx="20" fill="#20201e" stroke="#a69f97" stroke-width="3" stroke-dasharray="12 10" opacity="0"/>
+        <circle cx="170" cy="760" r="14" fill="#fff4e7"/>
+        <circle class="f02-dim" cx="1750" cy="760" r="14" fill="#fff4e7"/>
+        <path d="M960 846 C1010 965 1490 985 1750 850" fill="none" stroke="#a69f97" stroke-width="5"
+          stroke-linecap="round" stroke-dasharray="0.1 12" mask="url(#f02-trail-m)"/>
+        <g id="f02-data" transform="translate(960 846)" opacity="0">
+          <rect x="-30" y="-30" width="60" height="60" rx="12" fill="#20201e"/>
+          <g transform="translate(-24 -24) scale(2)" fill="none" stroke="#fff4e7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 7.5A1.5 1.5 0 0 1 4.5 6H9l2 2h8.5A1.5 1.5 0 0 1 21 9.5v8a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-10Z"/>
+          </g>
+          <text x="-40" y="13" text-anchor="end" font-family="Montserrat" font-size="36" font-weight="700" fill="#fff4e7">Ihre Daten</text>
+        </g>
+      </svg>
+      <div class="f02-label" style="left:150px">Gast</div>
+      <div class="f02-label f02-dim" style="left:1478px;width:292px;text-align:right">Ihr Restaurant</div>
+      <div class="f02-boxl" id="f02-boxl">Quandoo</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      /* VO: "Ihre Daten exportieren Sie nur noch bis zum 31. Dezember."
+         "Ihre"@0.06  "Daten"@0.29  "exportieren"@0.63  "Sie"@1.29  "nur"@1.39  "noch"@1.57
+         "bis"@1.79  "zum"@1.95  "31."@2.12  "Dezember."@2.91
+         duration 3.541s · hold 3.891 · push to 03 (0.5) */
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      var B = window.BTV;
+
+      // "Daten"@0.29: the folder surfaces under the portal box
+      tl.fromTo("#f02-data", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power2.out" }, 0.27);
+
+      /* "exportieren"@0.63: it travels to the restaurant. One proxy drives both the trail
+         (mask path drawn to f·L) and the folder (placed at the point f·L). */
+      var mp = document.getElementById("f02-trail-mp"), g = document.getElementById("f02-data");
+      var L = B.prime(mp, 0);
+      var st = { f: 0 };
+      tl.fromTo(st, { f: 0 }, {
+        f: 1, duration: 0.95, ease: "power2.inOut", immediateRender: false,
+        onUpdate: function () {
+          mp.style.strokeDashoffset = String((L + 1) * (1 - st.f));
+          var p = mp.getPointAtLength(L * st.f);
+          g.setAttribute("transform", "translate(" + p.x.toFixed(2) + " " + p.y.toFixed(2) + ")");
+        }
+      }, 0.63);
+
+      /* ── the date column turns over: out on "bis"@1.79 (an exit with intent: up, power2.in),
+         the new eyebrow with it, "31."@2.12, "Dezember."@2.91, the year after the word. */
+      tl.to(["#f02-a1", "#f02-a2", "#f02-ay"], { yPercent: -135, duration: 0.26, ease: "power2.in" }, 1.72);
+      tl.to("#f02-eyebrow1", { opacity: 0, duration: 0.18, ease: "power1.in" }, 1.72);
+      B.arrive(tl, "#f02-eyebrow2", 1.82, { y: 10, dur: 0.28 });
+      B.rise(tl, "#f02-b1", 2.12);
+      B.rise(tl, "#f02-b2", 2.91);
+      B.rise(tl, "#f02-by", 3.30);
+
+      // "Dezember."@2.91: the portal box goes dashed and dim (crossfade, solid → dashed)
+      tl.to("#f02-box", { opacity: 0, duration: 0.35, ease: "power1.inOut" }, 2.93);
+      tl.fromTo("#f02-box-dash", { opacity: 0 }, { opacity: 0.6, duration: 0.35, ease: "power1.inOut" }, 2.93);
+      tl.to("#f02-boxl", { opacity: 0.4, duration: 0.35, ease: "power1.inOut" }, 2.93);
+
+      tl.to({}, { duration: 4.391 }, 0);
+      window.__timelines["02-export"] = tl;
+    })();
+  </script>
+</template>

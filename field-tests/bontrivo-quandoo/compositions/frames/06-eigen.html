@@ -1,0 +1,91 @@
+<!--
+  06-eigen: hard cut on 05's diagram (05's claim is dropped on the cut). What the O is:
+  "IHRE EIGENE WEBSITE.", optionally under the restaurant's own domain. Then two more
+  channels connect into it, each line drawn on its word: Speisekarte, Google-Profil. The
+  four channels of the portal world (03) were dead ends; here every line arrives.
+
+  Stage as 05 (O centred on (1500, 620), outer radius 148.5; guest line at y = 620).
+  New rows (labels 44/700 at x = 150): Speisekarte y = 800, Google-Profil y = 920. Their
+  lines end ON the ring's outer edge, aimed at its centre:
+    165° → (1356.6, 658.4)    150° → (1371.4, 694.3)
+  so the three lines arrive at 180°, 165° and 150° and fan apart towards the left (v1 had
+  140°: that line grazed the "Ihr Restaurant" label).
+  Headline 92/900 at x = 150, top 144 ("IHRE EIGENE WEBSITE." = 1150 px); sub-line 36/500
+  muted at top 262.
+-->
+<template>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="compositions/lib/btv-brand.js"></script>
+  <script src="compositions/lib/btv.js"></script>
+  <style>
+    @font-face {
+      font-family: "Montserrat";
+      src: url("assets/fonts/montserrat-variable-latin.woff2") format("woff2-variations");
+      font-weight: 100 900;
+      font-display: block;
+    }
+    #root {
+      position: relative; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "Montserrat", sans-serif; -webkit-font-smoothing: antialiased; color: #20201e;
+    }
+    .f06-ground { position: absolute; inset: 0; background: #fff4e7; }
+    .f06-mask { position: absolute; left: 150px; top: 144px; height: 112px; overflow: hidden; white-space: nowrap; font-size: 92px; line-height: 104px; font-weight: 900; letter-spacing: 0.005em; }
+    .f06-mask span { display: inline-block; }
+    .f06-sub { position: absolute; left: 152px; top: 262px; font-size: 36px; line-height: 44px; font-weight: 500; color: #55534c; white-space: nowrap; opacity: 0; }
+    .f06-svg { position: absolute; left: 0; top: 0; }
+    .f06-label { position: absolute; font-size: 36px; line-height: 44px; font-weight: 700; white-space: nowrap; }
+    .f06-row { position: absolute; left: 150px; font-size: 44px; line-height: 54px; font-weight: 700; white-space: nowrap; opacity: 0; }
+    #f06-o { position: absolute; left: 1350px; top: 470px; width: 300px; height: 300px; }
+  </style>
+
+  <div id="root" data-composition-id="06-eigen" data-width="1920" data-height="1080" data-duration="6.256">
+    <div class="clip f06-ground" id="f06-ground" data-start="0" data-duration="6.256" data-track-index="0"></div>
+    <div id="f06-layer-1" class="clip" data-start="0" data-duration="6.256" data-track-index="1" style="position:absolute;inset:0">
+      <div class="f06-mask" id="f06-h"><span id="f06-w1">IHRE EIGENE</span> <span id="f06-w2">WEBSITE.</span></div>
+      <div class="f06-sub" id="f06-sub">auf Wunsch unter Ihrer Domain</div>
+      <svg class="f06-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+        <path d="M184 620 H1352" fill="none" stroke="#e65f3c" stroke-width="10"/>
+        <circle cx="170" cy="620" r="14" fill="#20201e"/>
+        <path id="f06-l1" d="M452 800 C900 800 1150 700 1357 658.4" fill="none" stroke="#e65f3c" stroke-width="10"/>
+        <path id="f06-l2" d="M484 920 C950 920 1180 780 1371.4 694.3" fill="none" stroke="#e65f3c" stroke-width="10"/>
+      </svg>
+      <div class="f06-label" style="left:150px;top:550px">Gast</div>
+      <div class="f06-row" id="f06-r1" style="top:773px">Speisekarte</div>
+      <div class="f06-row" id="f06-r2" style="top:893px">Google-Profil</div>
+      <div id="f06-o"></div>
+      <div class="f06-label" style="left:1364px;top:800px">Ihr Restaurant</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      /* VO: "Auf Ihrer eigenen Website, auf Wunsch unter Ihrer Domain. Mit Speisekarte und Google-Profil."
+         "Auf"@0.08  "Ihrer"@0.22  "eigenen"@0.51  "Website,"@0.89  "auf"@1.58  "Wunsch"@1.75
+         "unter"@2.14  "Ihrer"@2.37  "Domain."@2.64  "Mit"@3.46  "Speisekarte"@3.63  "und"@4.42
+         "Google-Profil."@4.61
+         duration 5.406s · hold 5.756 · push to 07 (0.5) */
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      var B = window.BTV;
+
+      // the O as 05 left it: ring and bean, landed (no animation: the cut holds still)
+      B.plate(document.getElementById("f06-o"), "f06-o", { bean: true });
+
+      // "eigenen"@0.51 · "Website,"@0.89 · "Wunsch"@1.75
+      B.rise(tl, "#f06-w1", 0.51);
+      B.rise(tl, "#f06-w2", 0.89);
+      B.arrive(tl, "#f06-sub", 1.75, { y: 10, dur: 0.3 });
+
+      // "Speisekarte"@3.63 · "Google-Profil."@4.61: each channel arrives, its line drawn into the O
+      [["#f06-r1", "f06-l1", 3.63], ["#f06-r2", "f06-l2", 4.61]].forEach(function (r) {
+        var p = document.getElementById(r[1]);
+        B.prime(p, 0);
+        B.arrive(tl, r[0], r[2], { x: -14, y: 0, dur: 0.3 });
+        B.draw(tl, p, r[2] + 0.05, 0.5, { ease: "power2.inOut" });
+      });
+
+      tl.to({}, { duration: 6.256 }, 0);
+      window.__timelines["06-eigen"] = tl;
+    })();
+  </script>
+</template>

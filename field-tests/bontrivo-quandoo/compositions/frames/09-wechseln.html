@@ -1,0 +1,115 @@
+<!--
+  09-wechseln: the resolution, and the signature's last appearance. Hard cut on "Jetzt".
+  A piece of the reservation line, exactly one circumference long, travels in from the
+  left along the floor of the O and coils into a circle: the visible segment is [head − C,
+  head] on a path "lead-in + full circle", so when the head reaches the end, the segment IS
+  the circle. Then it thickens to the ring's real thickness, the traced ring takes over
+  (with its notch), the bean drops in (olive, 2 of 2) and the letters appear: the line has
+  become the O of BONTRIVO. The brand chord from film 1 resolves on "bontrivo".
+
+  Lockup (screen px): traced logo (viewBox 577 × 186) at width 1100 → scale 1.9064,
+  left 410, top 252.7 (height 354.6, centred on x = 960).
+    O centre = (410 + 129.933·1.9064, 252.7 + 94.536·1.9064) = (657.7, 432.9)
+    r_in 40.71 · r_out 78.47 → mid radius 59.59, thickness 37.76
+    plate box = oBox × 1.9064 → left 578.45, top 353.67, size 158.5
+  Coil path: M-20 492.5 (y = cy + r_mid: the floor of the circle) H657.7, then two arcs
+  counter-clockwise on screen (up the right side, over the top, down the left side) back
+  to (657.7, 492.5). Lead-in 677.7 + circumference 374.4 = 1052.1.
+  Row under the lockup: button (431 px) + 48 px + URL (205 px) centred → 618 / 1097.
+  Disclaimer (site copy, verbatim) 22/500 muted, centred, top 900.
+-->
+<template>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="compositions/lib/btv-brand.js"></script>
+  <script src="compositions/lib/btv.js"></script>
+  <style>
+    @font-face {
+      font-family: "Montserrat";
+      src: url("assets/fonts/montserrat-variable-latin.woff2") format("woff2-variations");
+      font-weight: 100 900;
+      font-display: block;
+    }
+    #root {
+      position: relative; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "Montserrat", sans-serif; -webkit-font-smoothing: antialiased; color: #20201e;
+    }
+    .f09-ground { position: absolute; inset: 0; background: #fff4e7; }
+    .f09-svg { position: absolute; left: 0; top: 0; }
+    #f09-letters { position: absolute; left: 410px; top: 252.7px; width: 1100px; height: 354.6px; opacity: 0; }
+    #f09-plate { position: absolute; left: 578.45px; top: 353.67px; width: 158.5px; height: 158.5px; opacity: 0; }
+    .f09-btn {
+      position: absolute; left: 618px; top: 690px; height: 78px; padding: 0 44px 0 48px; border-radius: 20px;
+      background: #e65f3c; color: #20201e; display: flex; align-items: center; gap: 16px; box-sizing: border-box;
+      font-size: 30px; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; white-space: nowrap; opacity: 0;
+    }
+    .f09-url { position: absolute; left: 1097px; top: 708px; font-size: 34px; line-height: 42px; font-weight: 700; white-space: nowrap; opacity: 0; }
+    .f09-legal {
+      position: absolute; left: 0; width: 1920px; top: 900px; text-align: center;
+      font-size: 22px; line-height: 30px; font-weight: 500; color: #55534c; white-space: nowrap; opacity: 0;
+    }
+  </style>
+
+  <div id="root" data-composition-id="09-wechseln" data-width="1920" data-height="1080" data-duration="4.617">
+    <div class="clip f09-ground" id="f09-ground" data-start="0" data-duration="4.617" data-track-index="0"></div>
+    <div id="f09-layer-1" class="clip" data-start="0" data-duration="4.617" data-track-index="1" style="position:absolute;inset:0">
+      <div id="f09-letters"></div>
+      <div id="f09-plate"></div>
+      <svg class="f09-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+        <path id="f09-coil" d="M-20 492.5 H657.7 A59.59 59.59 0 0 0 657.7 373.32 A59.59 59.59 0 0 0 657.7 492.5"
+          fill="none" stroke="#e65f3c" stroke-width="10" stroke-linecap="butt"/>
+      </svg>
+      <div class="f09-btn" id="f09-btn"><span>Jetzt wechseln</span><span id="f09-arrow"></span></div>
+      <div class="f09-url" id="f09-url">bontrivo.de</div>
+      <div class="f09-legal" id="f09-legal">Quandoo ist eine Marke ihres jeweiligen Inhabers. BONTRIVO steht in keiner Verbindung zu Quandoo.</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      /* VO: "Jetzt wechseln. Auf bontrivo.de."
+         "Jetzt"@0.07  "wechseln."@0.33  "Auf"@1.19  "bontrivo"@1.47  "."@2.00  "d"@2.29  "e."@2.49
+         duration 2.817s · hold 4.617 (the last frame: a 1.8 s still poster) */
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      var B = window.BTV, BR = window.BTV_BRAND;
+
+      B.plate(document.getElementById("f09-plate"), "f09-plate", { bean: true });
+      var bean = document.getElementById("f09-plate-bean");
+      document.getElementById("f09-letters").innerHTML =
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 577 186" width="100%" height="100%">' +
+        '<g fill="' + BR.colors.letters + '">' + BR.letters + "</g></svg>";
+      document.getElementById("f09-arrow").innerHTML = B.icon("arrow", 30, "#20201E", 2.4);
+
+      /* ── the coil (0.05 → 1.30): a segment of one circumference travels in and closes.
+         Visible = [max(0, h − C), h], written as a dash pattern "0 tail len rest". */
+      var coil = document.getElementById("f09-coil");
+      var L = coil.getTotalLength(), C = 2 * Math.PI * 59.59;
+      var st = { h: 0 };
+      function write() {
+        var tail = Math.max(0, st.h - C), len = st.h - tail;
+        coil.style.strokeDasharray = "0 " + tail.toFixed(2) + " " + len.toFixed(2) + " " + (L + 10).toFixed(2);
+      }
+      write();
+      tl.fromTo(st, { h: 0 }, { h: L, duration: 1.25, ease: "power2.out", onUpdate: write, immediateRender: false }, 0.05);
+
+      // "wechseln."@0.33: the one action, the one solid accent shape
+      tl.fromTo("#f09-btn", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, 0.31);
+
+      // closed at 1.30 → thickens to the ring's own thickness, landing on "bontrivo"@1.47
+      tl.fromTo(coil, { attr: { "stroke-width": 10 } }, { attr: { "stroke-width": 37.76 }, duration: 0.24, ease: "power2.inOut", immediateRender: false }, 1.23);
+      // the traced ring takes over (its notch opens), then the bean drops into it
+      tl.fromTo("#f09-plate", { opacity: 0 }, { opacity: 1, duration: 0.08, ease: "none" }, 1.42);
+      tl.to(coil, { opacity: 0, duration: 0.1, ease: "none" }, 1.47);
+      B.drop(tl, bean, 1.62, { from: 1.8, dur: 0.26, shadow: false, origin: "50% 50%" });
+      tl.to("#f09-letters", { opacity: 1, duration: 0.4, ease: "power1.out" }, 1.50);
+
+      // "."@2.00: the address · then the disclaimer, still well inside the 1.8 s hold
+      B.arrive(tl, "#f09-url", 2.00, { x: -12, y: 0, dur: 0.28 });
+      B.arrive(tl, "#f09-legal", 2.40, { y: 0, dur: 0.4, ease: "power1.out" });
+
+      // 2.8 → 4.617 locked still: the last frame of the film is the poster
+      tl.to({}, { duration: 4.617 }, 0);
+      window.__timelines["09-wechseln"] = tl;
+    })();
+  </script>
+</template>

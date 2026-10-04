@@ -1,0 +1,502 @@
+{
+  "01-bruch": {
+    "duration": 3.6688,
+    "words": [
+      {
+        "w": "Seit",
+        "start": 0.0464,
+        "end": 0.2322
+      },
+      {
+        "w": "dem",
+        "start": 0.267,
+        "end": 0.3831
+      },
+      {
+        "w": "1.",
+        "start": 0.4296,
+        "end": 0.743
+      },
+      {
+        "w": "Oktober",
+        "start": 0.7779,
+        "end": 1.1842
+      },
+      {
+        "w": "laufen",
+        "start": 1.2539,
+        "end": 1.637
+      },
+      {
+        "w": "keine",
+        "start": 1.6951,
+        "end": 1.9156
+      },
+      {
+        "w": "Reservierungen",
+        "start": 1.9389,
+        "end": 2.6587
+      },
+      {
+        "w": "mehr",
+        "start": 2.6935,
+        "end": 2.8793
+      },
+      {
+        "w": "über",
+        "start": 2.9025,
+        "end": 3.0883
+      },
+      {
+        "w": "Quandoo.",
+        "start": 3.1347,
+        "end": 3.5527
+      }
+    ]
+  },
+  "02-export": {
+    "duration": 3.541,
+    "words": [
+      {
+        "w": "Ihre",
+        "start": 0.058,
+        "end": 0.2322
+      },
+      {
+        "w": "Daten",
+        "start": 0.2902,
+        "end": 0.5921
+      },
+      {
+        "w": "exportieren",
+        "start": 0.6269,
+        "end": 1.2655
+      },
+      {
+        "w": "Sie",
+        "start": 1.2887,
+        "end": 1.37
+      },
+      {
+        "w": "nur",
+        "start": 1.3932,
+        "end": 1.5441
+      },
+      {
+        "w": "noch",
+        "start": 1.5673,
+        "end": 1.7067
+      },
+      {
+        "w": "bis",
+        "start": 1.7879,
+        "end": 1.904
+      },
+      {
+        "w": "zum",
+        "start": 1.9505,
+        "end": 2.0782
+      },
+      {
+        "w": "31.",
+        "start": 2.1246,
+        "end": 2.8909
+      },
+      {
+        "w": "Dezember.",
+        "start": 2.9141,
+        "end": 3.4017
+      }
+    ]
+  },
+  "03-leere": {
+    "duration": 5.4683,
+    "words": [
+      {
+        "w": "Das",
+        "start": 0.1509,
+        "end": 0.267
+      },
+      {
+        "w": "Widget",
+        "start": 0.3367,
+        "end": 0.6385
+      },
+      {
+        "w": "auf",
+        "start": 0.6734,
+        "end": 0.7546
+      },
+      {
+        "w": "Ihrer",
+        "start": 0.7779,
+        "end": 0.9172
+      },
+      {
+        "w": "Website,",
+        "start": 0.952,
+        "end": 1.4861
+      },
+      {
+        "w": "der",
+        "start": 1.7067,
+        "end": 1.8112
+      },
+      {
+        "w": "Link",
+        "start": 1.8344,
+        "end": 2.0434
+      },
+      {
+        "w": "im",
+        "start": 2.0898,
+        "end": 2.1827
+      },
+      {
+        "w": "Google-Profil,",
+        "start": 2.2175,
+        "end": 3.0186
+      },
+      {
+        "w": "bei",
+        "start": 3.1811,
+        "end": 3.3088
+      },
+      {
+        "w": "Instagram:",
+        "start": 3.3437,
+        "end": 3.9706
+      },
+      {
+        "w": "Alles",
+        "start": 4.226,
+        "end": 4.4931
+      },
+      {
+        "w": "läuft",
+        "start": 4.5395,
+        "end": 4.853
+      },
+      {
+        "w": "ins",
+        "start": 4.8994,
+        "end": 5.0155
+      },
+      {
+        "w": "Leere.",
+        "start": 5.0387,
+        "end": 5.3522
+      }
+    ]
+  },
+  "04-portal": {
+    "duration": 3.2005,
+    "words": [
+      {
+        "w": "Einfach",
+        "start": 0.0232,
+        "end": 0.4063
+      },
+      {
+        "w": "das",
+        "start": 0.4412,
+        "end": 0.5573
+      },
+      {
+        "w": "nächste",
+        "start": 0.5805,
+        "end": 0.8591
+      },
+      {
+        "w": "Portal?",
+        "start": 0.9056,
+        "end": 1.3932
+      },
+      {
+        "w": "Dann",
+        "start": 1.8422,
+        "end": 1.9931
+      },
+      {
+        "w": "bleibt",
+        "start": 2.0395,
+        "end": 2.295
+      },
+      {
+        "w": "die",
+        "start": 2.3298,
+        "end": 2.4459
+      },
+      {
+        "w": "Abhängigkeit.",
+        "start": 2.4691,
+        "end": 3.0961
+      }
+    ]
+  },
+  "05-direkt": {
+    "duration": 2.1595,
+    "words": [
+      {
+        "w": "Reservierungen",
+        "start": 0.1277,
+        "end": 0.7895
+      },
+      {
+        "w": "ab",
+        "start": 0.8359,
+        "end": 0.952
+      },
+      {
+        "w": "jetzt",
+        "start": 0.9868,
+        "end": 1.1842
+      },
+      {
+        "w": "direkt",
+        "start": 1.219,
+        "end": 1.5673
+      },
+      {
+        "w": "bei",
+        "start": 1.6022,
+        "end": 1.7067
+      },
+      {
+        "w": "Ihnen.",
+        "start": 1.7415,
+        "end": 2.0434
+      }
+    ]
+  },
+  "06-eigen": {
+    "duration": 5.4064,
+    "words": [
+      {
+        "w": "Auf",
+        "start": 0.0813,
+        "end": 0.1974
+      },
+      {
+        "w": "Ihrer",
+        "start": 0.2206,
+        "end": 0.4644
+      },
+      {
+        "w": "eigenen",
+        "start": 0.5108,
+        "end": 0.8707
+      },
+      {
+        "w": "Website,",
+        "start": 0.894,
+        "end": 1.4396
+      },
+      {
+        "w": "auf",
+        "start": 1.579,
+        "end": 1.6834
+      },
+      {
+        "w": "Wunsch",
+        "start": 1.7531,
+        "end": 2.0666
+      },
+      {
+        "w": "unter",
+        "start": 2.1362,
+        "end": 2.3452
+      },
+      {
+        "w": "Ihrer",
+        "start": 2.3684,
+        "end": 2.589
+      },
+      {
+        "w": "Domain.",
+        "start": 2.6355,
+        "end": 3.0534
+      },
+      {
+        "w": "Mit",
+        "start": 3.456,
+        "end": 3.5721
+      },
+      {
+        "w": "Speisekarte",
+        "start": 3.6301,
+        "end": 4.3732
+      },
+      {
+        "w": "und",
+        "start": 4.4196,
+        "end": 4.5705
+      },
+      {
+        "w": "Google-Profil.",
+        "start": 4.6054,
+        "end": 5.2903
+      }
+    ]
+  },
+  "07-preis": {
+    "duration": 5.9405,
+    "words": [
+      {
+        "w": "Ein",
+        "start": 0.3135,
+        "end": 0.418
+      },
+      {
+        "w": "fester",
+        "start": 0.4644,
+        "end": 0.8243
+      },
+      {
+        "w": "Preis",
+        "start": 0.8824,
+        "end": 1.219
+      },
+      {
+        "w": "statt",
+        "start": 1.2539,
+        "end": 1.4396
+      },
+      {
+        "w": "Gebühren",
+        "start": 1.4861,
+        "end": 1.8808
+      },
+      {
+        "w": "pro",
+        "start": 1.9273,
+        "end": 2.0434
+      },
+      {
+        "w": "Gast.",
+        "start": 2.0898,
+        "end": 2.38
+      },
+      {
+        "w": "29,00 €",
+        "start": 2.8987,
+        "end": 3.6998
+      },
+      {
+        "w": "Euro",
+        "start": 3.781,
+        "end": 4.0481
+      },
+      {
+        "w": "im",
+        "start": 4.0829,
+        "end": 4.1293
+      },
+      {
+        "w": "Monat,",
+        "start": 4.1526,
+        "end": 4.617
+      },
+      {
+        "w": "bei",
+        "start": 4.7911,
+        "end": 4.9072
+      },
+      {
+        "w": "jährlicher",
+        "start": 4.9537,
+        "end": 5.3252
+      },
+      {
+        "w": "Zahlung.",
+        "start": 5.3832,
+        "end": 5.8244
+      }
+    ]
+  },
+  "08-hamburg": {
+    "duration": 2.3336,
+    "words": [
+      {
+        "w": "Und",
+        "start": 0.1161,
+        "end": 0.3019
+      },
+      {
+        "w": "ein",
+        "start": 0.3367,
+        "end": 0.476
+      },
+      {
+        "w": "Team",
+        "start": 0.5108,
+        "end": 0.7663
+      },
+      {
+        "w": "aus",
+        "start": 0.8011,
+        "end": 0.9636
+      },
+      {
+        "w": "Hamburg",
+        "start": 0.9985,
+        "end": 1.3816
+      },
+      {
+        "w": "hilft",
+        "start": 1.4048,
+        "end": 1.6254
+      },
+      {
+        "w": "beim",
+        "start": 1.6834,
+        "end": 1.7995
+      },
+      {
+        "w": "Umstieg.",
+        "start": 1.846,
+        "end": 2.2407
+      }
+    ]
+  },
+  "09-wechseln": {
+    "duration": 2.8174,
+    "words": [
+      {
+        "w": "Jetzt",
+        "start": 0.0697,
+        "end": 0.2786
+      },
+      {
+        "w": "wechseln.",
+        "start": 0.3251,
+        "end": 0.7198
+      },
+      {
+        "w": "Auf",
+        "start": 1.192,
+        "end": 1.4474
+      },
+      {
+        "w": "bontrivo",
+        "start": 1.4707,
+        "end": 1.9583
+      },
+      {
+        "w": ".",
+        "start": 2.0047,
+        "end": 2.2485
+      },
+      {
+        "w": "d",
+        "start": 2.295,
+        "end": 2.4459
+      },
+      {
+        "w": "e.",
+        "start": 2.4923,
+        "end": 2.6317
+      }
+    ]
+  }
+}

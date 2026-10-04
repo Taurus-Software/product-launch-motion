@@ -1,0 +1,74 @@
+{
+  "duration": 3.6688,
+  "source": "piper alignment (de_DE-thorsten-high), sample-exact",
+  "asr_check": {
+    "score": 1.4,
+    "heard": "Seit dem 1. Oktober laufen keine Reservierungen mehr über Quandu."
+  },
+  "segments": [
+    {
+      "words": [
+        {
+          "word": "Seit",
+          "start": 0.0464,
+          "end": 0.2322,
+          "phonemes": "zaɪt"
+        },
+        {
+          "word": "dem",
+          "start": 0.267,
+          "end": 0.3831,
+          "phonemes": "deːm"
+        },
+        {
+          "word": "1.",
+          "start": 0.4296,
+          "end": 0.743,
+          "phonemes": "ˈeːɾstən"
+        },
+        {
+          "word": "Oktober",
+          "start": 0.7779,
+          "end": 1.1842,
+          "phonemes": "ɔktˈoːbɜ"
+        },
+        {
+          "word": "laufen",
+          "start": 1.2539,
+          "end": 1.637,
+          "phonemes": "lˈaʊfən"
+        },
+        {
+          "word": "keine",
+          "start": 1.6951,
+          "end": 1.9156,
+          "phonemes": "kˈaɪnə"
+        },
+        {
+          "word": "Reservierungen",
+          "start": 1.9389,
+          "end": 2.6587,
+          "phonemes": "rˌeːzɛɾvˈiːrʊŋən"
+        },
+        {
+          "word": "mehr",
+          "start": 2.6935,
+          "end": 2.8793,
+          "phonemes": "mˈeːɾ"
+        },
+        {
+          "word": "über",
+          "start": 2.9025,
+          "end": 3.0883,
+          "phonemes": "ˌyːbɜ"
+        },
+        {
+          "word": "Quandoo.",
+          "start": 3.1347,
+          "end": 3.5527,
+          "phonemes": "kvˈanduː."
+        }
+      ]
+    }
+  ]
+}

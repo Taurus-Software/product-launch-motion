@@ -1,0 +1,50 @@
+{
+  "duration": 2.1595,
+  "source": "piper alignment (de_DE-thorsten-high), sample-exact",
+  "asr_check": {
+    "score": 1.0,
+    "heard": "Reservierungen ab jetzt direkt bei Ihnen."
+  },
+  "segments": [
+    {
+      "words": [
+        {
+          "word": "Reservierungen",
+          "start": 0.1277,
+          "end": 0.7895,
+          "phonemes": "rˌeːzɛɾvˈiːrʊŋən"
+        },
+        {
+          "word": "ab",
+          "start": 0.8359,
+          "end": 0.952,
+          "phonemes": "ap"
+        },
+        {
+          "word": "jetzt",
+          "start": 0.9868,
+          "end": 1.1842,
+          "phonemes": "jˌɛtst"
+        },
+        {
+          "word": "direkt",
+          "start": 1.219,
+          "end": 1.5673,
+          "phonemes": "diːrˈɛkt"
+        },
+        {
+          "word": "bei",
+          "start": 1.6022,
+          "end": 1.7067,
+          "phonemes": "baɪ"
+        },
+        {
+          "word": "Ihnen.",
+          "start": 1.7415,
+          "end": 2.0434,
+          "phonemes": "ˈiːnən."
+        }
+      ]
+    }
+  ]
+}

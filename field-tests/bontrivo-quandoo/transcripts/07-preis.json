@@ -1,0 +1,98 @@
+{
+  "duration": 5.9405,
+  "source": "piper alignment (de_DE-thorsten-high), sample-exact",
+  "asr_check": {
+    "score": 0.929,
+    "heard": "Ein fester Preis statt Gebühren pro Gast, 29 Euro im Monat bei jährlicher Zahlung."
+  },
+  "segments": [
+    {
+      "words": [
+        {
+          "word": "Ein",
+          "start": 0.3135,
+          "end": 0.418,
+          "phonemes": "aɪn"
+        },
+        {
+          "word": "fester",
+          "start": 0.4644,
+          "end": 0.8243,
+          "phonemes": "fˈɛstɜ"
+        },
+        {
+          "word": "Preis",
+          "start": 0.8824,
+          "end": 1.219,
+          "phonemes": "prˈaɪs"
+        },
+        {
+          "word": "statt",
+          "start": 1.2539,
+          "end": 1.4396,
+          "phonemes": "ʃtˈat"
+        },
+        {
+          "word": "Gebühren",
+          "start": 1.4861,
+          "end": 1.8808,
+          "phonemes": "ɡəbˈyːrən"
+        },
+        {
+          "word": "pro",
+          "start": 1.9273,
+          "end": 2.0434,
+          "phonemes": "proː"
+        },
+        {
+          "word": "Gast.",
+          "start": 2.0898,
+          "end": 2.38,
+          "phonemes": "ɡˈast."
+        },
+        {
+          "word": "29,00 €",
+          "start": 2.8987,
+          "end": 3.6998,
+          "phonemes": "nˈɔønʊnttsvˌantsɪç"
+        },
+        {
+          "word": "Euro",
+          "start": 3.781,
+          "end": 4.0481,
+          "phonemes": "ˈɔøroː"
+        },
+        {
+          "word": "im",
+          "start": 4.0829,
+          "end": 4.1293,
+          "phonemes": "ɪm"
+        },
+        {
+          "word": "Monat,",
+          "start": 4.1526,
+          "end": 4.617,
+          "phonemes": "mˈoːnɑːt,"
+        },
+        {
+          "word": "bei",
+          "start": 4.7911,
+          "end": 4.9072,
+          "phonemes": "baɪ"
+        },
+        {
+          "word": "jährlicher",
+          "start": 4.9537,
+          "end": 5.3252,
+          "phonemes": "jˈɛːɾlɪçɜ"
+        },
+        {
+          "word": "Zahlung.",
+          "start": 5.3832,
+          "end": 5.8244,
+          "phonemes": "tsˈɑːlʊŋ."
+        }
+      ]
+    }
+  ]
+}

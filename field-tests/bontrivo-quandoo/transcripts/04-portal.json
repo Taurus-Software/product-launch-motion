@@ -1,0 +1,62 @@
+{
+  "duration": 3.2005,
+  "source": "piper alignment (de_DE-thorsten-high), sample-exact",
+  "asr_check": {
+    "score": 1.0,
+    "heard": "Einfach das nächste Portal, dann bleibt die Abhängigkeit."
+  },
+  "segments": [
+    {
+      "words": [
+        {
+          "word": "Einfach",
+          "start": 0.0232,
+          "end": 0.4063,
+          "phonemes": "ˈaɪnfˌax"
+        },
+        {
+          "word": "das",
+          "start": 0.4412,
+          "end": 0.5573,
+          "phonemes": "das"
+        },
+        {
+          "word": "nächste",
+          "start": 0.5805,
+          "end": 0.8591,
+          "phonemes": "nˈɛçstə"
+        },
+        {
+          "word": "Portal?",
+          "start": 0.9056,
+          "end": 1.3932,
+          "phonemes": "pɔɾtˈɑːl?"
+        },
+        {
+          "word": "Dann",
+          "start": 1.8422,
+          "end": 1.9931,
+          "phonemes": "dan"
+        },
+        {
+          "word": "bleibt",
+          "start": 2.0395,
+          "end": 2.295,
+          "phonemes": "blˈaɪpt"
+        },
+        {
+          "word": "die",
+          "start": 2.3298,
+          "end": 2.4459,
+          "phonemes": "diː"
+        },
+        {
+          "word": "Abhängigkeit.",
+          "start": 2.4691,
+          "end": 3.0961,
+          "phonemes": "ˈaphˌɛŋɪçkˌaɪt."
+        }
+      ]
+    }
+  ]
+}

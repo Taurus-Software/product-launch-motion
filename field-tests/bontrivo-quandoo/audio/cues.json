@@ -1,0 +1,41 @@
+{
+  "_readme": [
+    "Frame-relative SFX cues, resolved against real frame starts by scripts/wire-audio.mjs.",
+    "Every cue names its word. The kit is synthesised (tools/sfx.sh), so there is no licence",
+    "to record. Dramaturgy (DIRECTION.md): a held tone follows the line and STOPS on the break",
+    "(01); then no music at all through the portal world (02-04): the silence is the problem.",
+    "At the turn the line comes back with a brighter tone (05 -> 09) that resolves into the",
+    "brand chord from film 1 on 'bontrivo'. Nothing repeats more than twice (zip-up x2)."
+  ],
+  "bed": { "src": "audio/room.mp3", "volume": 0.12 },
+  "sfxDir": "audio/sfx",
+  "cues": {
+    "01-bruch": [
+      { "sfx": "tone-portal", "at": 0.0, "dur": 1.72, "vol": 0.16, "word": "Seit … laufen — the tone follows the running line and ends ON the break" },
+      { "sfx": "snap", "at": 1.70, "dur": 0.45, "vol": 0.5, "word": "keine — the line breaks at the portal" }
+    ],
+    "03-leere": [
+      { "sfx": "glide-down", "at": 4.90, "dur": 1.0, "vol": 0.35, "word": "ins Leere — the dead ends exhale once" }
+    ],
+    "05-direkt": [
+      { "sfx": "wipe-air", "at": 0.0, "dur": 1.3, "vol": 0.4, "word": "Reservierungen — the cream wipe along the line" },
+      { "sfx": "tone-own", "at": 0.0, "dur": 19.82, "vol": 0.13, "word": "the line returns with its tone; fades into the chord in 09" },
+      { "sfx": "connect", "at": 1.22, "dur": 1.2, "vol": 0.4, "word": "direkt — the line lands in the O, the bean drops (olive 1/2)" }
+    ],
+    "06-eigen": [
+      { "sfx": "zip-up", "at": 3.68, "dur": 0.35, "vol": 0.3, "word": "Speisekarte — its line connects" },
+      { "sfx": "zip-up", "at": 4.66, "dur": 0.35, "vol": 0.3, "word": "Google-Profil — its line connects" }
+    ],
+    "07-preis": [
+      { "sfx": "price-thunk", "at": 2.90, "dur": 0.5, "vol": 0.5, "word": "Neunundzwanzig — the price lands on the line" }
+    ],
+    "08-hamburg": [
+      { "sfx": "pin-tick", "at": 1.00, "dur": 0.25, "vol": 0.45, "word": "Hamburg — the pin is set on the line" }
+    ],
+    "09-wechseln": [
+      { "sfx": "chord-c", "at": 1.47, "dur": 2.6, "vol": 0.45, "word": "bontrivo — the ring is closed: the brand chord" },
+      { "sfx": "sub-drop", "at": 1.47, "dur": 1.8, "vol": 0.3, "word": "bontrivo — sub under the lockup" },
+      { "sfx": "bean-tick", "at": 1.62, "dur": 0.5, "vol": 0.4, "word": "the bean lands in the notch (olive 2/2)" }
+    ]
+  }
+}

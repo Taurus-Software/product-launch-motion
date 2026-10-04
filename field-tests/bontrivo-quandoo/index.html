@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="vendor/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #000;
+      }
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #20201E;
+      }
+      .scene { position: absolute; inset: 0; width: 100%; height: 100%; }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="40.286"
+      data-width="1920"
+      data-height="1080"
+    >
+      <div
+        id="el-01-bruch"
+        class="scene"
+        data-composition-id="01-bruch"
+        data-composition-src="compositions/frames/01-bruch.html"
+        data-start="0"
+        data-duration="4.019"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-01-bruch-voice"
+        src="assets/voice/01-bruch.wav"
+        data-start="0"
+        data-duration="3.669"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-02-export"
+        class="scene"
+        data-composition-id="02-export"
+        data-composition-src="compositions/frames/02-export.html"
+        data-start="4.019"
+        data-duration="4.391"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-02-export-voice"
+        src="assets/voice/02-export.wav"
+        data-start="4.019"
+        data-duration="3.541"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-03-leere"
+        class="scene"
+        data-composition-id="03-leere"
+        data-composition-src="compositions/frames/03-leere.html"
+        data-start="7.91"
+        data-duration="5.918"
+        data-track-index="2"
+      ></div>
+      <audio
+        id="el-03-leere-voice"
+        src="assets/voice/03-leere.wav"
+        data-start="7.91"
+        data-duration="5.468"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-04-portal"
+        class="scene"
+        data-composition-id="04-portal"
+        data-composition-src="compositions/frames/04-portal.html"
+        data-start="13.828"
+        data-duration="5.001"
+        data-track-index="3"
+      ></div>
+      <audio
+        id="el-04-portal-voice"
+        src="assets/voice/04-portal.wav"
+        data-start="13.828"
+        data-duration="3.201"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-05-direkt"
+        class="scene"
+        data-composition-id="05-direkt"
+        data-composition-src="compositions/frames/05-direkt.html"
+        data-start="17.579"
+        data-duration="2.759"
+        data-track-index="4"
+      ></div>
+      <audio
+        id="el-05-direkt-voice"
+        src="assets/voice/05-direkt.wav"
+        data-start="17.579"
+        data-duration="2.159"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-06-eigen"
+        class="scene"
+        data-composition-id="06-eigen"
+        data-composition-src="compositions/frames/06-eigen.html"
+        data-start="20.338"
+        data-duration="6.256"
+        data-track-index="5"
+      ></div>
+      <audio
+        id="el-06-eigen-voice"
+        src="assets/voice/06-eigen.wav"
+        data-start="20.338"
+        data-duration="5.406"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-07-preis"
+        class="scene"
+        data-composition-id="07-preis"
+        data-composition-src="compositions/frames/07-preis.html"
+        data-start="26.095"
+        data-duration="6.941"
+        data-track-index="6"
+      ></div>
+      <audio
+        id="el-07-preis-voice"
+        src="assets/voice/07-preis.wav"
+        data-start="26.095"
+        data-duration="5.941"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-08-hamburg"
+        class="scene"
+        data-composition-id="08-hamburg"
+        data-composition-src="compositions/frames/08-hamburg.html"
+        data-start="32.535"
+        data-duration="3.134"
+        data-track-index="7"
+      ></div>
+      <audio
+        id="el-08-hamburg-voice"
+        src="assets/voice/08-hamburg.wav"
+        data-start="32.535"
+        data-duration="2.334"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-09-wechseln"
+        class="scene"
+        data-composition-id="09-wechseln"
+        data-composition-src="compositions/frames/09-wechseln.html"
+        data-start="35.669"
+        data-duration="4.617"
+        data-track-index="8"
+      ></div>
+      <audio
+        id="el-09-wechseln-voice"
+        src="assets/voice/09-wechseln.wav"
+        data-start="35.669"
+        data-duration="2.817"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+      (function () {
+        var tl = window.__timelines["main"];
+        /* transitions:start */
+        tl.to("#el-02-export", { x: -1920, duration: 0.5, ease: "power3.inOut" }, 7.91);
+        tl.fromTo("#el-03-leere", { x: 1920, opacity: 1 }, { x: 0, duration: 0.5, ease: "power3.inOut" }, 7.91);
+        tl.to("#el-06-eigen", { x: -1920, duration: 0.5, ease: "power3.inOut" }, 26.095);
+        tl.fromTo("#el-07-preis", { x: 1920, opacity: 1 }, { x: 0, duration: 0.5, ease: "power3.inOut" }, 26.095);
+        tl.to("#el-07-preis", { x: -1920, duration: 0.5, ease: "power3.inOut" }, 32.535);
+        tl.fromTo("#el-08-hamburg", { x: 1920, opacity: 1 }, { x: 0, duration: 0.5, ease: "power3.inOut" }, 32.535);
+        /* transitions:end */
+        /* Full-span anchor: without it the root timeline is only as long as its last tween,
+           and the renderer takes THAT as the film's length — truncating the final hold. */
+        tl.to({}, { duration: 40.286 }, 0);
+      })();
+    </script>
+  
+    <!-- wire-audio:start -->
+    <!-- music bed -->
+    <audio id="bed" class="clip" src="audio/room.mp3" data-start="0" data-duration="40.286" data-track-index="900" data-volume="0.12"></audio>
+    <!-- SFX: frame-relative cues resolved against real frame starts -->
+    <audio id="sfx-01-bruch-tone-portal-00" class="clip" src="audio/sfx/tone-portal.mp3" data-start="0.000" data-duration="1.720" data-track-index="910" data-volume="0.16"></audio> <!-- "Seit … laufen — the tone follows the running line and ends ON the break" -->
+    <audio id="sfx-01-bruch-snap-01" class="clip" src="audio/sfx/snap.mp3" data-start="1.700" data-duration="0.450" data-track-index="911" data-volume="0.5"></audio> <!-- "keine — the line breaks at the portal" -->
+    <audio id="sfx-03-leere-glide-down-02" class="clip" src="audio/sfx/glide-down.mp3" data-start="12.810" data-duration="1.000" data-track-index="912" data-volume="0.35"></audio> <!-- "ins Leere — the dead ends exhale once" -->
+    <audio id="sfx-05-direkt-wipe-air-03" class="clip" src="audio/sfx/wipe-air.mp3" data-start="17.579" data-duration="1.300" data-track-index="913" data-volume="0.4"></audio> <!-- "Reservierungen — the cream wipe along the line" -->
+    <audio id="sfx-05-direkt-tone-own-04" class="clip" src="audio/sfx/tone-own.mp3" data-start="17.579" data-duration="19.820" data-track-index="914" data-volume="0.13"></audio> <!-- "the line returns with its tone; fades into the chord in 09" -->
+    <audio id="sfx-05-direkt-connect-05" class="clip" src="audio/sfx/connect.mp3" data-start="18.799" data-duration="1.200" data-track-index="915" data-volume="0.4"></audio> <!-- "direkt — the line lands in the O, the bean drops (olive 1/2)" -->
+    <audio id="sfx-06-eigen-zip-up-06" class="clip" src="audio/sfx/zip-up.mp3" data-start="24.018" data-duration="0.350" data-track-index="916" data-volume="0.3"></audio> <!-- "Speisekarte — its line connects" -->
+    <audio id="sfx-06-eigen-zip-up-07" class="clip" src="audio/sfx/zip-up.mp3" data-start="24.998" data-duration="0.350" data-track-index="917" data-volume="0.3"></audio> <!-- "Google-Profil — its line connects" -->
+    <audio id="sfx-07-preis-price-thunk-08" class="clip" src="audio/sfx/price-thunk.mp3" data-start="28.995" data-duration="0.500" data-track-index="918" data-volume="0.5"></audio> <!-- "Neunundzwanzig — the price lands on the line" -->
+    <audio id="sfx-08-hamburg-pin-tick-09" class="clip" src="audio/sfx/pin-tick.mp3" data-start="33.535" data-duration="0.250" data-track-index="919" data-volume="0.45"></audio> <!-- "Hamburg — the pin is set on the line" -->
+    <audio id="sfx-09-wechseln-chord-c-10" class="clip" src="audio/sfx/chord-c.mp3" data-start="37.139" data-duration="2.600" data-track-index="920" data-volume="0.45"></audio> <!-- "bontrivo — the ring is closed: the brand chord" -->
+    <audio id="sfx-09-wechseln-sub-drop-11" class="clip" src="audio/sfx/sub-drop.mp3" data-start="37.139" data-duration="1.800" data-track-index="921" data-volume="0.3"></audio> <!-- "bontrivo — sub under the lockup" -->
+    <audio id="sfx-09-wechseln-bean-tick-12" class="clip" src="audio/sfx/bean-tick.mp3" data-start="37.289" data-duration="0.500" data-track-index="922" data-volume="0.4"></audio> <!-- "the bean lands in the notch (olive 2/2)" -->
+    <!-- wire-audio:end -->
+  </body>
+</html>

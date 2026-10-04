@@ -1,0 +1,104 @@
+<!--
+  05-direkt: THE TURN (story register flips ink → cream). The cream world wipes in from the
+  left while the reservation line runs from the guest straight into the O, both driven by
+  one value f (0 → 1, power2.out), so the cream reaches the right edge exactly as the line
+  lands in the ring on "direkt"@1.22. 04 stays alive underneath for those 1.25 s
+  (film.json), so the wipe uncovers the portal diagram, never an empty frame.
+  On the landing the bean drops into its notch: the olive "connected" signal (1 of 2).
+
+  Stage constants (shared with 06, hard cut):
+    O: the traced logo ring, element 300 px centred on (1500, 620) → box 1350/470
+       outer radius = 41.162 × 300 / 83.147 = 148.5 px → its left edge at x = 1351.5
+    guest dot (170, 620), label "Gast" 36/700 at top 550 · line M184 620 H1352
+    label "Ihr Restaurant" 36/700 centred under the O, top 800
+    headline 92/900 at x = 150, tops 150 / 242 ("RESERVIERUNGEN AB JETZT" = 1418 px)
+  Edge and head: edge = 1920·f, head = 184 + 1168·f; the edge passes the head at f = 0.245
+  (t ≈ 0.16), after that the cream runs ahead and the line follows it into the O.
+-->
+<template>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="compositions/lib/btv-brand.js"></script>
+  <script src="compositions/lib/btv.js"></script>
+  <style>
+    @font-face {
+      font-family: "Montserrat";
+      src: url("assets/fonts/montserrat-variable-latin.woff2") format("woff2-variations");
+      font-weight: 100 900;
+      font-display: block;
+    }
+    #root {
+      position: relative; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "Montserrat", sans-serif; -webkit-font-smoothing: antialiased; color: #20201e;
+    }
+    .f05-ground { position: absolute; inset: 0; background: #fff4e7; clip-path: inset(0px 1920px 0px 0px); }
+    #f05-layer-1 { clip-path: inset(0px 1920px 0px 0px); }
+    .f05-mask { position: absolute; left: 150px; height: 112px; overflow: hidden; white-space: nowrap; }
+    .f05-mask span { display: inline-block; font-size: 92px; line-height: 104px; font-weight: 900; letter-spacing: 0.005em; }
+    #f05-h1 { top: 144px; }
+    #f05-h2 { top: 236px; }
+    .f05-svg { position: absolute; left: 0; top: 0; }
+    .f05-label { position: absolute; font-size: 36px; line-height: 44px; font-weight: 700; white-space: nowrap; }
+    #f05-o { position: absolute; left: 1350px; top: 470px; width: 300px; height: 300px; }
+    #f05-rest { opacity: 0; }
+  </style>
+
+  <div id="root" data-composition-id="05-direkt" data-width="1920" data-height="1080" data-duration="2.759">
+    <div class="clip f05-ground" id="f05-ground" data-start="0" data-duration="2.759" data-track-index="0"></div>
+    <div id="f05-layer-1" class="clip" data-start="0" data-duration="2.759" data-track-index="1" style="position:absolute;inset:0">
+      <div class="f05-mask" id="f05-h1" data-layout-allow-overlap><span id="f05-w1">RESERVIERUNGEN AB JETZT</span></div>
+      <div class="f05-mask" id="f05-h2" data-layout-allow-overlap><span id="f05-w2">DIREKT BEI IHNEN.</span></div>
+      <svg class="f05-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+        <path id="f05-line" d="M184 620 H1352" fill="none" stroke="#e65f3c" stroke-width="10" stroke-linecap="butt"/>
+        <circle cx="170" cy="620" r="14" fill="#20201e"/>
+      </svg>
+      <!-- data-layout-allow-overlap: during the wipe 04 is still mounted underneath; this layer
+           and its cream ground are clipped together, so 04 is covered wherever this text shows -->
+      <div class="f05-label" style="left:150px;top:550px" data-layout-allow-overlap>Gast</div>
+      <div id="f05-o"></div>
+      <div class="f05-label" id="f05-rest" style="left:1364px;top:800px">Ihr Restaurant</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      /* VO: "Reservierungen ab jetzt direkt bei Ihnen."
+         "Reservierungen"@0.13  "ab"@0.84  "jetzt"@0.99  "direkt"@1.22  "bei"@1.60  "Ihnen."@1.74
+         duration 2.159s · hold 2.759 · hard cut to 06 */
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      var B = window.BTV;
+
+      B.plate(document.getElementById("f05-o"), "f05-o", { bean: true });
+      var bean = document.getElementById("f05-o-bean");
+
+      /* ── the wipe and the line: one value drives both (0 → 1.22, landing on "direkt") */
+      var ground = document.getElementById("f05-ground"), layer = document.getElementById("f05-layer-1");
+      var line = document.getElementById("f05-line");
+      var L = B.prime(line, 0);
+      var st = { f: 0 };
+      tl.fromTo(st, { f: 0 }, {
+        f: 1, duration: 1.22, ease: "power2.out", immediateRender: false,
+        onUpdate: function () {
+          var clip = "inset(0px " + (1920 * (1 - st.f)).toFixed(2) + "px 0px 0px)";
+          ground.style.clipPath = clip;
+          layer.style.clipPath = clip;
+          line.style.strokeDashoffset = String((L + 1) * (1 - st.f));
+        }
+      }, 0);
+
+      // "Reservierungen"@0.13: the claim rises inside the advancing cream, so the wipe
+      // uncovers it left to right; "direkt"@1.22: the second line, as the line lands
+      B.rise(tl, "#f05-w1", 0.13);
+      B.rise(tl, "#f05-w2", 1.22);
+
+      // landed: the bean drops into the notch (olive = connected); no shadow, the film is flat
+      B.drop(tl, bean, 1.30, { from: 1.8, dur: 0.26, shadow: false, origin: "50% 50%" });
+
+      // "Ihnen."@1.74: the O is the restaurant
+      B.arrive(tl, "#f05-rest", 1.74, { y: 10, dur: 0.28 });
+
+      tl.to({}, { duration: 2.759 }, 0);
+      window.__timelines["05-direkt"] = tl;
+    })();
+  </script>
+</template>
